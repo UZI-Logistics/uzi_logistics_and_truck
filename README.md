@@ -1,45 +1,45 @@
-# gotrucking
+# Getting Started and contributing to GoTrucking
 
-Providing Truck Services
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-###
+## Available Scripts
 
-===
-This is a service to help people solve their trucking issues, like moving from one place to another, relocating, moving goods and all.
+In the project directory, you can run:
 
----
+### `git clone https://github.com/Gtstride/gotrucking.git`
 
-Authors:
-- Godstime Agho
-- Mohod Osheni
-- Adekunle Anifowose
-- Matthew M.
+### `cd gotrucking`
 
-## To find out more about this project, check-out [GOTRUCKING].
+### `yarn install`
 
-### This is totally built and get more from the URLs: <http://www.gotrucking.com>
+### `yarn start`
 
-# The Official Logo of the business is: 
-![Official Logo](assets/images/logo.jpeg)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```
-This project makes use of:
-- React-JS for web app
-- Mongodb For Database
-- React Native for Android Mobile
-- React Native for iOS Mobile
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
----
+### `Contributors to the Web App`
 
-To get started
+### `Godstime Agho (Full-Stack Web Engineer)`
 
-> git clone _https://github.com/Gtstride/gotrucking.git_
-- run **npm install**
-- **npm start**
+### `Osheni Moshod (Full-stack Web / Mobile Engineer)`
 
----
-Don't forget to reference the owners of the project
+### `Anifowoshe Adekunle (Chief Operating Officer)`
 
----
-More updates about this project coming in soon
+### `Matthew (Android / iOS Engineer)`
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Gotrucking documentation](https://gotrucking.com/docs/getting-started).

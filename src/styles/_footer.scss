@@ -1,0 +1,124 @@
+.footer {
+  justify-content: center;
+  // padding: 4rem 5rem;
+  // display: grid;
+  // grid-template-columns: repeat(6, 200px);
+  // grid-gap: 25px;
+
+  @include breakpoint(phone-only) {
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  @include breakpoint(tablet-portrait-up) {
+    grid-template-columns: repeat(3, 200px);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: repeat(3, 200px);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  @include breakpoint(desktop-up) {
+    padding: 4rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(6, 180px);
+    grid-gap: 25px;
+    justify-content: center;
+  }
+  @include breakpoint(big-desktop-up) {
+    align-items: center;
+    justify-content: center;
+  }
+  &-social__media {
+    &--logos {
+      & img {
+        cursor: pointer;
+        padding-right: 1.1rem;
+      }
+    }
+  }
+}
+
+.footer-contact {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // z-index: 99;
+  color: white !important;
+  width: 100%;
+  @include breakpoint(phone-only) {
+    position: relative;
+  }
+  @include breakpoint(tablet-portrait-up) {
+    position: relative;
+  }
+  @include breakpoint(tablet-landscape-up) {
+    position: relative;
+  }
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 25px;
+
+  @include breakpoint(small-phone-only) {
+    grid-template-columns: repeat(2, 120px) !important;
+  }
+  @include breakpoint(phone-only) {
+    grid-template-columns: repeat(2, 155px);
+  }
+
+  @include breakpoint(tablet-portrait-up) {
+    display: grid;
+    grid-template-columns: repeat(3, 205px);
+    grid-gap: 25px;
+    margin-bottom: 2rem;
+  }
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: repeat(4, 210px);
+    padding: 1rem 0;
+  }
+  @include breakpoint(desktop-up) {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 25px;
+  }
+}
+
+ul .list {
+  display: block;
+
+  :hover {
+    color: colors(orange);
+  }
+}
+
+@media (max-width: 599px) {
+  .join-us {
+    display: none;
+  }
+  .quick-links {
+    display: none;
+  }
+
+  .footer-social__media {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 768px) and(max-width: 1200px) {
+  .join-us {
+    display: none;
+  }
+  .quick-links {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+$colors: (
+  blue: #2b3c95,
+  dark-text: #282a3c,
+  light-orange: #fbf7f5,
+  light-grey: #fbfbfb,
+  orange: #ff932f,
+  input-border: #dddbd7,
+  green: #36b37e,
+  white: #ffffff,
+  modal: #f5f7fa,
+  light-blue: #eff7fb,
+  footer: #738ca5,
+  input: #707070
+);
+
+//map through the colors
+
+@function colors($colorName) {
+  @return map-get($map: $colors, $key: $colorName);
+}
