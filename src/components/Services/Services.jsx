@@ -52,7 +52,7 @@ const Services = ({ history }) => {
         <p data-aos="zoom-left" className="about-box__card">
           <FormattedMessage
             id="app.about-kobo"
-            defaultMessage="Kobo360 is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework. <div class=about-content-space />  
+            defaultMessage="Gotrucking is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework. <div class=about-content-space />  
                                     With only a click of a button on our seamless mobile and web applications, cargo owners can simply request for any truck of their choice and have their goods picked up and delivered to the required location through an all-in-one robust logistics ecosystem.<div class=about-content-space /> 
                                     Kobo uses big data and technology to reduce logistics frictions while empowering rural farmers to earn more by reducing farm wastages and helping manufacturers of all sizes to find new markets.
                                     Kobo enables unprecedented efficiency and cost reduction in the supply chain, providing 360-visibility while delivering products of all sizes safely, on time and in full."
@@ -70,7 +70,7 @@ const Services = ({ history }) => {
                   description="KG's Moved"
                 />
               </p>
-              <h1 data-aos="zoom-in">300M+</h1>
+              <h1 data-aos="zoom-in">150M+</h1>
             </span>
           </div>
           <div className="about-box__images margin-left-5 flex-align-center hover-scale margin-1">
@@ -83,7 +83,7 @@ const Services = ({ history }) => {
                   description="Businesses Supported"
                 />
               </p>
-              <h1 data-aos="zoom-in">2,345</h1>
+              <h1 data-aos="zoom-in">1,587</h1>
             </span>
           </div>
           <div className="about-box__images flex-align-center hover-scale margin-1 movement">
@@ -96,7 +96,7 @@ const Services = ({ history }) => {
                   description="Total Fleet"
                 />
               </p>
-              <h1 data-aos="zoom-out">12,908</h1>
+              <h1 data-aos="zoom-out">10,997</h1>
             </span>
           </div>
         </div>
@@ -110,12 +110,12 @@ const Services = ({ history }) => {
             <div className="flex height-16">
               <img src={servicetruck} alt="" loading="lazy"/>
               <div className="card-content">
-                <p>Kobo Care</p>
+                <p>Gotruck Care</p>
                 <p data-aos="zoom-in" className="margin-bottom-1">
                   <b>
                     <FormattedMessage
                       id="app.about-text"
-                      defaultMessage=" KoboCare is a solution for drivers registered on the Kobo
+                      defaultMessage=" GotruckCare is a solution for drivers registered on the gotruck
                   platform, as part of our commitment to drivers. The
                   advantages includes: <br /> Discounted Diesel sale ..."
                     />
@@ -145,12 +145,12 @@ const Services = ({ history }) => {
             <div className="flex height-16 ">
               <img src={servicetruck} alt="" loading="lazy"/>
               <div className="card-content">
-                <p>Kobo Safe</p>
+                <p>Gotruck Safe</p>
                 <p data-aos="zoom-in" className="margin-bottom-1">
                   <b>
                     <FormattedMessage
                       id="app.kobo-safe"
-                      defaultMessage="KoboSafe is our bespoke self insurance solution that provides insurance cover for every single trip on Kobo’s platform. This product offers 80% cost reduction on insurance premiums."
+                      defaultMessage="GotruckSafe is our bespoke self insurance solution that provides insurance cover for every single trip on Gotruck’s platform. This product offers 80% cost reduction on insurance premiums."
                     />
                   </b>
                 </p>
