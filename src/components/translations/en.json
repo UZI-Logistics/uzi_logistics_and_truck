@@ -1,4 +1,9 @@
 {
     "app.text": "Edit <code>src/App.js</code> and save to reload.<br/>Now with {what}!",
-    "app.learn-react-link": "Learn React."
+    "app.sig": "SIGN IN AS CUSTOMER",
+    "app.sign-partner": "SIGN IN AS PARTNER",
+    "app.sign-staff": "SIGN IN AS A STAFF",
+    "app.kobo-safe": "GotruckSafe is our bespoke self insurance solution that provides insurance cover for every single trip on Gotruck’s platform. This product offers 80% cost reduction on insurance premiums.",
+    "app.read-more": "Read More...",
+    "app.truck-trade": "TRADE IN YOUR TRUCK"
 }

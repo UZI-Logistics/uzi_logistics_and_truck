@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logocolored from "../../images/logo.png";
 import TheHeader from "../common/TheHeader";
+import { FormattedMessage } from "react-intl"
 // import { FormattedMessage, FormattedHTMLMessage } from "./components/common/node_modules/react-intl";
 
 import Footer from "../common/Footer";
@@ -110,9 +111,9 @@ const TradeIn = () => {
               />
             </h1>
             <p className="center padding-1" data-aos="zoom-out">
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.trade-caption"
-                defaultMessage=" Kobo360 has a reliable market place to help you trade in <br />
+                defaultMessage=" Gotrucking has a reliable market place to help you trade in <br />
                 your truck for cash."
               />
             </p>
