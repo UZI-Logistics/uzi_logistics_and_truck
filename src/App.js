@@ -7,7 +7,7 @@ import { IntlProvider } from "react-intl";
 // import "./styles/fonts/avenir/avenir.css";
 import "./styles/App.scss";
 
-// import messages_en from "./components/translations/en.json";
+import messages_en from "./components/translations/en.json";
 // import messages_ha from "./components/translations/ha.json";
 // import messages_sw from "./components/translations/sw.json";
 // import messages_fr from "./components/translations/fr.json";
@@ -16,7 +16,7 @@ import Loading from "./Loading";
 import { initGA, PageView, setProperties } from "./components/helpers/tracking";
 
 // Lazy load routes
-// const About = lazy(() => import("./components/About/About"));
+const About = lazy(() => import("./components/About/About"));
 // const Services = lazy(() => import("./components/Services/Services"));
 // const Careers = lazy(() => import("./components/Careers/Careers"));
 // const KoboCare = lazy(() => import("./components/KoboCare/KoboCare"));
@@ -27,7 +27,7 @@ import { initGA, PageView, setProperties } from "./components/helpers/tracking";
 // const Privacy = lazy(() => import("./components/Terms-Conditions/Privacy"));
 
 const messages = {
-  // en: messages_en,
+  en: messages_en,
   // fr: messages_fr,
   // ha: messages_ha,
   // sw: messages_sw,
@@ -80,8 +80,8 @@ const App = () => {
           <Switch>
             {/* <Route path="/" exact component={Home} /> */}
             <Route path="/:code/:lang/" exact component={Home} />
-            {/* <Route path="/:code/:lang/about-kobo360" exact component={About} />
-            <Route path="/:code/:lang/services" exact component={Services} />
+             <Route path="/:code/:lang/about-kobo360" exact component={About} />
+           {/* <Route path="/:code/:lang/services" exact component={Services} />
             <Route path="/:code/:lang/careers" exact component={Careers} />
             <Route path="/:code/:lang/kobocare" exact component={KoboCare} /> */}
             {/* <Route

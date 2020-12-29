@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
-// import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-// import { FormattedMessage, FormattedHTMLMessage } from "../../../node_modules/react-intl";  
+import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
 // import kgs from "../../images/Group 1406.png";
 // import businesses from "../../images/Group 1407.png";
 // import fleet from "../../images/fast.png";
 import serviceimage from "../../images/2052636@2x.png";
-
 import gms from "../../images/Goldman-Sachs-@2x.png";
 import tlc from "../../images/Tlc@2x.png";
 import ifc from "../../images/Ifc@2x.png";
@@ -37,7 +35,7 @@ const About = () => {
   return (
     <>
     
-      <SEO title="Kobo360 | About Kobo360" />
+      <SEO title="GOTRUCKING | About GOTRUCKING" />
     <div className="overflow-head">
       <TheHeader
         bgColor="light-blue"
@@ -50,14 +48,14 @@ const About = () => {
           <h1 className="capitalize" data-aos="zoom-in">
             <FormattedMessage
               id="app.about-head"
-              defaultMessage="About Kobo360"
+              defaultMessage="About GOTRUCKING"
               description="About Heading"
             />
           </h1>
           <p data-aos="zoom-out" className="">
             <FormattedMessage
               id="app.about-leading"
-              defaultMessage="We are the leading global logistics platform in Africa."
+              defaultMessage="We are the leading global logistics platform in Nigeria at The Moment."
               description="About Heading"
             />
           </p>
@@ -74,7 +72,7 @@ const About = () => {
           />
         </div>
         <p className="services-box__card" data-aos="zoom-out">
-          <FormattedHTMLMessage
+          <FormattedMessage
             id="app.services-text-1"
             defaultMessage="“Africa Rising” is the unifying theme, drawn from the deeply rooted African values of ambition, openness, hope and respect."
             description="Our Services Text 1"
@@ -82,36 +80,51 @@ const About = () => {
           <br />
           <br />
           <p data-aos="zoom-out">
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.services-text-2"
-              defaultMessage="Kobo promotes the values of creativity, drive and imagination, which are vital to Africa’s economic future. Building a dynamic and innovative company is a critical element in sustaining Africa’s new-found optimism. And this one will not just grow shareholder values, but create exponential economic expansion."
+              defaultMessage="Gotrucking promotes the values of creativity, drive and imagination, which are vital to Africa’s economic future. Building a dynamic and innovative company is a critical element in sustaining Africa’s new-found optimism. And this one will not just grow shareholder values, but create exponential economic expansion."
               description="Our Services Text 2"
             />
           </p>
           <br />
-          <FormattedHTMLMessage
+          {/* <FormattedHTMLMessage
+            id="app.services-text-3"
+            defaultMessage="These values have shaped the company’s"
+            description="Our Services Text 3"
+          /> */}
+           <FormattedMessage
             id="app.services-text-3"
             defaultMessage="These values have shaped the company’s"
             description="Our Services Text 3"
           />
           <br />
           <br />
-          <FormattedHTMLMessage
+          {/* <FormattedHTMLMessage
             id="app.mission"
             defaultMessage="<b>Mission:</b> A Global Logistics Operating System (G-LOS). "
             description="Mission"
+          /> */}
+          <FormattedMessage
+            id="app.mission"
+            defaultMessage="Mission: A Global Logistics Operating System (G-LOS). "
+            description="Mission"
           />
           <br />
-          <FormattedHTMLMessage
+          <FormattedMessage
             id="app.vision"
-            defaultMessage="<b>Vision:</b> Powering enterprise and the economy through logistics. "
+            defaultMessage="Vision: Powering enterprise and the economy through logistics. "
             description="Vision"
           />
           <br />
           <b data-aos="zoom-in"></b>{" "}
-          <FormattedHTMLMessage
+          {/* <FormattedHTMLMessage
             id="app.corporate"
             defaultMessage="<b>Corporate Tagline:</b> Think logistics, Think Kobo360  "
+            description="Corporate Tagline"
+          /> */}
+          <FormattedMessage
+            id="app.corporate"
+            defaultMessage="Corporate Tagline: Think logistics, Think Gotrucking  "
             description="Corporate Tagline"
           />
         </p>
@@ -119,7 +132,12 @@ const About = () => {
 
       <div className="investors ">
         <h1 className="center title investors-title" data-aos="zoom-in">
-          <FormattedHTMLMessage
+          {/* <FormattedHTMLMessage
+            id="app.investors"
+            defaultMessage="Our Investors"
+            description="Our Investors"
+          /> */}
+          <FormattedMessage
             id="app.investors"
             defaultMessage="Our Investors"
             description="Our Investors"
@@ -135,7 +153,7 @@ const About = () => {
       </div>
       <div className="news" data-aos="zoom-in">
         <h1 className="center title white">
-          <FormattedHTMLMessage
+          <FormattedMessage
             id="app.in-the-news"
             defaultMessage="In The News"
             description="In The News"
@@ -154,10 +172,10 @@ const About = () => {
                 August 14, 2019
               </p>
               <p className="margin-bottom-1">
-                <b>Kobo360 raises $30M backed by Goldman Sachs</b>
+                <b>Gotrucking raises $30M backed by Goldman Sachs</b>
               </p>
               <p className="margin-bottom-1">
-                Kobo360 has raised a $20 million Series A round led by Goldman
+              Gotrucking has raised a $20 million Series A round led by Goldman
                 Sachs...
               </p>
               <p
@@ -169,11 +187,11 @@ const About = () => {
                 }
               >
                 <img src={arrow} alt="" className="smaller pointer-margin-5" loading="lazy" />{" "}
-                <FormattedHTMLMessage
+                {/* <FormattedHTMLMessage
                   id="app.read-more"
                   defaultMessage="Read more"
                   description="Read more..."
-                />
+                /> */}
               </p>
             </div>
           </div>
@@ -209,7 +227,7 @@ const About = () => {
                 }
               >
                 <img src={arrow} alt="" className="smaller pointer-margin-5" loading="lazy" />{" "}
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.read-more"
                   defaultMessage="Read more"
                   description="Read more..."
@@ -225,7 +243,7 @@ const About = () => {
                 <b> How cargo delivery is going digital in Nigeria</b>
               </p>
               <p className="margin-bottom-1">
-                Digital startup Kobo360 is revolutionising cargo delivery with
+                Digital startup Gotrucking is revolutionising cargo delivery with
                 an app inspired by Uber.
               </p>
               <p
@@ -237,7 +255,7 @@ const About = () => {
                 }
               >
                 <img src={arrow} alt="" className="smaller pointer-margin-5" loading="lazy" />{" "}
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.read-more"
                   defaultMessage="Read more"
                   description="Read more..."
@@ -253,12 +271,12 @@ const About = () => {
               </p>
               <p className="margin-bottom-1">
                 <b>
-                  Q&A With Kobo360 Co-Founder Obi Ozor On His E-Logistics
+                  Q&A With Gotrucking Co-Founder Obi Ozor On His E-Logistics
                   Startups's $30 Million Raise
                 </b>
               </p>
               <p className="margin-bottom-1">
-                Kobo360 co-founder Obi Uzor talks about how his startup plans to
+                Gotrucking co-founder Obi Uzor talks about how his startup plans to
                 dominate Supply Chain Management In Africa after raising $30
                 million...
               </p>
@@ -271,7 +289,7 @@ const About = () => {
                 }
               >
                 <img src={arrow} alt="" className="smaller pointer-margin-5" loading="lazy" />{" "}
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.read-more"
                   defaultMessage="Read more"
                   description="Read more..."
@@ -301,7 +319,7 @@ const About = () => {
                   loading="lazy"
                 />{" "}
                 <a href={pdf} target="_blank" rel="noopener noreferrer">
-                  <FormattedHTMLMessage
+                  <FormattedMessage
                     id="app.read-more"
                     defaultMessage="Read more"
                     description="Read more..."
