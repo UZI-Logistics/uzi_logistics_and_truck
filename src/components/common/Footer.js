@@ -31,7 +31,7 @@ const Footer = () => {
     <div className="footer">
       <div className="join-us">
         <p className="bold">
-          <FormattedMessage id="app.about-head" defaultMessage="Join Us" />
+          <FormattedMessage id="app.about-head" defaultMessage="About Us" />
         </p>
         <p className="grey font-smaller">
           <FormattedMessage
@@ -153,43 +153,43 @@ const Footer = () => {
       <div className="branches">
         <span>
           <p className="bold">Nigeria</p>
-          <p className="grey font-smaller">+234 818 678 0000</p>
-          <OpenMail mail="info@kobo360.com"></OpenMail>
-        </span>
-        <span>
-          <p className="bold">Kenya</p>
-          <p className="grey font-smaller">+254717053217</p>
-          <OpenMail mail="info.ke@kobo360.com"></OpenMail>
+          <p className="grey font-smaller">+234 919 000 0000</p>
+          <OpenMail mail="info@gotrucking-ng.com"></OpenMail>
         </span>
         <span>
           <p className="bold">Ghana</p>
-          <p className="grey font-smaller">+233(0)500406855</p>
-          <OpenMail mail="info.gh@kobo360.com"></OpenMail>
+          <p className="grey font-smaller">+234 919 000 0000</p>
+          <OpenMail mail="info@gotrucking.com"></OpenMail>
         </span>
         <span>
-          <p className="bold">Uganda</p>
-          <p className="grey font-smaller">+25 677 297 9480</p>
-          <OpenMail mail="info.ug@kobo360.com"></OpenMail>
+          <p className="bold">Kenya</p>
+          <p className="grey font-smaller">+234 919 000 0000</p>
+          <OpenMail mail="info@gotrucking.com"></OpenMail>
         </span>
         <span>
-          <p className="bold">Togo</p>
-          <p className="grey font-smaller">+228 9257 7720</p>
-          <OpenMail mail="info.tg@kobo360.com"></OpenMail>
+          <p className="bold">France</p>
+          <p className="grey font-smaller">+234 919 000 0000</p>
+          <OpenMail mail="info@gotrucking.com"></OpenMail>
         </span>
         <span>
-          <p className="bold">Ivory Coast</p>
-          <p className="grey font-smaller">+225  49400000</p>
-          <OpenMail mail="info.ivc@kobo360.com"></OpenMail>
-        </span>
-        <span>
-          <p className="bold">Burkina Faso</p>
-          <p className="grey font-smaller">+226 75244998</p>
-          <OpenMail mail="info.bf@kobo360.com"></OpenMail>
+          <p className="bold">Cameroon</p>
+          <p className="grey font-smaller">+234 919 000 0000</p>
+          <OpenMail mail="info@gotrucking.com"></OpenMail>
         </span>
         <span>
           <p className="bold">Media Enquiries</p>
-          <OpenMail mail="press@kobo360.com"></OpenMail>
+          <OpenMail mail="press@gotrucking.com"></OpenMail>
         </span>
+        {/* <span>
+          <p className="bold">Ivory Coast</p>
+          <p className="grey font-smaller">+225  49400000</p>
+          <OpenMail mail="info.ivc@kobo360.com"></OpenMail>
+        </span> */}
+        {/* <span>
+          <p className="bold">Burkina Faso</p>
+          <p className="grey font-smaller">+226 75244998</p>
+          <OpenMail mail="info.bf@kobo360.com"></OpenMail>
+        </span> */}
       </div>
     </div>
   );
