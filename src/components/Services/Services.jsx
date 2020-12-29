@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
+import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
 // import serviceimage from "../../images/2052636@2x.png";
@@ -33,7 +33,7 @@ const Services = ({ history }) => {
       <div data-aos="zoom-out" className="about">
         <div className="about-heading middle">
           <h1 className="capitalize">
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.our-services"
               defaultMessage="Our Services"
               description="Our Services"
@@ -50,7 +50,7 @@ const Services = ({ history }) => {
       </div>
       <div className="flex about-box">
         <p data-aos="zoom-left" className="about-box__card">
-          <FormattedHTMLMessage
+          <FormattedMessage
             id="app.about-kobo"
             defaultMessage="Kobo360 is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework. <div class=about-content-space />  
                                     With only a click of a button on our seamless mobile and web applications, cargo owners can simply request for any truck of their choice and have their goods picked up and delivered to the required location through an all-in-one robust logistics ecosystem.<div class=about-content-space /> 
@@ -64,7 +64,7 @@ const Services = ({ history }) => {
             <img src={kgs} alt="" data-aos="zoom-in" loading="lazy" />
             <span>
               <p data-aos="zoom-out">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.moved"
                   defaultMessage="KG's Moved"
                   description="KG's Moved"
@@ -77,7 +77,7 @@ const Services = ({ history }) => {
             <img src={businesses} alt="" data-aos="zoom-in" loading="lazy" />
             <span>
               <p data-aos="zoom-out">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.biz-supported"
                   defaultMessage="Businesses Supported"
                   description="Businesses Supported"
@@ -90,7 +90,7 @@ const Services = ({ history }) => {
             <img src={fleet} alt="" loading="lazy" />
             <span className="">
               <p data-aos="zoom-out">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.fleet"
                   defaultMessage="Total Fleet"
                   description="Total Fleet"
@@ -113,7 +113,7 @@ const Services = ({ history }) => {
                 <p>Kobo Care</p>
                 <p data-aos="zoom-in" className="margin-bottom-1">
                   <b>
-                    <FormattedHTMLMessage
+                    <FormattedMessage
                       id="app.about-text"
                       defaultMessage=" KoboCare is a solution for drivers registered on the Kobo
                   platform, as part of our commitment to drivers. The
@@ -132,7 +132,7 @@ const Services = ({ history }) => {
                     className="smaller-pointer pointer-margin-5"
                     loading="lazy"
                   />{" "}
-                  <FormattedHTMLMessage
+                  <FormattedMessage
                     id="app.read-more"
                     defaultMessage="Read more"
                     description="Read more..."
