@@ -22,7 +22,7 @@ const Services = lazy(() => import("./components/Services/Services"));
 // const KoboCare = lazy(() => import("./components/KoboCare/KoboCare"));
 const TradeIn = lazy(() => import("./components/TradeIn/TradeIn"));
 // const Contact = lazy(() => import("./components/Contact/Contact"));
-// const Pricing = lazy(() => import("./components/Pricing/Pricing"));
+const Pricing = lazy(() => import("./components/Pricing/Pricing"));
 // const Terms = lazy(() => import("./components/Terms-Conditions/Terms"));
 // const Privacy = lazy(() => import("./components/Terms-Conditions/Privacy"));
 
@@ -64,7 +64,7 @@ const App = () => {
   if (process.env.NODE_ENV === "production") {
     initGA("UA-122568450-1");
     PageView();
-    setProperties({ userId: "website-visitor", name: "Kobo Visitor" });
+    setProperties({ userId: "website-visitor", name: "Gotrucking Visitor" });
   }
 
   AOS.init();
@@ -87,8 +87,8 @@ const App = () => {
             <Route path="/:code/:lang/kobocare" exact component={KoboCare} /> */}
             {/* <Route path="/:code/:lang/terms-and-conditions" exact component={Terms} />
             <Route path="/:code/:lang/contact" exact component={Contact} />
-            <Route path="/:code/:lang/privacy-policy" exact component={Privacy} />
-            <Route path="/:code/:lang/pricing" exact component={Pricing} /> */}
+            <Route path="/:code/:lang/privacy-policy" exact component={Privacy} />*/}
+            <Route path="/:code/:lang/pricing" exact component={Pricing} /> 
             {/* <Route path="/newhome" exact component={NewHome} /> */}
 
             <Redirect

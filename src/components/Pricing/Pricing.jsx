@@ -6,8 +6,7 @@ import Swal from "sweetalert2";
 import { POST } from ".././helpers/api";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
-// import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
-// import { FormattedMessage, FormattedHTMLMessage } from "./components/node_modules/react-intl";
+import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
 import Loader from "../helpers/Loader";
 import Autocomplete from "./Autocomplete";
 import iosstore from "../../images/app-store-logo@2x.png";
@@ -50,17 +49,17 @@ class Pricing extends React.Component {
     // document.title = "Kobo360 | Pricing";
     window.scrollTo(0, 0);
   }
-  setRef = (input) => {
-    this.pickupAddress = input;
-    this.autocomplete = new window.google.maps.places.Autocomplete(
-      this.pickupAddress
-    );
-    this.autocomplete.setComponentRestrictions({
-      country: ["ng"],
-    });
-    // Fire Event when a name is selected
-    this.autocomplete.addListener("place_changed", this.handlePlaceSelect);
-  };
+  // setRef = (input) => {
+  //   this.pickupAddress = input;
+  //   this.autocomplete = new window.google.maps.places.Autocomplete(
+  //     this.pickupAddress
+  //   );
+  //   this.autocomplete.setComponentRestrictions({
+  //     country: ["ng"],
+  //   });
+  //   // Fire Event when a name is selected
+  //   this.autocomplete.addListener("place_changed", this.handlePlaceSelect);
+  // };
 
   _setRef = (input) => {
     this.destinationAddress = input;
@@ -170,7 +169,7 @@ class Pricing extends React.Component {
   render() {
     return (
       <>
-        <SEO title="Kobo360 | Pricing"/>
+        <SEO title="Gotrucking | Pricing"/>
         <div>
           <TheHeader
             bgColor="light-blue"
@@ -188,10 +187,10 @@ class Pricing extends React.Component {
               </h1>
             </div>
             <p className="center" data-aos="zoom-in">
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.estimator-text"
-                defaultMessage=" How much does Kobo cost in your city? Calculate a fare estimate for
-            your <br /> next trip. Simply enter a pickup location and
+                defaultMessage="How much does gotruck cost in your city? Calculate a fare estimate for
+            your next trip. Simply enter a pickup location and
             destination to get started."
               />
             </p>
