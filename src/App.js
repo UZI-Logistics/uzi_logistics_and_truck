@@ -18,10 +18,10 @@ import { initGA, PageView, setProperties } from "./components/helpers/tracking";
 // Lazy load routes
 const About = lazy(() => import("./components/About/About"));
 const Services = lazy(() => import("./components/Services/Services"));
-// const Careers = lazy(() => import("./components/Careers/Careers"));
+const Careers = lazy(() => import("./components/Careers/Careers"));
 // const KoboCare = lazy(() => import("./components/KoboCare/KoboCare"));
 const TradeIn = lazy(() => import("./components/TradeIn/TradeIn"));
-// const Contact = lazy(() => import("./components/Contact/Contact"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
 const Pricing = lazy(() => import("./components/Pricing/Pricing"));
 // const Terms = lazy(() => import("./components/Terms-Conditions/Terms"));
 // const Privacy = lazy(() => import("./components/Terms-Conditions/Privacy"));
@@ -83,10 +83,10 @@ const App = () => {
              <Route path="/:code/:lang/about-kobo360" exact component={About} />
            <Route path="/:code/:lang/services" exact component={Services} />
            <Route path="/:code/:lang/trade-in-your-truck" exact component={TradeIn} />
-           {/*  <Route path="/:code/:lang/careers" exact component={Careers} />
-            <Route path="/:code/:lang/kobocare" exact component={KoboCare} /> */}
-            {/* <Route path="/:code/:lang/terms-and-conditions" exact component={Terms} />
+            <Route path="/:code/:lang/careers" exact component={Careers} />
             <Route path="/:code/:lang/contact" exact component={Contact} />
+            {/* <Route path="/:code/:lang/kobocare" exact component={KoboCare} /> */}
+            {/* <Route path="/:code/:lang/terms-and-conditions" exact component={Terms} />
             <Route path="/:code/:lang/privacy-policy" exact component={Privacy} />*/}
             <Route path="/:code/:lang/pricing" exact component={Pricing} /> 
             {/* <Route path="/newhome" exact component={NewHome} /> */}
