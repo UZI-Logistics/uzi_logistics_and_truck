@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
+import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import tyres from "../../images/tyres.png";
 import diesel from "../../images/diesel.png";
@@ -169,7 +169,7 @@ const KoboCare = () => {
   return (
     <>
       
-      <SEO title="Kobo360 | KoboCare"/>
+      <SEO title="Gotruck | GotruckCare"/>
       <div className="overflow-head">
         <TheHeader
           bgColor="orange-header"
@@ -188,7 +188,7 @@ const KoboCare = () => {
                 <p className="margin-bottom-1 bold">
                   <FormattedMessage
                     id="app.signupkobocare"
-                    defaultMessage="Sign up for KoboCare"
+                    defaultMessage="Sign up for Gotruck"
                   />
                 </p>
                 <div className="grid-input input-text">
@@ -362,44 +362,44 @@ const KoboCare = () => {
               KoboCARE
           </h1>
             <p data-aos="zoom-out">
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.kobocare-caption"
                 defaultMessage="Get products at discounted rates."
               />
             </p>
             <p data-aos="zoom-in">
               {" "}
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.get-prod-text"
-                defaultMessage="KoboCare is a solution for registered drivers on the Kobo Platform, as part of our commitment to drivers."
+                defaultMessage="Gotruck is a solution for registered drivers on the Kobo Platform, as part of our commitment to drivers."
               />
             </p>
           </div>
         </div>
         <div className="flex care-box">
           <p className="care-box__card" data-aos="zoom-out">
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.kobo-care-text"
-              defaultMessage="KoboCare is a solution for registered drivers on the Kobo Platform, as part of our commitment to drivers."
+              defaultMessage="Gotruck is a solution for registered drivers on the Gotruck Platform, as part of our commitment to drivers."
             />
 
             <ul className="margin-1 margin-left-1 ">
               <li className="padding-1 list-care">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.about-list-1"
                   defaultMessage="Discounted Diesel sale to Kobo Drivers in partnership with Oando/Total filling stations nationwide."
                 />
               </li>
               <li className="padding-1 list-care" data-aos="zoom-out">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.about-list-2"
                   defaultMessage="Access to Diver Support Centers across Nigeria with services like filling stations maintenance bay, fire services, law enforcements dedicated parking, rest bay for drivers etc."
                 />
               </li>
               <li className="padding-1 list-care" data-aos="zoom-in">
-                <FormattedHTMLMessage
+                <FormattedMessage
                   id="app.about-list-3"
-                  defaultMessage="Integrated HMO plan on Kobo Care for drivers and their families."
+                  defaultMessage="Integrated HMO plan on Gotruck Care for drivers and their families."
                 />
               </li>{" "}
               {/* <li className="padding-1 list-care" data-aos="zoom-out">
@@ -413,7 +413,7 @@ const KoboCare = () => {
               onClick={showModal}
             // onClick={() => window.open("https://care.kobo360.com")}
             >
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.started"
                 defaultMessage="Get started"
               />
@@ -424,7 +424,7 @@ const KoboCare = () => {
               <img src={tyres} alt="" className="tyre" loading="lazy" />
               <span data-aos="zoom-out">
                 <p>
-                  <FormattedHTMLMessage id="app.tyres" defaultMessage="Tyres" />
+                  <FormattedMessage id="app.tyres" defaultMessage="Tyres" />
                 </p>
                 <h1>+20% off</h1>
               </span>
@@ -433,7 +433,7 @@ const KoboCare = () => {
               <img src={diesel} alt="" loading="lazy"/>
               <span>
                 <p>
-                  <FormattedHTMLMessage id="app.diesel" defaultMessage="Diesel" />{" "}
+                  <FormattedMessage id="app.diesel" defaultMessage="Diesel" />{" "}
                 </p>
                 <h1>+30% off</h1>
               </span>
@@ -442,7 +442,7 @@ const KoboCare = () => {
               <img src={oil} alt="" loading="lazy"/>
               <span>
                 <p>
-                  <FormattedHTMLMessage
+                  <FormattedMessage
                     id="app.engine-oil"
                     defaultMessage="Engine oil"
                   />
@@ -454,7 +454,7 @@ const KoboCare = () => {
         </div>
         <div className="partners ">
           <h1 className="center title" data-aos="zoom-in">
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.partner-with"
               defaultMessage="Our Partners"
             />
