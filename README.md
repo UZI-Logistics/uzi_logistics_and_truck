@@ -13,10 +13,10 @@ In the Project Directory, you can run"
 
 ```
 To start the project:
-> `git clone https://github.com/Gtstride/gotrucking.git`
->  `cd gotrucking`
->  `yarn install or npm install`
->  `yarn start or npm start`
+> git clone https://github.com/Gtstride/gotrucking.git
+> cd gotrucking
+> yarn install or npm install
+> yarn start or npm start`
 ```
 
 Runs the app in the development mode.\
