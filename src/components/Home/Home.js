@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactPhoneInput from "react-phone-input-2";
 import kobo from "../../images/kobo-video.mp4";
-import ceo from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65@2x.png";
-import sme from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65y@2x.png";
+// import ceo from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65@2x.png";
+// import sme from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65y@2x.png";
 import iosstore from "../../images/app-store-logo@2x.png";
 import googlestore from "../../images/en_badge_web_generic@2x.png";
 import Loader from "../helpers/Loader";
@@ -231,7 +231,7 @@ const Home = () => {
         <meta name="twitter:creator" content="@kobo_360" />
         <link rel="canonical" href={`https://www.kobo360.com/${localStorage.code || 'NG'}/${localStorage.locale || 'en'}`} />
       </Helmet> */}
-      <SEO title="Kobo360 | Africa tech enabled logistics startup" />
+      <SEO title="Gotruck | Your Number 1 Logistics Plug Company" />
       <div className="home">
         <TheHeader kobo={logo} color="white" sticky="sticky" />
         {_show && (
@@ -465,10 +465,10 @@ const Home = () => {
         </div>
         <div className="home-container">
           <div className="home-content">
-            <div className="awards">
+            {/* <div className="awards">
               <img src={ceo} alt="award-ceo" className="small" loading="lazy" />
               <img src={sme} alt="award-sme" className="small" loading="lazy" />
-            </div>
+            </div> */}
             <div className="">
               <h1 className="capitalize font-10 title white home-title">
                 <FormattedMessage

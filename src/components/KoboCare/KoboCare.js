@@ -72,7 +72,7 @@ const KoboCare = () => {
             "Your details have been submitted. We will get in touch shortly",
           type: "success",
         });
-        Event("KoboCare", "Registering for KoboCare", "Kobocare registration successful");
+        Event("Gotruck", "Registering for Gotruck", "Gotruck registration successful");
         setSubmitting(false);
         closeModal();
       })
@@ -359,7 +359,7 @@ const KoboCare = () => {
         <div className="care">
           <div className="care-heading middle">
             <h1 className="capitalize" data-aos="zoom-out">
-              KoboCARE
+              GoTRUCK
           </h1>
             <p data-aos="zoom-out">
               <FormattedMessage
@@ -371,7 +371,7 @@ const KoboCare = () => {
               {" "}
               <FormattedMessage
                 id="app.get-prod-text"
-                defaultMessage="Gotruck is a solution for registered drivers on the Kobo Platform, as part of our commitment to drivers."
+                defaultMessage="Gotruck is a solution for registered drivers on the Gotruck Platform, as part of our commitment to drivers."
               />
             </p>
           </div>
@@ -387,7 +387,7 @@ const KoboCare = () => {
               <li className="padding-1 list-care">
                 <FormattedMessage
                   id="app.about-list-1"
-                  defaultMessage="Discounted Diesel sale to Kobo Drivers in partnership with Oando/Total filling stations nationwide."
+                  defaultMessage="Discounted Diesel sale to gotruck Drivers in partnership with Oando/Total filling stations nationwide."
                 />
               </li>
               <li className="padding-1 list-care" data-aos="zoom-out">

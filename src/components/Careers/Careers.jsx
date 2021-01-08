@@ -331,7 +331,7 @@ const Careers = () => {
                 Managing the processing of transporter invoices and timely payments to transporters.
               </li>
               <li> Managing receivables and ensuring timely payments from the cargo owners within the agreed terms.</li>
-              <li> Ensuring prompt, daily data entry and process improvement of the Kobo Master Sheet.</li>
+              <li> Ensuring prompt, daily data entry and process improvement of the Gotruck Master Sheet.</li>
               <li> Acting as company treasurer to monitor and manage bank accounts, disbursements and  receivables. </li>
               <li>Send daily trip reports.</li>
               <li>Preparing monthly financial reports by 2nd of every month.</li>

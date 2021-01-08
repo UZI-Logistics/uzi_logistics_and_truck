@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import logocolored from "../../images/logo.png";
-// import { FormattedHTMLMessage } from "./components/node_modules/react-intl";
+import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import Footer from "../common/Footer";
 import Accordion from "../Careers/Accordion";
@@ -8,13 +8,12 @@ import SEO from "../SEO";
 
 const Privacy = () => {
   useEffect(() => {
-    // document.title = "Kobo360 | Privacy Policy";
     window.scrollTo(0, 0);
   });
   return (
     <>
     
-      <SEO title="Kobo360 | Privacy Policy"/>
+      <SEO title="Gotruck | Privacy Policy"/>
     <div className="overflow-head">
       <TheHeader
         bgColor="light-blue"
@@ -25,13 +24,13 @@ const Privacy = () => {
       <div className="terms">
         <div className="terms-heading middle">
           <h1 className="capitalize">
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.privacy-policy"
               defaultMessage="Privacy Policy"
             />
           </h1>
           <p>
-            <FormattedHTMLMessage
+            <FormattedMessage
               id="app.privacy-caption"
               defaultMessage="Our policy book"
             />
@@ -40,10 +39,10 @@ const Privacy = () => {
         <Accordion title="Terms and Conditions" location="">
           <div className="conclusion padding-1">
             <p>
-              Kobo360 recognizes the importance of protecting your personal
+              Gotruck recognizes the importance of protecting your personal
               information, and this Privacy Policy explains our privacy
               practices when it comes to using, sharing, and protecting the
-              information we collect when you visit our “kobo360.com” website
+              information we collect when you visit our “Gotruck.com” website
               and any other online platform, website, mobile or tablet
               application, or other online service that links or refers to this
               Privacy Policy (collectively, the “Services”). Terms used in this
@@ -61,8 +60,8 @@ const Privacy = () => {
                 <b>Information You Provide to Us.</b>
               </li>{" "}
               You may provide information directly to us in several different
-              ways. For example, when you create, modify, or log in to your Kobo
-              360 account (“Account”) , contact us with questions or feedback,
+              ways. For example, when you create, modify, or log in to your Gotruck
+              account (“Account”) , contact us with questions or feedback,
               or otherwise provide information directly to us, we may ask you to
               provide your name, email address, postal address, phone number,
               insurance information or other information.
@@ -162,7 +161,7 @@ const Privacy = () => {
               </li>{" "}
               We may share your information with our current and future
               affiliates—companies that control, are controlled by, or are under
-              common control with Kobo360.
+              common control with gotruck.
               <li>
                 <b>Service Providers.</b>
               </li>{" "}
@@ -183,7 +182,7 @@ const Privacy = () => {
               There may be instances when we disclose your information to other
               parties in order to:
               <li>
-                protect the legal rights of Kobo360, its affiliates, and users
+                protect the legal rights of Gotruck, its affiliates, and users
                 of our products and services;
               </li>
               <li>
@@ -264,7 +263,7 @@ const Privacy = () => {
               </li>{" "}
               You may access or modify your Account information at any time by
               logging into your Account. If you would like to cancel your
-              Account, please contact us at Support@kobo360.com.
+              Account, please contact us at Support@gotruck.com.
               <li>
                 <b>Promotional Communications.</b>
               </li>{" "}
@@ -348,7 +347,7 @@ const Privacy = () => {
             <p>
               <h4 style={{ textDecoration: "underline" }}>Contact Us</h4>
               If you have questions or comments about this Privacy Policy,
-              please contact us at Support@kobo360.com.
+              please contact us at Support@gotruck.com.
             </p>
           </div>
         </Accordion>

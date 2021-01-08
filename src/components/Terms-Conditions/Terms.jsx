@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import logocolored from "../../images/logo.png";
-// import { FormattedHTMLMessage } from "./components/node_modules/react-intl";
+import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import Footer from "../common/Footer";
 import Accordion from "../Careers/Accordion";
@@ -15,7 +15,7 @@ const Terms = () => {
   return (
     <>
       
-      <SEO title="Kobo360 | Terms and Conditions"/>
+      <SEO title="Gotruck | Terms and Conditions"/>
       <div className="overflow-head">
         <TheHeader
           bgColor="light-blue"
@@ -26,13 +26,13 @@ const Terms = () => {
         <div className="terms">
           <div className="terms-heading middle">
             <h1 className="capitalize">
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.terms-of-use"
                 defaultMessage="Terms and Conditions"
               />
             </h1>
             <p>
-              <FormattedHTMLMessage
+              <FormattedMessage
                 id="app.terms-of-use-caption"
                 defaultMessage="Our rule book"
               />
@@ -41,11 +41,11 @@ const Terms = () => {
           <Accordion title="Terms and Conditions" location="">
             <div className="conclusion padding-1">
               <p>
-                Thank you for visiting the Kobo360{" "}
-                <b>(“Kobo360,” “we,” “our,” or “us”)</b> website titled
-              “kobo360.com” (including any subdomains thereof and any websites
+                Thank you for visiting the Gotruck{" "}
+                <b>(“Gotruck,” “we,” “our,” or “us”)</b> website titled
+              “Gotruck.com” (including any subdomains thereof and any websites
               through which we make our Services available) and if you{" "}
-                <b>(“you,” or “your”)</b> have done so, downloading the Kobo360
+                <b>(“you,” or “your”)</b> have done so, downloading the Gotruck
               mobile, tablet or other smart device application and application
               program interfaces (collectively, the <b>“Site”</b>). IN RETURN
               FOR GAINING ACCESS TO AND USING THE SERVICES, YOU AGREE TO BE
@@ -123,7 +123,7 @@ const Terms = () => {
               marketing opportunities, or securities; (f) post, send, or
               otherwise disclose confidential information, trade secrets, or
               other confidential and/or protected proprietary data of any entity
-              or person, including Kobo360 or any of our affiliates; (g)
+              or person, including Gotruck or any of our affiliates; (g)
               download or upload files that you know, or reasonably should know,
               cannot be legally distributed through the Services; (h) upload,
               download, or otherwise export or re-export software from the
@@ -155,21 +155,21 @@ const Terms = () => {
             </p>
             </div>
           </Accordion>
-          <Accordion title="Kobo360 Account Credentials" location="">
+          <Accordion title="Gotruck Account Credentials" location="">
             <div className="conclusion padding-1">
               <p>
                 For access to and use of certain features of the Site (including
                 for registering as a Carrier, Shipper or Driver), we may provide
               you with a user identification and password{" "}
-                <b>(“Kobo360 Account Credentials”).</b> The Kobo360 Account
-              Credentials are proprietary to and the property of Kobo360.
+                <b>(“Gotruck Account Credentials”).</b> The Gotruck Account
+              Credentials are proprietary to and the property of Gotruck.
               However, you must take precautions to ensure the security of your
-              Kobo360 Account Credentials. We assume no responsibility for, and
+              Gotruck Account Credentials. We assume no responsibility for, and
               will not be liable in the event that, a third party learns your
-              Kobo360 Account Credentials or uses it to access your Kobo360
+              Gotruck Account Credentials or uses it to access your Gotruck
               account on the Site <b>(“Account”)</b> or cause damage to you. You
               must provide accurate, current and complete information during the
-              registration process and keep your Kobo360 Account Credentials and
+              registration process and keep your Gotruck Account Credentials and
               Account information up-to-date at all times. You may not give
               access to your Account to any person or entity. However, if you
               are a Carrier, you may give those you directly supervise or
@@ -179,9 +179,9 @@ const Terms = () => {
               Any act or omission of an Agent will be deemed to be your act or
               omission, for which you will be liable in accordance with the
               terms of this Agreement. You will not, and if you are a Carrier,
-              will ensure your Agents do not, share Kobo360 Account Credentials
+              will ensure your Agents do not, share “Gotruck Account Credentials
               with any other individual or allow any third party to access or
-              use your Account or the Services under your Kobo360 Account
+              use your Account or the Services under your Gotruck Account
               Credentials.
             </p>
             </div>
@@ -197,7 +197,7 @@ const Terms = () => {
                 and use of the Services after the event giving rise to the
                 suspension has been resolved to our satisfaction. We may
                 permanently remove or delete any information that you may have on
-                ﬁle with us, including any User Content or Kobo360 Account
+                ﬁle with us, including any User Content or “Gotruck Account
                 Credentials without any liability whatsoever.
             </p>
             </div>
@@ -297,7 +297,7 @@ const Terms = () => {
                 and use of the Services after the event giving rise to the
                 suspension has been resolved to our satisfaction. We may
                 permanently remove or delete any information that you may have on
-                ﬁle with us, including any User Content or Kobo360 Account
+                ﬁle with us, including any User Content or “Gotruck Account
                 Credentials without any liability whatsoever.
             </p>
             </div>
@@ -336,12 +336,12 @@ const Terms = () => {
               otherwise expressly noted, we are and will remain the sole and
               exclusive owner of all right, title and interest in and to the
               Services (including any modifications and improvements thereto or
-              derivatives thereof) and all information, Kobo360 Account
+              derivatives thereof) and all information, “Gotruck Account
               Credentials (as defined below), account information, articles,
               blog posts, data, images, passwords, screens, text, user
               identification, Web pages, software, trademarks, logos, service
               marks, trade dress or other materials (collectively{" "}
-                <b>“Kobo360 Content”</b>) appearing on the Services, including all
+                <b>“Gotruck Content”</b>) appearing on the Services, including all
               intellectual property rights therein and thereto. Neither this
               Agreement nor your use of or access to the Services conveys or
               grants to you any rights or licenses in or related to the Services
@@ -494,7 +494,7 @@ const Terms = () => {
               IN ADDITION TO THE FOREGOING, IN NO EVENT WILL WE OR OUR
               AFFILIATES BE LIABLE FOR ANY DAMAGES ARISING OUT OF, OR IN ANY WAY
               CONNECTED WITH, A THIRD PARTY'S UNAUTHORIZED ACCESS TO YOUR
-              PRIVATE INFORMATION, KOBO360 ACCOUNT CREDENTIALS, ACCOUNT OR USER
+              PRIVATE INFORMATION, GOTRUCK ACCOUNT CREDENTIALS, ACCOUNT OR USER
               CONTENT, REGARDLESS OF WHETHER SUCH DAMAGES ARE BASED ON CONTRACT,
               STRICT LIABILITY, TORT OR OTHER THEORIES OF LIABILITY, AND ALSO
               REGARDLESS OF WHETHER WE WERE GIVEN ACTUAL OR CONSTRUCTIVE NOTICE
