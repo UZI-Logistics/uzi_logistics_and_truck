@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
-import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
-// import kgs from "../../images/Group 1406.png";
-// import businesses from "../../images/Group 1407.png";
-// import fleet from "../../images/fast.png";
+import { FormattedMessage } from "react-intl";
 import serviceimage from "../../images/2052636@2x.png";
 import gms from "../../images/Goldman-Sachs-@2x.png";
 import tlc from "../../images/Tlc@2x.png";
@@ -263,7 +260,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="news-card__content margin-1">
+          {/* <div className="news-card__content margin-1">
             <img className="news-card__content--image" src={forbes} alt="" loading="lazy" />
             <div className="news-card__content--text">
               <p className="grey font-smaller margin-bottom-1">
@@ -296,7 +293,7 @@ const About = () => {
                 />
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="news-card__content margin-1">
             <img className="news-card__content--image" loading="lazy" src={ft} alt="" />
             <div className="news-card__content--text">

@@ -221,7 +221,14 @@ const TheHeader = (props) => {
           <FormattedMessage id="app.career" defaultMessage="Careers" />
         </NavLink>
 
-        <div onClick={() => window.open("http://media.kobo360.com/")}>
+        {/* <div onClick={() => window.open("http://media.kobo360.com/")}>
+          <NavLink to='' className="header-underline capitalize">
+            {" "}
+            <FormattedMessage id="footer.blog" defaultMessage="Blog" />
+          </NavLink>
+        </div> */}
+
+        <div onClick={() => window.open("#")}>
           <NavLink to='' className="header-underline capitalize">
             {" "}
             <FormattedMessage id="footer.blog" defaultMessage="Blog" />
@@ -247,8 +254,12 @@ const TheHeader = (props) => {
           <div className="dropdown-content left-100">
             <div className="span dropdown kobocare-dropdown-span">
               <i className="fa fa-caret-right"></i>
-              <span
+              {/* <span
                 onClick={() => window.open("https://customer.kobo360.com/")}
+                className="font-icon-small"
+              > */}
+                 <span
+                onClick={() => window.open("http://localhost:3001/")}
                 className="font-icon-small"
               >
                 <FormattedMessage
@@ -432,7 +443,8 @@ const TheHeader = (props) => {
             variants={navItemVariants}
           >
             <a
-              href='http://media.kobo360.com/'
+              href="#region "
+              //href='http://media.kobo360.com/'
               target='_blank'
               rel="noopener noreferrer"
               // to="http://media.kobo360.com/"
@@ -478,8 +490,12 @@ const TheHeader = (props) => {
             <div className="dropdown-content ">
               <div className="span dropdown kobocare-dropdown-span">
                 <i className="fa fa-caret-right"></i>
-                <span
+                {/* <span
                   onClick={() => window.open("https://customer.kobo360.com/")}
+                  className="font-icon-small"
+                > */}
+                 <span
+                  onClick={() => window.open("http://localhost:3001/")}
                   className="font-icon-small"
                 >
                   <FormattedMessage

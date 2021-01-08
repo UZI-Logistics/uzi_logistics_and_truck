@@ -161,7 +161,7 @@ const Footer = () => {
           <p className="grey font-smaller">+234 919 000 0000</p>
           <OpenMail mail="info@gotrucking.com"></OpenMail>
         </span>
-        <span>
+        {/* <span>
           <p className="bold">Kenya</p>
           <p className="grey font-smaller">+234 919 000 0000</p>
           <OpenMail mail="info@gotrucking.com"></OpenMail>
@@ -175,7 +175,7 @@ const Footer = () => {
           <p className="bold">Cameroon</p>
           <p className="grey font-smaller">+234 919 000 0000</p>
           <OpenMail mail="info@gotrucking.com"></OpenMail>
-        </span>
+        </span> */}
         <span>
           <p className="bold">Media Enquiries</p>
           <OpenMail mail="press@gotrucking.com"></OpenMail>
