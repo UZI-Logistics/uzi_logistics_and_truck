@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
 // import serviceimage from "../../images/2052636@2x.png";
