@@ -8,7 +8,7 @@ import tlc from "../../images/Tlc@2x.png";
 import ifc from "../../images/Ifc@2x.png";
 import aaic from "../../images/AAIC@2x.png";
 import ycomb from "../../images/Y_Combinator@2x.png";
-import forbes from "../../images/obi-forbes.jpg";
+// import forbes from "../../images/obi-forbes.jpg";
 import kobobbc from "../../images/kobo-bbc.jpg";
 import bloomberg from "../../images/bloomberg.jpeg";
 import techcrunch from "../../images/kobo-tech.jpeg";

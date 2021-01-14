@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { POST } from ".././helpers/api";
 import TheHeader from "../common/TheHeader";
 import logocolored from "../../images/logo.png";
-import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import Loader from "../helpers/Loader";
 import Autocomplete from "./Autocomplete";
 import iosstore from "../../images/app-store-logo@2x.png";
