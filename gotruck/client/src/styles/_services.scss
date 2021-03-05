@@ -1,0 +1,112 @@
+.services {
+  background-color: colors(light-blue);
+  padding-top: 8rem;
+  padding-bottom: 19rem;
+
+  &-heading {
+    flex-direction: column;
+  }
+  &-box {
+    margin-left: 5.5rem;
+    margin-top: -14.8rem;
+    padding-bottom: 5.5rem;
+
+    @include breakpoint(big-desktop-up) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__images img {
+      width: 30rem;
+    }
+
+    &__card {
+      background-color: colors(white);
+      margin: 0 5rem;
+      padding: 2rem;
+      width: 45%;
+    }
+  }
+  &-added {
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(0, 57, 115, 1) 0%,
+      rgba(43, 60, 149, 1) 100%
+    );
+    &__card {
+      border-top-left-radius: 3rem;
+      border-bottom-left-radius: 3rem;
+      border-top-right-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+
+      width: 40%;
+
+      & img {
+        width: 15rem;
+      }
+    }
+    &__content {
+      justify-content: space-around;
+      padding-bottom: 5rem;
+      //   border-top-left-radius: 0.3rem;
+      //   border-top-right-radius: 0.3rem;
+      //   border-bottom-left-radius: 0.3rem;
+      //   border-bottom-right-radius: 0.3rem;
+    }
+  }
+}
+
+.card-content {
+  padding: 1rem;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .services {
+    &-heading {
+      text-align: center;
+      & h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    &-box {
+      display: block;
+      margin-top: -18rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      padding-bottom: 2rem;
+
+      &__card {
+        width: 100%;
+        margin: 0 0.3rem;
+        border-radius: 1rem;
+      }
+      // .box-images {
+      // }
+      &__images {
+        // display: none !important;
+        display: none;
+      }
+    }
+  }
+  .services-title {
+    padding: 1rem !important;
+  }
+  .services-added__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2rem 1rem;
+
+    & img {
+      border-bottom-right-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      width: 7rem;
+      object-fit: cover;
+    }
+  }
+  .services-added__card {
+    margin-bottom: 2rem;
+    width: 98%;
+  }
+}

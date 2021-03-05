@@ -1,0 +1,79 @@
+h1,
+p {
+  margin: 0;
+  color: colors(dark-text);
+}
+
+.terms {
+  font-family: Avenir;
+  background-color: colors(light-blue);
+  line-height: 1.5;
+  padding-top: 6rem;
+  padding-bottom: 20rem;
+  color: colors(dark-text);
+
+  &-heading {
+    flex-direction: column;
+  }
+  &-box {
+    margin: 8rem;
+    margin-top: -14.8rem;
+    padding-bottom: 5rem;
+    color: colors(dark-text);
+
+    @include breakpoint(big-desktop-up) {
+      align-items: center;
+      justify-content: center;
+    }
+    &__images img {
+      width: 30rem;
+    }
+
+    &__card {
+      background-color: colors(white);
+      padding: 2rem;
+    }
+  }
+}
+.line {
+  margin: 2.5rem 0;
+  background-color: black;
+  height: 0.05rem;
+  width: 15rem;
+}
+
+//Media Queries
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .accordion-section {
+    margin: 1rem 2rem;
+  }
+  .terms {
+    &-heading {
+      text-align: center;
+      & h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    &-box {
+      display: block;
+      margin-top: -18rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      padding-bottom: 2rem;
+
+      &__card {
+        width: 100%;
+        margin: 0 0.3rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  .line {
+    width: 8.5rem;
+  }
+}
