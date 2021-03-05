@@ -1,0 +1,40 @@
+.home-section {
+  min-height: 25rem;
+  height: 100vh;
+  position: relative;
+}
+.home-container {
+  height: 100%;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  & video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include breakpoint(phone-only) {
+      display: none;
+    }
+  }
+}
+
+.brands-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  height: max-content;
+  width: 100%;
+}
+
+//old home style

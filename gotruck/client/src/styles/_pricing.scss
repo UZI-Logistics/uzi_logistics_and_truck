@@ -1,0 +1,169 @@
+h1,
+p {
+  margin: 0;
+  // color: colors(dark-text);
+}
+
+.pricing {
+  font-family: Avenir;
+  background-color: colors(light-blue);
+  padding-top: 8rem;
+  color: colors(dark-text);
+
+  &-button {
+    @extend %button;
+    border-radius: 5px;
+  }
+  &-heading {
+    flex-direction: column;
+  }
+  &-box {
+    width: 500px;
+    padding: 1rem 2rem;
+
+    &__card {
+      background-color: colors(white);
+      margin: 0 5rem;
+      padding: 2rem;
+      width: 45%;
+    }
+  }
+}
+
+.button-pricing {
+  text-align: right;
+  margin-top: -32px;
+}
+.price {
+  position: relative;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 57, 115, 1) 0%,
+    rgba(43, 60, 149, 1) 100%
+  );
+  padding-bottom: 15rem;
+
+  // &-form {
+  // }
+  &-estimator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 9.6rem;
+    padding-top: 1rem;
+  }
+
+  &-map {
+    position: absolute;
+    bottom: 55%;
+    left: 50%;
+  }
+}
+
+.map-div {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  height: 43rem;
+  z-index: 9;
+}
+input[type="text"],
+input[type="password"],
+.select-box {
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  // max-width: 500px;
+  padding: 12px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 1px solid #dddbd7;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #000;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus, textarea:focus {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid colors(green);
+  border-radius: 10px;
+}
+
+textarea {
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  // max-width: 500px;
+  padding: 12px;
+  display: inline-block;
+  border: 1px solid #dddbd7;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    &-heading {
+      text-align: center;
+      & h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    &-box {
+      display: block;
+      margin-top: -18rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      padding-bottom: 2rem;
+
+      &__card {
+        width: 100%;
+        margin: 0 0.3rem;
+        border-radius: 1rem;
+      }
+      .box-images {
+        display: none !important;
+      }
+    }
+  }
+  .map-div {
+    display: none !important;
+  }
+  .price {
+    display: block !important;
+    // background-color: colors(white) !important;
+    &-form {
+      margin: 0;
+    }
+
+    & .price-estimator {
+      padding-right: 2rem;
+    }
+    &-title {
+      padding: 0 !important;
+    }
+
+    &-images {
+      flex-direction: column;
+      margin: 0 auto;
+
+      img {
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  .trade-box {
+    grid-template-columns: 1fr;
+    &__form {
+      margin: 0 auto;
+      padding: 2rem 2rem;
+    }
+  }
+}

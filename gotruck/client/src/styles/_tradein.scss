@@ -1,0 +1,116 @@
+h1,
+p {
+  margin: 0;
+}
+.trader {
+  background-color: colors(light-blue);
+  // padding-bottom: 10rem;
+}
+.trade {
+  background-color: colors(light-blue);
+  padding-top: 6rem;
+  padding-bottom: 2.5rem;
+
+  &-button {
+    @extend %button;
+    border-radius: 0.4rem;
+  }
+
+  &-heading {
+    flex-direction: column;
+  }
+  &-box {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+    &__form {
+      margin: 0rem 5rem;
+      padding: 5rem;
+      @include breakpoint(tablet-landscape-up) {
+        padding: 0rem;
+      }
+    }
+
+    &__card {
+      position: relative;
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(0, 57, 115, 1) 0%,
+        rgba(43, 60, 149, 1) 100%
+      );
+
+      img {
+        position: absolute;
+        top: 6%;
+        left: -15%;
+        width: 38rem;
+        border-radius: 1rem;
+        @include breakpoint(tablet-landscape-up) {
+          width: 30rem;
+        }
+      }
+    }
+  }
+}
+
+.grid-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.resizedTextbox {
+  // width: 100%;
+}
+input[type="text"],
+input[type="password"] {
+  // width: 100%;
+  padding: 12px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 1px solid #dddbd7;
+  border-radius: 0.4rem;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid colors(green);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .trade {
+    &-heading {
+      text-align: center;
+      margin-top: 2.2rem;
+      & h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .sell-box {
+    display: block;
+  }
+  .sell-form {
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    & input[type="text"] {
+      border-top: 0.5px solid #dddbd7;
+      border: 0.5px solid #dddbd7;
+      outline: none;
+    }
+  }
+  .sell-card {
+    display: none !important;
+  }
+  .box-images {
+  }
+}

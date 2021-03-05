@@ -1,0 +1,19 @@
+[
+    {
+        "app.text": "Edit <code>src/App.js</code> and save to reload.<br/>Now with {what}!",
+        "app.sig": "SIGN IN AS CUSTOMER",
+        "app.sign-partner": "SIGN IN AS PARTNER",
+        "app.sign-staff": "SIGN IN AS A STAFF",
+        "app.kobo-safe": "GotruckSafe is our bespoke self insurance solution that provides insurance cover for every single trip on Gotruck’s platform. This product offers 80% cost reduction on insurance premiums.",
+        "app.read-more": "Read More...",
+        "app.truck-trade": "TRADE IN YOUR TRUCK"
+    },
+
+    "Pricing Page",
+    {
+        "app.estimator-text": "How much does gotrucking cost in your city? Calculate a fare estimate for your next trip. Simply enter a pickup location and destination to get started.",
+        "app.estimator-title": "Price Estimator",
+        "app.estimator-range": "Estimated price range"
+
+    }
+]
