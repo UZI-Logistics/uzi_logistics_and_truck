@@ -1,18 +1,24 @@
 import React from "react";
-import fmn from "../../images/fmn.png";
-import honeywell from "../../images/honeywell.png";
-import msc from "../../images/msc.png";
-import dangote from "../../images/dangote.png";
-import olam from "../../images/olam.png";
-import dhl from "../../images/dhl.png";
-import bua from "../../images/bua.png";
-import emel from "../../images/emel.png";
-import sinoma from "../../images/sinoma.png";
-import lafarge from "../../images/lafarge.png";
-import chisco from "../../images/chisco copy.png";
-import ups from "../../images/ups.png";
-import incl from "../../images/icnl.png";
-import sifax from "../../images/sifax.png";
+// import fmn from "../../images/fmn.png";
+import abtech from "../../images/png/ABTECH logistics logo big.png";
+import fortune from "../../images/png/fortune global logo BIG.png";
+import eminence from "../../images/png/Eminence logistics logo big.png";
+import helem from "../../images/png/helem logistics logo BIG.png";
+import moe from "../../images/png/mo-joe logistics logo big.png";
+
+// import honeywell from "../../images/honeywell.png";
+// import msc from "../../images/msc.png";
+// import dangote from "../../images/dangote.png";
+// import olam from "../../images/olam.png";
+// import dhl from "../../images/dhl.png";
+// import bua from "../../images/bua.png";
+// import emel from "../../images/emel.png";
+// import sinoma from "../../images/sinoma.png";
+// import lafarge from "../../images/lafarge.png";
+// import chisco from "../../images/chisco copy.png";
+// import ups from "../../images/ups.png";
+// import incl from "../../images/icnl.png";
+// import sifax from "../../images/sifax.png";
 
 export const Slider = () => {
   return (
@@ -20,47 +26,47 @@ export const Slider = () => {
       <div className="slider">
         <div className="slide-track">
           <div className="slide">
-            <img src={fmn} height="55" width="70" alt=""  loading="lazy"/>
+            <img src={abtech} height="55" width="85" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={honeywell} height="55" width="70" alt="" loading="lazy"/>
+            <img src={fortune} height="55" width="85" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={msc} height="55" width="70" alt="" loading="lazy"/>
+            <img src={eminence} height="55" width="85" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={dangote} height="55" width="70" alt="" loading="lazy"/>
+            <img src={helem} height="55" width="85" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={olam} height="55" width="70" alt="" loading="lazy" />
+            <img src={moe} height="55" width="85" alt="" loading="lazy" />
           </div>
-          <div className="slide">
+          {/* <div className="slide">
             <img src={dhl} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={bua} height="55" width="70" alt="" loading="lazy"/>
+            <img src={bua} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
             <img src={emel} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={sinoma} height="55" width="70" alt="" loading="lazy"/>
+            <img src={sinoma} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={lafarge} height="55" width="70" alt="" loading="lazy"/>
+            <img src={lafarge} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={chisco} height="55" width="70" alt="" loading="lazy"/>
+            <img src={chisco} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={ups} height="55" width="70" alt="" loading="lazy"/>
+            <img src={ups} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={incl} height="55" width="70" alt="" loading="lazy"/>
+            <img src={incl} height="55" width="70" alt="" loading="lazy" />
           </div>
           <div className="slide">
             <img src={sifax} height="55" width="70" alt="" loading="lazy" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

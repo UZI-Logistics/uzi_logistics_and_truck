@@ -19,22 +19,22 @@ const Autocomplete = ({
   const [trucks, setTrucks] = useState({});
   const [sizes, setSizes] = useState([]);
 
-  // const getRef = useCallback(() => {
-  //   setRef(pickupRef.current);
-  // }, [setRef]);
+  const getRef = useCallback(() => {
+    setRef(pickupRef.current);
+  }, [setRef]);
 
   const _getRef = useCallback(() => {
     _setRef(destinationRef.current);
   }, [_setRef]);
 
-  // useEffect(() => {
-  //   axios.get(`${process.env.REACT_APP_API_URL}asset/grouped`).then((data) => {
-  //     setTrucks(data.data.data);
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}asset/grouped`).then((data) => {
+      setTrucks(data.data.data);
 
-  //   });
-  //   getRef();
-  //   _getRef();
-  // }, [getRef, _getRef]);
+    });
+    getRef();
+    _getRef();
+  }, [getRef, _getRef]);
 
   useEffect(() => {
     if(state.truckType) {

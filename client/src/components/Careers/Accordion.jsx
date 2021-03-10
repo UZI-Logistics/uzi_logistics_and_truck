@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import pin from "../../images/pin-location.svg";
 

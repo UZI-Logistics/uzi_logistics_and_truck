@@ -12,7 +12,6 @@ import SEO from "../SEO";
 
 const Services = ({ history }) => {
   useEffect(() => {
-    // document.title = "Kobo360 | Services";
     window.scrollTo(0, 0);
 
     window.scrollTo(0, 0);
@@ -52,7 +51,6 @@ const Services = ({ history }) => {
               defaultMessage="Our deep industry experience and passion for logistics enable us to meet customers’ demands. We ensure the best customer experience, 
               competitive pricing and state of the art technology through our mobile and web applications that fosters speed, service and safety with a single click of a button.
               be the “Top Choice” to our partners and customers worldwide for international freight forwarding and logistics services."
-              values={{}}
               description="About UZI Logistics & Trucking"
             />
             <br />
