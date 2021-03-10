@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactPhoneInput from "react-phone-input-2";
 import kobo from "../../images/gotruck-video.mp4";
-// import kobo from "../../images/kobo-video.mp4";
-// import ceo from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65@2x.png";
-// import sme from "../../images/04ba9efd5253303e355a377eed54a5ed3d806f65y@2x.png";
 import iosstore from "../../images/app-store-logo@2x.png";
 import googlestore from "../../images/en_badge_web_generic@2x.png";
 import Loader from "../helpers/Loader";
-// import { POST } from "../helpers/api";
 import { POST } from "../helpers/api";
 import Swal from "sweetalert2";
 import { FormattedMessage } from "react-intl";
@@ -23,11 +19,15 @@ import { Event } from "../helpers/tracking";
 const Home = () => {
   const node = useRef();
 
+  const apiUrl = `https://gotrucker.herokuapp.com/`;
+
   const [show, setShow] = useState(false);
   const [_show, _setShow] = useState(false);
-  const [trucks, setTrucks] = useState({});
+  const [trucks] = useState({});
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
+
+  const [truck_types, setTruckTypes] = useState([]);
 
   const [inputValues, setInputValues] = useState({
     truckType: "",
@@ -63,21 +63,28 @@ const Home = () => {
     [show]
   );
 
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}asset`).then((data) => {
-      setTrucks(data.data.data);
-    });
-  }, []);
+  const getTruckTypes = async () => {
+    try {
+      let res = await axios.get(`${apiUrl}api/get_truck_types`);
+      // let res = await axios.get(
+      //   `${process.env.REACT_APP_API_URL}api/get_truck_types`
+      // );
+
+      // console.log("res>", res);
+      if (res && res.data && res.data.response) {
+        setTruckTypes(res.data.response.data);
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   useEffect(() => {
-    // document.title = "Kobo360 | Home";
-
     if (_show) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -85,6 +92,7 @@ const Home = () => {
 
   // For registration modal
   useEffect(() => {
+    getTruckTypes();
     if (show) {
       document.addEventListener("mousedown", handleRegClickOutside);
     } else {
@@ -121,7 +129,16 @@ const Home = () => {
           : phone,
     };
 
-    POST("selltruck/signup", data)
+    // try {
+    //   let res = await axios.get(
+    //     `${apiUrl}api/register_truck`
+    //   ), data;
+    // } catch ((error) => {
+    //   error
+    // })
+
+    axios
+      .post(`${apiUrl}api/register_truck`, data)
       .then((res) => {
         Swal.fire({
           title: "Successful 😀",
@@ -134,18 +151,20 @@ const Home = () => {
           "Registering truck was successful",
           "Register Truck Success"
         );
-        setSubmitting(false);
+        console.log(res);
 
+        setSubmitting(false);
         closeModal();
       })
-
-      .catch((err) => {
-        const errMsg = err.response.data
-          ? err.response.data.data.error.message
-          : err.response.data.message;
+      //  console.log(error);
+      .catch((error) => {
+        console.log('err>>', error.response);
+        // const errMsg = error.res.data
+        //   ? error.res.data.data.error.message
+        //   : error.res.data.message;
         Swal.fire({
-          title: "Sorry 😞",
-          text: errMsg,
+          title: "Sorry 😞, we couldn't process your details" ,
+          // text: errMsg,
           type: "error",
         });
         Event(
@@ -199,39 +218,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Helmet>
-        <meta
-          name="title"
-          content="Kobo360 — Moving Your Cargo Just Got Easier."
-        />
-        <meta
-          name="description"
-          content="Kobo360 is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework."
-        />
-
-        <meta property="og:title" content="Kobo360 — Moving Your Cargo Just Got Easier." />
-        <meta property="og:description"
-          content="Kobo360 is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework." />
-        <meta property="og:type" content="Kobo360 Home " />
-        <meta property="og:image" content="https://data.kobo360.com/image/r200x200/i256.256/profile/1619529297131564421965.jpg" />
-        
-
-        <meta
-          property="twitter:title"
-          content="Kobo360 — Moving Your Cargo Just Got Easier."
-        />
-        <meta
-          property="twitter:description"
-          content="Kobo360 is a technology company that aggregates end-to-end haulage operations to help cargo owners, truck owners, drivers, and cargo recipients to achieve an efficient supply chain framework."
-        />
-
-        <meta name="twitter:image" content="https://data.kobo360.com/image/r200x200/i256.256/profile/1619529297131564421965.jpg"/>
-
-        <meta name="twitter:site" content="@kobo_360" />
-
-        <meta name="twitter:creator" content="@kobo_360" />
-        <link rel="canonical" href={`https://www.kobo360.com/${localStorage.code || 'NG'}/${localStorage.locale || 'en'}`} />
-      </Helmet> */}
       <SEO title="UZI Logistics & Trucking | Your Number 1 Logistics Plug Company" />
       <div className="home">
         <TheHeader kobo={logo} color="white" sticky="sticky" />
@@ -241,7 +227,11 @@ const Home = () => {
               <div className="flex-column">
                 <button
                   className="home-button capitalize margin-bottom-1"
-                  onClick={() => window.open("https://customer.uzi-logistics-&-trucking.com/")}
+                  onClick={() =>
+                    window.open(
+                      "https://customer.uzi-logistics-&-trucking.com/"
+                    )
+                  }
                 >
                   <FormattedMessage
                     id="app.sig"
@@ -250,7 +240,9 @@ const Home = () => {
                 </button>
                 <button
                   className="home-button capitalize"
-                  onClick={() => window.open("https://partner.uzi-logistics-&-trucking.com/")}
+                  onClick={() =>
+                    window.open("https://partner.uzi-logistics-&-trucking.com/")
+                  }
                 >
                   <FormattedMessage
                     id="app.sig"
@@ -342,19 +334,10 @@ const Home = () => {
                     />
                   </div>
                   <div className="flex-column">
-                    <label
-                      htmlFor="model"
-                      className="input-text font-smaller margin-label"
-                    >
-                      <FormattedMessage
-                        id="app.phone-number"
-                        defaultMessage="Phone number"
-                      />
-                    </label>
                     <ReactPhoneInput
                       dropdownClass=""
                       inputClass=""
-                      preferredCountries={["ng", "gh", "ke", "tg", "bf", "ug"]}
+                      preferredCountries={["ng", "gh"]}
                       value={phone}
                       country="ng"
                       onChange={handleOnChange}
@@ -393,6 +376,11 @@ const Home = () => {
                       onChange={handleChange}
                     >
                       <option value=""></option>
+                      {truck_types.map((item, index) => (
+                        <option value={item.id} key={index}>
+                          {item.name}
+                        </option>
+                      ))}
                       {trucks.assetClasses
                         ? [
                             ...new Set(

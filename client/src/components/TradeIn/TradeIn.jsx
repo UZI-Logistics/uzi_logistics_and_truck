@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logocolored from "../../images/logo.png";
 import TheHeader from "../common/TheHeader";
-import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import Footer from "../common/Footer";
 import truck from "../../images/sell-truck@2x.jpg";
 
@@ -18,7 +18,7 @@ const TradeIn = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axios.get(`${process.env.REACT_APP_API_URL}asset`).then((data) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/aution_truck`).then((data) => {
       setTrucks(data.data.data);
       // console.log(data);
     });
@@ -46,32 +46,25 @@ const TradeIn = () => {
       ...inputValues,
     };
 
-    // POST("selltruck", data).then((res) => {
-    //   Swal.fire({
-    //     title: "Successful 😀",
-    //     text: "Your details have been submitted. We will get in touch shortly",
-    //     type: "success",
-    //   });
-    //   Event(
-    //     "SellTruck",
-    //     `Selling Truck on UZI-logistics-&-truck`,
-    //     "Success sending truck message"
-    //   );
+    POST("selltruck", data).then((res) => {
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted. We will get in touch shortly",
+        type: "success",
+      });
+      Event(
+        "SellTruck",
+        `Selling Truck on UZI-logistics-&-truck`,
+        "Success sending truck message"
+      );
 
-    //   setSubmitting(false);
-    //   clearSaleForm();
-    // });
-    console.log(data);
-    Swal.fire({
-      title: "Successful 😀, Your details have been submitted. We will get in touch shortly",
+      setSubmitting(false);
+      clearSaleForm();
     });
-    // .then((res) => {
-    //   Swal.fire({
-    //     title: "Successful 😀",
-    //     text: "Your details have been submitted. We will get in touch shortly",
-    //     type: "success",
-    //   });
-    // });
+    // console.log(data);
+    // Swal.fire({
+    //   title:
+    //     "Successful 😀, Your details have been submitted. We will get in touch shortly",
 
     setSubmitting(false);
     clearSaleForm();

@@ -27,7 +27,7 @@ const Contact = () => {
   const [step, setStep] = useState(0);
   const [change, setChange] = useState(false);
 
-  let countries = ["NG", "GH",];
+  let countries = ["NG", "GH"];
 
   const [countryItem, setCountryItem] = useState({
     code: "NG",
@@ -126,7 +126,11 @@ const Contact = () => {
         text: "Your details have been submitted. We will get in touch shortly",
         type: "success",
       });
-      Event("Contact", "Sending Message to UZI-Logistics-&-Trucking", "Sending Message Success");
+      Event(
+        "Contact",
+        "Sending Message to UZI-Logistics-&-Trucking",
+        "Sending Message Success"
+      );
       setSubmitting(false);
       clearForm();
     });
@@ -409,26 +413,27 @@ const Contact = () => {
 
   const next = (e) => {
     setChange(true);
-    setStep(prevState => prevState + 1);
+    setStep((prevState) => prevState + 1);
 
     // getCountry(countries[step]);
-
   };
 
   const previous = () => {
     setChange(true);
-    setStep(prevState => prevState - 1);
+    setStep((prevState) => prevState - 1);
     // getCountry(countries[step]);
   };
 
   useEffect(() => {
-    if(step >= 0) {
-      const country = countryDetails.find(det => det.code === countries[step]);
+    if (step >= 0) {
+      const country = countryDetails.find(
+        (det) => det.code === countries[step]
+      );
       // console.log(step, country)
       setCountryItem(country);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [step])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   useEffect(() => {
     if (change) {
@@ -659,163 +664,169 @@ const Contact = () => {
 
   return (
     <>
-      <SEO title="UZI-Logistics-&-Trucking | Contact Us"/>
-    <div className="overflow-head">
-      <TheHeader
-        bgColor="gradient-header"
-        kobo={logocolored}
-        color="black"
-        sticky="sticky"
-      />
-      <div className="contact">
-        <div id="chartdiv" style={{ width: "100%", height: "100vh" }}></div>
-        <div className="contact-section">
-          <div className="contact-nav">
-            <span
-              className={`${step === 0 && "disabled"} pointer map-button`}
-              onClick={previous}
-            >
-              <i className="material-icons map-icon-smaller pointer">
-                arrow_back_ios
-              </i>
-            </span>
-            <span
-              className={`${
-                step === countries.length - 1 && "disabled"
-              } pointer map-button margin-left-1`}
-              onClick={next}
-            >
-              <i className="material-icons map-icon-smaller pointer">
-                arrow_forward_ios
-              </i>
-            </span>
-          </div>
+      <SEO title="UZI-Logistics-&-Trucking | Contact Us" />
+      <div className="overflow-head">
+        <TheHeader
+          bgColor="gradient-header"
+          kobo={logocolored}
+          color="black"
+          sticky="sticky"
+        />
+        <div className="contact">
+          <div id="chartdiv" style={{ width: "100%", height: "100vh" }}></div>
+          <div className="contact-section">
+            <div className="contact-nav">
+              <span
+                className={`${step === 0 && "disabled"} pointer map-button`}
+                onClick={previous}
+              >
+                <i className="material-icons map-icon-smaller pointer">
+                  arrow_back_ios
+                </i>
+              </span>
+              <span
+                className={`${
+                  step === countries.length - 1 && "disabled"
+                } pointer map-button margin-left-1`}
+                onClick={next}
+              >
+                <i className="material-icons map-icon-smaller pointer">
+                  arrow_forward_ios
+                </i>
+              </span>
+            </div>
 
-          <div className="contact-info">
-            <div className="contact-info__details">
-              <h1>{countryItem ? countryItem.country : "N/A"}</h1>
-              <div className="blue-side" style={{ fontSize: '1.2em'}}>
-                <p className="grey capitalize" style={{width: '50%'}}>
-                  {countryItem ? countryItem.address : "N/A"}
-                </p>
-                <p className="grey">
-                  {countryItem ? countryItem.email : "N/A"}
-                </p>
-                <p className="grey">
-                  {countryItem ? countryItem.mobile : "N/A"}
-                </p>
+            <div className="contact-info">
+              <div className="contact-info__details">
+                <h1>{countryItem ? countryItem.country : "N/A"}</h1>
+                <div className="blue-side" style={{ fontSize: "1.2em" }}>
+                  <p className="grey capitalize" style={{ width: "50%" }}>
+                    {countryItem ? countryItem.address : "N/A"}
+                  </p>
+                  <p className="grey">
+                    {countryItem ? countryItem.email : "N/A"}
+                  </p>
+                  <p className="grey">
+                    {countryItem ? countryItem.mobile : "N/A"}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          {/* ))
+            {/* ))
             : ""} */}
-          <div className="contact-box ">
-            <h1 className="center">Feel free to reach out to us</h1>
-            <form
-              className="contact-box__images margin-1"
-              onSubmit={handleSubmit}
-            >
-              <div className="grid-input">
-                <div className="flex-column">
-                  <label htmlFor="model" className="grey">
-                    <FormattedMessage id="app.name" defaultMessage="Name" />
-                  </label>
+            <div className="contact-box ">
+              <h1 className="center">Feel free to reach out to us</h1>
+              <form
+                className="contact-box__images margin-1"
+                onSubmit={handleSubmit}
+              >
+                <div className="grid-input">
+                  <div className="flex-column">
+                    <label htmlFor="model" className="grey">
+                      <FormattedMessage id="app.name" defaultMessage="Name" />
+                    </label>
 
-                  <input
-                    type="text"
-                    name="name"
-                    value={inputValues.name}
-                    placeholder=""
-                    required
-                    onChange={handleChange}
-                  />
+                    <input
+                      type="text"
+                      name="name"
+                      value={inputValues.name}
+                      placeholder=""
+                      required
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="flex-column">
+                    <label htmlFor="model" className="grey">
+                      <FormattedMessage
+                        id="app.business-name"
+                        defaultMessage="Business Name"
+                      />
+                    </label>
+                    <input
+                      type="text"
+                      name="business"
+                      placeholder=""
+                      required
+                      value={inputValues.business}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
-                <div className="flex-column">
+
+                <div className="grid-input">
+                  <div className="flex-column">
+                    <label htmlFor="model" className="grey">
+                      <FormattedMessage
+                        id="app.email"
+                        defaultMessage="Email address"
+                      />
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder=""
+                      name="email"
+                      required
+                      value={inputValues.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="flex-column">
+                    <label htmlFor="model" className="grey">
+                      <FormattedMessage
+                        id="app.phone-number"
+                        // defaultMessage="Phone number"
+                      />
+                    </label>
+                    <input
+                      type="text"
+                      placeholder=""
+                      name="phone"
+                      required
+                      value={inputValues.phone}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+                <div className="flex-column textarea">
                   <label htmlFor="model" className="grey">
                     <FormattedMessage
-                      id="app.business-name"
-                      defaultMessage="Business Name"
+                      id="app.message"
+                      defaultMessage="Message"
                     />
                   </label>
-                  <input
+                  <textarea
                     type="text"
-                    name="business"
-                    placeholder=""
+                    name="message"
+                    className=""
                     required
-                    value={inputValues.business}
+                    cols={2}
+                    rows={2}
+                    value={inputValues.message}
                     onChange={handleChange}
                   />
                 </div>
-              </div>
-
-              <div className="grid-input">
-                <div className="flex-column">
-                  <label htmlFor="model" className="grey">
-                    <FormattedMessage
-                      id="app.email"
-                      defaultMessage="Email address"
-                    />
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder=""
-                    name="email"
-                    required
-                    value={inputValues.email}
-                    onChange={handleChange}
-                  />
+                <div className="contact-button">
+                  <button
+                    className="pricing-button capitalize width-100"
+                    type="submit"
+                  >
+                    {submitting ? (
+                      <Loader />
+                    ) : (
+                      <FormattedMessage
+                        id="app.submit"
+                        defaultMessage="Submit"
+                      />
+                    )}
+                  </button>
                 </div>
-                <div className="flex-column">
-                  <label htmlFor="model" className="grey">
-                    <FormattedMessage
-                      id="app.phone-number"
-                      defaultMessage="Phone number"
-                    />
-                  </label>
-                  <input
-                    type="text"
-                    placeholder=""
-                    name="phone"
-                    required
-                    value={inputValues.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div className="flex-column textarea">
-                <label htmlFor="model" className="grey">
-                  <FormattedMessage id="app.message" defaultMessage="Message" />
-                </label>
-                <textarea
-                  type="text"
-                  name="message"
-                  className=""
-                  required
-                  cols={2}
-                  rows={2}
-                  value={inputValues.message}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="contact-button">
-                <button
-                  className="pricing-button capitalize width-100"
-                  type="submit"
-                >
-                  {submitting ? (
-                    <Loader />
-                  ) : (
-                    <FormattedMessage id="app.submit" defaultMessage="Submit" />
-                  )}
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
+        <FooterContact />
       </div>
-      <FooterContact />
-    </div>
     </>
   );
 };
