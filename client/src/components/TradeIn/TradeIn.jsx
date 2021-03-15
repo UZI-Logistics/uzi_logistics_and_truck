@@ -5,27 +5,71 @@ import { FormattedMessage } from "react-intl";
 import Footer from "../common/Footer";
 import truck from "../../images/sell-truck@2x.jpg";
 
-import { POST } from "../helpers/api";
+import { httpPostNoToken, httpGetNoToken } from "../helpers/api";
 import Loader from "../helpers/Loader";
 import Swal from "sweetalert2";
-import axios from "axios";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 
 const TradeIn = () => {
   // const token =
   //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50SWQiOjg3MDgsInVzZXJUeXBlIjoiYWRtaW4iLCJlbWFpbCI6InllbWlAa29ibzM2MC5jb20iLCJtb2JpbGUiOiJ5ZW1pQGtvYm8zNjAuY29tIiwiZmlyc3ROYW1lIjoiTmV3IiwibGFzdE5hbWUiOiItIiwibW9iaWxlVmVyaWZpZWQiOjAsImVtYWlsVmVyaWZpZWQiOjAsInJvbGUiOiJTdXBlckFkbWluIiwiYWRtaW5JZCI6MzksInVuaXF1ZUhhc2giOiI1ZGI5OGZiODc1MjUwIiwiaXNzIjoiS29ibzM2MCIsImlhdCI6MTU3MjQ0MjA0MCwiZXhwIjoxNTczMDQ2ODQwfQ.H7wdFPkcm40052pQhT8-ZAO721e8N96FcMNjtrA3OaY";
+  const [submitting, setSubmitting] = useState(false);
+  const [truck_types, setTruckTypes] = useState([]);
+  const [tonnageRange, setTonnageRange] = useState([
+    2,
+    3,
+    5,
+    8,
+    10,
+    15,
+    16,
+    20,
+    28,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    1000,
+    33000,
+    45000,
+  ]);
+
+  const getTruckTypes = async () => {
+    try {
+      let res = await httpGetNoToken("get_truck_types");
+      setTruckTypes(res.data);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const newTonnageRange = (e) => {
+    let filtered = truck_types.filter(
+      (item) => item.type.toLowerCase() === e.target.value.toLowerCase()
+    );
+    setTonnageRange(filtered);
+    setInputValues({ ...inputValues, truckType: e.target.value });
+  };
+
+  // const setTrucTypeUUID = (e) => {
+  //   let uUID = truck_types.map((item, index) => (
+  //    (item) => item.id === e.target.value
+  //   )
+  //     key=()
+  // )}
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    axios.get(`${process.env.REACT_APP_API_URL}/api/aution_truck`).then((data) => {
-      setTrucks(data.data.data);
-      // console.log(data);
-    });
+    getTruckTypes();
+    // filteredTonnage();
+    // // window.scrollTo(0, 0);
+    // axios.get(`${process.env.REACT_APP_API_URL}/api/aution_truck`).then((data) => {
+    //   setTrucks(data.data.data);
+    //   // console.log(data);
+    // })
   }, []);
-
-  const [submitting, setSubmitting] = useState(false);
-  const [trucks, setTrucks] = useState("");
 
   const [inputValues, setInputValues] = useState({
     truckType: "",
@@ -39,14 +83,24 @@ const TradeIn = () => {
     phone: "",
   });
 
-  const register = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const data = {
-      ...inputValues,
-    };
-
-    POST("selltruck", data).then((res) => {
+  const register = async (e) => {
+    try {
+      e.preventDefault(e);
+      setSubmitting(true);
+      const data = {
+        ...inputValues,
+        truck_type_id: inputValues.tonnage,
+        //  cargo_tonnage: inputValues.tonnage,
+        truck_model: inputValues.truckModel,
+        truck_price: inputValues.askingPrice,
+        no_of_trucks: inputValues.noTrucks,
+        location: inputValues.location,
+        email: inputValues.email,
+        phone_number: inputValues.phone,
+        truck_year: inputValues.truckYear,
+      };
+      // console.log(data);
+      const response = await httpPostNoToken("auction_truck", data);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted. We will get in touch shortly",
@@ -54,20 +108,21 @@ const TradeIn = () => {
       });
       Event(
         "SellTruck",
-        `Selling Truck on UZI-logistics-&-truck`,
+        `Selling Truck on Kobo`,
         "Success sending truck message"
       );
-
+      console.log(response);
       setSubmitting(false);
       clearSaleForm();
-    });
-    // console.log(data);
-    // Swal.fire({
-    //   title:
-    //     "Successful 😀, Your details have been submitted. We will get in touch shortly",
-
-    setSubmitting(false);
-    clearSaleForm();
+    } catch (error) {
+      Swal.fire({
+        title: "Sorry 😞",
+        text: error.message,
+        type: "error",
+      });
+      clearSaleForm();
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -133,31 +188,18 @@ const TradeIn = () => {
                   name="truckType"
                   className="select-box black"
                   required
-                  onChange={handleChange}
+                  onChange={(value) => newTonnageRange(value)}
                   value={inputValues.truckType}
                 >
                   <option value=""></option>
-                  <option value="covered">COVERED</option>
-                  <option value="open">OPEN</option>
-                  <option value="flatbed">FLATBED</option>
-                  <option value="2x flatbed">2X FLATBED</option>
-                  <option value="tipper">TIPPER</option>
-                  <option value="box">BOX</option>
-                  <option value="train">TRAIN</option>
-                  <option value="tanker">TANKER</option>
-                  {trucks.assetClasses
-                    ? [
-                        ...new Set(
-                          trucks.assetClasses.flatMap((asset) =>
-                            asset.type.toLowerCase()
-                          )
-                        ),
-                      ].map((asset, index) => (
-                        <option key={index} value={asset}>
-                          {asset.toUpperCase()}
-                        </option>
-                      ))
-                    : ""}
+                  {[...new Set(truck_types.map((item) => item.type))].map(
+                    (item, index) => (
+                      <option value={item} key={index}>
+                        {/* console.log(item) */}
+                        {item}
+                      </option>
+                    )
+                  )}
                 </select>
               </label>
               <label htmlFor="model" className="grey">
@@ -169,43 +211,14 @@ const TradeIn = () => {
                   onChange={handleChange}
                   value={inputValues.tonnage}
                 >
-                  {/* <select name="tonnage" class="select-box black" required=""> */}
                   <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="5">5</option>
-                  <option value="8">8</option>
-                  <option value="10">10</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="20">20</option>
-                  <option value="28">28</option>
-                  <option value="30">30</option>
-                  <option value="35">35</option>
-                  <option value="40">40</option>
-                  <option value="45">45</option>
-                  <option value="50">50</option>
-                  <option value="60">60</option>
-                  {/* </select> */}
-                  {trucks.assetClasses
-                    ? [
-                        ...new Set(
-                          trucks.assetClasses
-                            //return asset that the assetType is equal to the truck state...
-                            .filter(
-                              (asset) =>
-                                asset.type.toLowerCase() ===
-                                inputValues.truckType
-                            )
-                            .flatMap((asset) => asset.size)
-                        ),
-                      ].map((asset, index) => (
-                        <option key={index} value={asset}>
-                          {asset}
-                        </option>
-                      ))
-                    : ""}
+                  {tonnageRange.map((item, index) => (
+                    <option value={item.id} key={index}>
+                      {/* console.log(item) */}
+                      {/* {item.cargo_tonnes} */}
+                      {item.cargo_tonnes}
+                    </option>
+                  ))}
                 </select>
               </label>
               <div className="row">

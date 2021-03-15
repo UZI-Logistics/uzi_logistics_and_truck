@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { FormattedHTMLMessage, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import tyres from "../../images/tyres.png";
 import diesel from "../../images/diesel.png";
 import oil from "../../images/oil.png";
-import oando from "../../images/oando.b59c6d52.png";
-import total from "../../images/download (1)@2x.png";
-import danco from "../../images/danco@2x.png";
 import Footer from "../common/Footer";
 import logocolored from "../../images/logo.png";
-import { POST } from "../helpers/api";
+import { httpGetNoToken, httpPostNoToken } from "../helpers/api";
 import ReactPhoneInput from "react-phone-input-2";
 import Loader from "../helpers/Loader";
 import Swal from "sweetalert2";
 import { handleError } from "../helpers/errorHandler";
-import { formatNumber } from "../helpers/formatNumber";
 import axios from "axios";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
@@ -22,7 +18,6 @@ import { Event } from "../helpers/tracking";
 
 const KoboCare = () => {
   useEffect(() => {
-    // document.title = "Kobo360 | KoboCare";
     window.scrollTo(0, 0);
   });
 
@@ -37,14 +32,15 @@ const KoboCare = () => {
   let [mobile, setMobile] = useState("");
   let [country, setCountry] = useState("");
   const [inputValues, setInputValues] = useState({
-    secret: "",
     first_name: "",
-    user_type: "care",
     last_name: "",
-    country: "",
-    location: "",
     email: "",
+    secret: "",
     mobile: "",
+    location: "",
+    country: "",
+    user_type: "uzi_care",
+    // user_type: "customer",
   });
   // const { lang } = useParams();
 
@@ -53,61 +49,77 @@ const KoboCare = () => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const register = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const data = {
-      ...inputValues,
-      mobile:
-        mobile.charAt(4) === "0"
-          ? (mobile = mobile.replace(mobile.charAt(4), ""))
-          : formatNumber(mobile),
-    };
-
-    POST("careWallet/register", data)
-      .then(() => {
-        Swal.fire({
-          title: "Successful 😀",
-          text:
-            "Your details have been submitted. We will get in touch shortly",
-          type: "success",
-        });
-        Event("Gotruck", "Registering for Gotruck", "Gotruck registration successful");
-        setSubmitting(false);
-        closeModal();
-      })
-
-      .catch((err) => {
-        handleError(err);
-
-        const text = err.response.data
-          ? err.response.data.data.error.message
-          : err.response.data.message;
-        Swal.fire({
-          title: "Sorry 😞",
-          text,
-          type: "error",
-        });
-        setSubmitting(false);
-        setInputValues({
-          ...inputValues,
-          secret: "",
-          country: "",
-          first_name: "",
-          last_name: "",
-          location: "",
-
-          email: "",
-          mobile: "",
-        });
+  const register = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const data = {
+        first_name: inputValues.first_name,
+        last_name: inputValues.last_name,
+        email: inputValues.email,
+        password: inputValues.secret,
+        // phone_number: inputValues.mobile,
+        phone_number:
+          mobile.charAt(4) === "0"
+            ? (mobile = mobile.replace(mobile.charAt(4), ""))
+            : mobile,
+        location: inputValues.location,
+        country: inputValues.country,
+        type: inputValues.user_type,
+      };
+      const response = await httpPostNoToken("create_user", data);
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted. We will get in touch shortly",
+        type: "success",
       });
+      Event(
+        "UZI Logistics & Trucking",
+        "Registering for UZI Logistics",
+        "UZI Logistics registration successful"
+      );
+      console.log(data);
+      console.log(response);
+      setSubmitting(false);
+      closeModal();
+      clearForm();
+    } catch (error) {
+      // handleError(error);
+      // const text = error.response.data
+      //   ? error.response.data.data.error.message
+      //   : error.response.data.message;
+      Swal.fire({
+        title: "Sorry 😞",
+        text: error.message,
+        type: "error",
+      });
+      setSubmitting(false);
+      clearForm();
+    }
   };
+
+  const clearForm = () => {
+    setInputValues({
+      ...inputValues,
+      secret: "",
+      first_name: "",
+      user_type: "",
+      last_name: "",
+      country: "",
+      location: "",
+      email: "",
+      mobile: "",
+      phone: ""
+    });
+  };
+
   const showModal = () => {
     setSubmitting(true);
     setShow(!show);
     setSubmitting(false);
   };
   const handleOnChange = (value, data) => {
+    console.log(data);
     setMobile(value);
   };
 
@@ -123,52 +135,15 @@ const KoboCare = () => {
       location: "",
       email: "",
       mobile: "",
+      user_type: "",
     });
     setSubmitting(false);
     setMobile("");
   };
 
-  // if (lang === "ar") {
-  //   return (
-  //     <div className="overflow-head">
-  //       <TheHeader
-  //         bgColor="orange-header"
-  //         kobo={logocolored}
-  //         color="black"
-  //         sticky="sticky"
-  //       />
-  //       <div className="care">
-  //         <div className="care-heading middle">
-  //           <h1 className="capitalize" data-aos="zoom-out">
-  //             KoboCARE
-  //           </h1>
-  //           <p data-aos="zoom-out">
-  //             <FormattedHTMLMessage
-  //               id="app.kobocare-caption"
-  //               defaultMessage="Get products at discounted rates."
-  //             />
-  //           </p>
-  //           <p data-aos="zoom-in">
-  //             {" "}
-  //             <FormattedHTMLMessage
-  //               id="app.get-prod-text"
-  //               defaultMessage="KoboCare is a solution for registered drivers on the Kobo Platform, as part of our commitment to drivers."
-  //             />
-  //           </p>
-  //         </div>
-  //       </div>
-  //       <div className="partners-images" data-aos="zoom-out">
-  //         <img className="big" src={oando} alt="" />
-  //         <img className="small-icon" src={total} alt="" />
-  //         <img className="small-icon" src={danco} alt="" />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   return (
     <>
-      <SEO title="UZI -LOGISTICS-&-TRUCKING CARE | UZICare" />
+      <SEO title="UZI-LOGISTICS-&-TRUCKING CARE | UZICare" />
       <div className="overflow-head">
         <TheHeader
           bgColor="orange-header"
@@ -257,15 +232,15 @@ const KoboCare = () => {
                       htmlFor="model"
                       className="input-text font-smaller margin-label"
                     >
-                      <FormattedMessage
+                      {/* <FormattedMessage
                         id="app.phone-number"
                         defaultMessage="Phone number"
-                      />
+                      /> */}
                     </label>
                     <ReactPhoneInput
                       dropdownClass=""
                       inputClass=""
-                      preferredCountries={["ng", "gh", "ke", "tg", "bf", "ug"]}
+                      preferredCountries={["ng", "gh"]}
                       value={mobile}
                       // defaultCountry={localStorage.code.toLowerCase() || "ng"}
                       country="ng"
@@ -284,6 +259,7 @@ const KoboCare = () => {
                     type="password"
                     placeholder=""
                     name="secret"
+                    autocomplete
                     value={inputValues.secret}
                     required
                     onChange={handleChange}
@@ -306,24 +282,40 @@ const KoboCare = () => {
                       required
                       onChange={handleChange}
                     >
-                      <option className="close">Country</option>
-                      {country
-                        ? country.map((countries) => (
+                      <option className="close">Select Country</option>
+                      <option value="ng">Nigeria</option>
+                      <option value="gh">Ghana</option>
+                      {/* {country
+                       ? country.map((countries) => (
                             <option value={countries.country}>
-                              {countries.country.toUpperCase()}
+                             {countries.country.toUpperCase()}
                             </option>
                           ))
-                        : ""}
+                         : ""} */}
                     </select>
-                    {/* <input
-                    type="text"
-                    placeholder=""
-                    name="country"
-                    value={inputValues.country}
-                    required
-                    onChange={handleChange}
-                  /> */}
                   </div>
+
+                  {/* <div className="flex-column">
+                    <label htmlFor="model" className="input-text font-smaller">
+                      <FormattedMessage
+                        id="app.user_type"
+                        defaultMessage="User Type"
+                      />
+                    </label>
+                    <select
+                      type="text"
+                      className="select-box"
+                      name="user_type"
+                      value={inputValues.user_type}
+                      required
+                      onChange={handleChange}
+                    >
+                      <option className="close">Select User</option>
+                      <option value="ng">UZI CARE</option>
+                      <option value="gh">CUSTOMER</option>
+                    </select>
+                  </div> */}
+
                   <div className="flex-column">
                     <label htmlFor="model" className="input-text font-smaller">
                       <FormattedMessage

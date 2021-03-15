@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import axios from "axios";
+import { httpGetNoToken } from "../helpers/api";
 import Loader from "../helpers/Loader";
 
 const Autocomplete = ({
@@ -12,12 +13,15 @@ const Autocomplete = ({
   loading,
   handlePlaceSelect,
   _handlePlaceSelect,
-  children
+  children,
 }) => {
   const pickupRef = useRef(null);
   const destinationRef = useRef(null);
   const [trucks, setTrucks] = useState({});
   const [sizes, setSizes] = useState([]);
+  const [truck_types, setTruckTypes] = useState([]);
+  const [tonnage, setTonnage] = useState([]);
+  const [tonnageRange, setTonnageRange] = useState([]);
 
   const getRef = useCallback(() => {
     setRef(pickupRef.current);
@@ -27,22 +31,52 @@ const Autocomplete = ({
     _setRef(destinationRef.current);
   }, [_setRef]);
 
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}asset/grouped`).then((data) => {
-      setTrucks(data.data.data);
+  // const clearForm = () => {
+  //   setInputValues({
+  //     ...inputValues,
+  //     truckType: "",
+  //     tonnage: ""
+  //   });
+  // };
 
+  const getTruckTypes = async () => {
+    try {
+      let res = await httpGetNoToken("get_truck_types");
+      console.log("res>", res);
+      setTruckTypes(res.data);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const getTonnes = async (e) => {
+    let filtered = truck_types.filter(
+      (item) => item.type.toLowerCase() === e.target.value.toLowerCase()
+    );
+    setTonnage(filtered);
+    // setInputValues({ ...inputValues, truckType: e.target.value });
+  };
+
+  useEffect(() => {
+    getTruckTypes();
+    getTonnes();
+    // axios.get(`${process.env.REACT_APP_API_URL}assets/grouped`).then((data) => {
+    let res = httpGetNoToken("get_truck_types").then((data) => {
+      setTrucks(data.data.data);
     });
-    getRef();
-    _getRef();
+    // getRef();
+    // _getRef();
+    console.log(res);
   }, [getRef, _getRef]);
 
-  useEffect(() => {
-    if(state.truckType) {
-      const sizes = trucks.assetClasses.find(asset => asset.name.toLowerCase() === state.truckType.toLowerCase()).size
-      setSizes(sizes);
-      
-    }
-  }, [state.truckType, trucks.assetClasses])
+  // useEffect(() => {
+  //   if (state.truckType) {
+  //     const sizes = trucks.assetClasses.find(
+  //       (asset) => asset.name.toLowerCase() === state.truckType.toLowerCase()
+  //     ).size;
+  //     setSizes(sizes);
+  //   }
+  // }, [state.truckType, trucks.assetClasses]);
 
   return (
     <div className="grid trade-box price-box">
@@ -102,16 +136,22 @@ const Autocomplete = ({
               className="select-box black"
               required
               onChange={setChange}
-              value={state.truckType}
+              // value={state.truckType}
+              value={truck_types}
             >
               <option value=""></option>
-              {trucks.assetClasses
-                ? trucks.assetClasses.map(({name}, index) => (
-                  <option key={index} value={name}>
-                    {name.toUpperCase()}
-                  </option>
-                ))
-                : ""}
+              {truck_types.map((item, index) => (
+                <option value={item.id} key={index}>
+                  {item.type}
+                </option>
+              ))}
+              {/* {trucks.assetClasses
+                ? trucks.assetClasses.map(({ name }, index) => (
+                    <option key={index} value={name}>
+                      {name.toUpperCase()}
+                    </option>
+                  ))
+                : ""} */}
             </select>
           </label>
 
@@ -122,15 +162,27 @@ const Autocomplete = ({
               className="select-box black"
               required
               onChange={setChange}
-              value={state.tonnage}
+              // value={state.tonnage}
+              value={tonnage}
             >
               <option value=""></option>
-              {sizes.length > 0 ? sizes.map(({size}, index) => (
-                  <option key={index} value={size}>
-                    {size}
-                  </option>
-                ))
-                : ""}
+              {truck_types.map((item, index) => (
+                <option value={item.id} key={index}>
+                  {item.cargo_tonnes}
+                </option>
+              ))}
+              {/* {tonnage.map((item, index) => (
+                <option value={item.id} key={index}>
+                  {item.name}
+                </option>
+              ))} */}
+              {/* {sizes.length > 0
+                ? sizes.map(({ size }, index) => (
+                    <option key={index} value={size}>
+                      {size}
+                    </option>
+                  ))
+                : ""} */}
             </select>
           </label>
         </div>
@@ -140,8 +192,8 @@ const Autocomplete = ({
             {loading ? (
               <Loader />
             ) : (
-                <FormattedMessage id="app.submit" defaultMessage="Submit" />
-              )}
+              <FormattedMessage id="app.submit" defaultMessage="Submit" />
+            )}
           </button>
         </div>
       </form>
