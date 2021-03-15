@@ -24,7 +24,7 @@ const OpenMail = ({ mail, color }) => {
 };
 const Careers = () => {
   useEffect(() => {
-    // document.title = "Kobo360 | Careers";
+ 
     window.scrollTo(0, 0);
   });
   return (

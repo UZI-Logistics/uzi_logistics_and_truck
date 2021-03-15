@@ -1,10 +1,10 @@
 import React from "react";
 // import fmn from "../../images/fmn.png";
-import abtech from "../../images/png/ABTECH logistics logo big.png";
-import fortune from "../../images/png/fortune global logo BIG.png";
-import eminence from "../../images/png/Eminence logistics logo big.png";
-import helem from "../../images/png/helem logistics logo BIG.png";
-import moe from "../../images/png/mo-joe logistics logo big.png";
+import abtech from "../../images/png/ABTECH logistics logo white.png";
+import fortune from "../../images/png/fortune global logo white.png";
+import eminence from "../../images/png/Eminence logistics logo white.png";
+import helem from "../../images/png/helem logistics logo white.png";
+import moe from "../../images/png/mo-joe logistics logo white.png";
 
 // import honeywell from "../../images/honeywell.png";
 // import msc from "../../images/msc.png";
@@ -26,19 +26,19 @@ export const Slider = () => {
       <div className="slider">
         <div className="slide-track">
           <div className="slide">
-            <img src={abtech} height="55" width="85" alt="" loading="lazy" />
+            <img src={abtech} height="55" width="100" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={fortune} height="55" width="85" alt="" loading="lazy" />
+            <img src={fortune} height="55" width="100" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={eminence} height="55" width="85" alt="" loading="lazy" />
+            <img src={eminence} height="55" width="100" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={helem} height="55" width="85" alt="" loading="lazy" />
+            <img src={helem} height="55" width="100" alt="" loading="lazy" />
           </div>
           <div className="slide">
-            <img src={moe} height="55" width="85" alt="" loading="lazy" />
+            <img src={moe} height="55" width="100" alt="" loading="lazy" />
           </div>
           {/* <div className="slide">
             <img src={dhl} height="55" width="70" alt="" loading="lazy" />

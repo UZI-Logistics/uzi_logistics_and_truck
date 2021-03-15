@@ -15,6 +15,7 @@ import FooterContact from "../common/FooterContact";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 // import { GET } from "../helpers/api";
+import { httpPostNoToken } from "../helpers/api";
 
 am4core.useTheme(am4themes_frozen);
 am4core.useTheme(am4themes_animated);
@@ -47,7 +48,6 @@ const Contact = () => {
   });
 
   //set country with the nav titles... if country code is ng, nigeria... if it drops
-
   const countryDetails = [
     {
       code: "NG",
@@ -56,22 +56,6 @@ const Contact = () => {
       email: "info@uzi-logistics-&-trucking.com",
       mobile: "+233 909 874 7941",
     },
-
-    // {
-    //   code: "KE",
-    //   country: "Kenya",
-    //   address:
-    //     "KOBO360 LIMITED, SMK BUSINESS PARK, 2ND FLOOR, ENTERPRISE RD. NAIROBI",
-    //   email: "info.ke@kobo360.com",
-    //   mobile: "+254 717053217",
-    // },
-    // {
-    //   code: "UG",
-    //   country: "Uganda",
-    //   address: "Kobo360 IncPlot 27 Bandali Rise - Bugoloobi, Kampala, Uganda",
-    //   email: "info.ug@kobo360.com",
-    //   mobile: "+256 788 071 987",
-    // },
     {
       code: "GH",
       country: "Ghana",
@@ -80,47 +64,29 @@ const Contact = () => {
       email: "info.gh@uzi-logistics-&-trucking.com",
       mobile: "+233 909 874 7941",
     },
-    // {
-    //   code: "EG",
-    //   country: "Egypt",
-    //   address:
-    //     "Building No. 11G/4 El-Laselky, New Maadi, front of Gate 3 technology village, Cairo",
-    //   email: "info.eg@kobo360.com",
-    //   mobile: "+204 818 678 0000",
-    // },
-    // {
-    //   code: "CI",
-    //   country: "Ivory Coast",
-    //   address: "Rue des selliers, Treichville, Abidjan , Côte d'voire",
-    //   email: "info.ivc@kobo360.com",
-    //   mobile: "+225  49400000",
-    // },
-    // {
-    //   code: "BF",
-    //   country: "Burkina Faso",
-    //   address: "",
-    //   email: "info.bf@kobo360.com",
-    //   mobile: "+226 75244998",
-    // },
   ];
 
-  useEffect(() => {
-    // document.title = "Kobo360 | Contact Us";
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const data = {
-      ...inputValues,
-    };
-    console.log(data);
-    POST("contact/", data).then((res) => {
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const data = {
+        name: inputValues.name,
+        business_name: inputValues.business,
+        phone_number: inputValues.phone,
+        email: inputValues.email,
+        message: inputValues.message,
+      };
+      let res = await httpPostNoToken("contact", data);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted. We will get in touch shortly",
@@ -131,10 +97,18 @@ const Contact = () => {
         "Sending Message to UZI-Logistics-&-Trucking",
         "Sending Message Success"
       );
+      console.log(res);
       setSubmitting(false);
       clearForm();
-    });
-  };
+   } catch (error) {
+      setSubmitting(false);
+      Swal.fire({
+        title: "Sorry 😞, we couldn't process your details",
+        text: error.message,
+        type: "error",
+      });
+   }
+  }
 
   useEffect(() => {
     // setMap(am4core.create("chartdiv", am4maps.MapChart));
@@ -173,43 +147,6 @@ const Contact = () => {
         zoomLevel: 7.0,
         fill: am4core.color("#f3d6c7"),
       },
-      // {
-      //   id: "KE",
-      //   name: "Kenya",
-      //   value: 10,
-      //   zoomLevel: 7.0,
-
-      //   fill: am4core.color("#f3d6c7"),
-      // },
-      // {
-      //   id: "UG",
-      //   name: "Uganda",
-      //   value: 10,
-      //   zoomLevel: 7.0,
-
-      //   fill: am4core.color("#f3d6c7"),
-      // },
-      // {
-      //   id: "EG",
-      //   name: "Egypt",
-      //   value: 10,
-      //   zoomLevel: 7.0,
-      //   fill: am4core.color("#f3d6c7"),
-      // },
-      // {
-      //   id: "CI",
-      //   name: "Ivory Coast",
-      //   value: 10,
-      //   zoomLevel: 7.0,
-      //   fill: am4core.color("#f3d6c7"),
-      // },
-      // {
-      //   id: "BF",
-      //   name: "Burkina Faso",
-      //   value: 10,
-      //   zoomLevel: 7.0,
-      //   fill: am4core.color("#f3d6c7"),
-      // },
     ];
     polygonSeries.dataFields.zoomLevel = "zoomLevel";
     polygonTemplate.propertyFields.fill = "fill";
@@ -275,36 +212,11 @@ const Contact = () => {
         latitude: 6.465422,
         longitude: 3.406448,
       },
-      // {
-      //   title: "Cairo",
-      //   latitude: 30.033333,
-      //   longitude: 31.233334,
-      // },
-      // {
-      //   title: "Nairobi",
-      //   latitude: -1.359227,
-      //   longitude: 36.937984,
-      // },
-      // {
-      //   title: "Abidjan",
-      //   latitude: 5.345317,
-      //   longitude: -4.024429,
-      // },
       {
         title: "Accra",
         latitude: 5.593222,
         longitude: -0.140138,
       },
-      // {
-      //   title: "Kampala",
-      //   latitude: 0.310841,
-      //   longitude: 32.595242,
-      // },
-      // {
-      //   title: "Ouagadougou",
-      //   latitude: 12.3714,
-      //   longitude: 1.5197,
-      // },
     ];
 
     // add events to recalculate map position when the map is moved or zoomed
@@ -471,43 +383,6 @@ const Contact = () => {
           zoomLevel: 7.0,
           fill: am4core.color("#f3d6c7"),
         },
-        // {
-        //   id: "KE",
-        //   name: "Kenya",
-        //   value: 10,
-        //   zoomLevel: 7.0,
-
-        //   fill: am4core.color("#f3d6c7"),
-        // },
-        // {
-        //   id: "UG",
-        //   name: "Uganda",
-        //   value: 10,
-        //   zoomLevel: 7.0,
-
-        //   fill: am4core.color("#f3d6c7"),
-        // },
-        // {
-        //   id: "EG",
-        //   name: "Egypt",
-        //   value: 10,
-        //   zoomLevel: 7.0,
-        //   fill: am4core.color("#f3d6c7"),
-        // },
-        // {
-        //   id: "CI",
-        //   name: "Ivory Coast",
-        //   value: 10,
-        //   zoomLevel: 7.0,
-        //   fill: am4core.color("#f3d6c7"),
-        // },
-        // {
-        //   id: "BF",
-        //   name: "Burkina Faso",
-        //   value: 10,
-        //   zoomLevel: 7.0,
-        //   fill: am4core.color("#f3d6c7"),
-        // },
       ];
       polygonSeries.dataFields.zoomLevel = "zoomLevel";
       polygonTemplate.propertyFields.fill = "fill";
@@ -561,36 +436,11 @@ const Contact = () => {
           latitude: 6.465422,
           longitude: 3.406448,
         },
-        // {
-        //   title: "Cairo",
-        //   latitude: 30.033333,
-        //   longitude: 31.233334,
-        // },
-        // {
-        //   title: "Nairobi",
-        //   latitude: -1.359227,
-        //   longitude: 36.937984,
-        // },
-        // {
-        //   title: "Abidjan",
-        //   latitude: 5.345317,
-        //   longitude: -4.024429,
-        // },
         {
           title: "Accra",
           latitude: 5.593222,
           longitude: -0.140138,
         },
-        // {
-        //   title: "Kampala",
-        //   latitude: 0.310841,
-        //   longitude: 32.595242,
-        // },
-        // {
-        //   title: "Ouagadougou",
-        //   latitude: 12.3714,
-        //   longitude: 1.5197,
-        // },
       ];
 
       // add events to recalculate map position when the map is moved or zoomed
@@ -712,8 +562,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            {/* ))
-            : ""} */}
             <div className="contact-box ">
               <h1 className="center">Feel free to reach out to us</h1>
               <form

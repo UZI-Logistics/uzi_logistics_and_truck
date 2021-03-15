@@ -4,22 +4,18 @@ import kobo from "../../images/gotruck-video.mp4";
 import iosstore from "../../images/app-store-logo@2x.png";
 import googlestore from "../../images/en_badge_web_generic@2x.png";
 import Loader from "../helpers/Loader";
-import { POST } from "../helpers/api";
 import Swal from "sweetalert2";
 import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import logo from "../../images/logo-white.png";
-import axios from "axios";
+import { httpGetNoToken, httpPostNoToken } from "../helpers/api";
 import { Slider } from "../helpers/Slider";
-// import userguide from "../../kobo360-guide-hausa.pdf";
 import userguideenglish from "../../kobo360-guide-english.pdf";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 
 const Home = () => {
   const node = useRef();
-
-  const apiUrl = `https://gotrucker.herokuapp.com/`;
 
   const [show, setShow] = useState(false);
   const [_show, _setShow] = useState(false);
@@ -65,16 +61,11 @@ const Home = () => {
 
   const getTruckTypes = async () => {
     try {
-      let res = await axios.get(`${apiUrl}api/get_truck_types`);
-      // let res = await axios.get(
-      //   `${process.env.REACT_APP_API_URL}api/get_truck_types`
-      // );
-
-      // console.log("res>", res);
-      if (res && res.data && res.data.response) {
-        setTruckTypes(res.data.response.data);
-      }
+      let res = await httpGetNoToken("get_truck_types");
+      console.log("res>", res);
+      setTruckTypes(res.data);
     } catch (error) {
+      
       console.log("error", error);
     }
   };
@@ -118,74 +109,61 @@ const Home = () => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
-  const register = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const data = {
-      ...inputValues,
-      phone:
-        phone.charAt(4) === "0"
-          ? (phone = phone.replace(phone.charAt(4), ""))
-          : phone,
-    };
-
-    // try {
-    //   let res = await axios.get(
-    //     `${apiUrl}api/register_truck`
-    //   ), data;
-    // } catch ((error) => {
-    //   error
-    // })
-
-    axios
-      .post(`${apiUrl}api/register_truck`, data)
-      .then((res) => {
-        Swal.fire({
-          title: "Successful 😀",
-          text:
-            "Your details have been submitted. We will get in touch shortly",
-          type: "success",
-        });
-        Event(
-          "Register Truck",
-          "Registering truck was successful",
-          "Register Truck Success"
-        );
-        console.log(res);
-
-        setSubmitting(false);
-        closeModal();
-      })
-      //  console.log(error);
-      .catch((error) => {
-        console.log('err>>', error.response);
-        // const errMsg = error.res.data
-        //   ? error.res.data.data.error.message
-        //   : error.res.data.message;
-        Swal.fire({
-          title: "Sorry 😞, we couldn't process your details" ,
-          // text: errMsg,
-          type: "error",
-        });
-        Event(
-          "Register Truck",
-          "Registering truck Failed",
-          "Register Truck failure"
-        );
-
-        setSubmitting(false);
-        setInputValues({
-          ...inputValues,
-          truckType: "",
-          referral: "",
-          firstName: "",
-          lastName: "",
-          location: "",
-          state: "",
-          email: "",
-          phone: "",
-        });
+  
+  const register = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const data = {
+        first_name: inputValues.firstName,
+        last_name: inputValues.lastName,
+        location: inputValues.location,
+        email_address: inputValues.email,
+        truck_type_id: inputValues.truckType,
+        phone_number:
+          inputValues.phone.charAt(4) === "0"
+            ? (phone = phone.replace(phone.charAt(4), ""))
+            : phone,
+        referred_by: inputValues.referral,
+      };
+      let res = await httpPostNoToken("register_truck", data);
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted. We will get in touch shortly",
+        type: "success",
       });
+      Event(
+        "Register Truck",
+        "Registering truck was successful",
+        "Register Truck Success"
+      );
+      setSubmitting(false);
+      closeModal();
+      setInputValues({
+        ...inputValues,
+        truckType: "",
+        referral: "",
+        firstName: "",
+        lastName: "",
+        location: "",
+        state: "",
+        email: "",
+        phone: "",
+      });
+      console.log(res);
+    } catch (error) {
+      setSubmitting(false);
+      Swal.fire({
+        title: "Sorry 😞, we couldn't process your details",
+        text: error.message,
+        type: "error",
+      });
+      Event(
+        "Register Truck",
+        "Registering truck Failed",
+        "Register Truck failure"
+      );
+    }
   };
 
   const showModal = () => {
@@ -248,6 +226,15 @@ const Home = () => {
                     id="app.sig"
                     defaultMessage="SIGN IN AS PARTNER"
                   />
+                </button>
+                <button
+                  className="home-button capitalize"
+                  onClick={() =>
+                    // window.open("https://admin.uzi-logistics-&-trucking.com/")
+                    window.open("http://localhost:3001/")
+                  }
+                >
+                  <FormattedMessage id="app.sig" defaultMessage="ADMIN LOGIN" />
                 </button>
               </div>
             </div>
