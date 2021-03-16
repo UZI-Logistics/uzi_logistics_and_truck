@@ -94,9 +94,9 @@ export class MapContainer extends Component {
   }
   render() {
     const { source, dest } = this.props;
-    var bounds = new this.props.google.maps.LatLngBounds();
+    // var bounds = new this.props.google.maps.LatLngBounds();
     for (let i = 0; i < this.state.route.length; i++) {
-      bounds.extend(this.state.route[i]);
+      // bounds.extend(this.state.route[i]);
     }
 
     return (
@@ -114,7 +114,7 @@ export class MapContainer extends Component {
               lng: this.state.lng,
             }}
             onReady={() => this.calculateDistance()}
-            bounds={bounds}
+            // bounds={bounds}
           >
             <Marker
               onClick={this.onMarkerClick}

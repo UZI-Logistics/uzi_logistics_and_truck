@@ -93,20 +93,20 @@ class Pricing extends React.Component {
   };
 
   // Extract City From Address Object
-  _handlePlaceSelect = (e) => {
-    let addressObject = this.autocomplete_.getPlace();
+  // _handlePlaceSelect = (e) => {
+  //   let addressObject = this.autocomplete_.getPlace();
 
-    if (addressObject !== undefined) {
-      let destLat = addressObject.geometry.location.lat();
-      let destLng = addressObject.geometry.location.lng();
-      this.setState((prevState) => ({
-        ...prevState,
-        destination: { lat: destLat, lng: destLng },
-        center: { lat: destLat, lng: destLng },
-        destinationAddress: addressObject && addressObject.formatted_address,
-      }));
-    }
-  };
+  //   if (addressObject !== undefined) {
+  //     let destLat = addressObject.geometry.location.lat();
+  //     let destLng = addressObject.geometry.location.lng();
+  //     this.setState((prevState) => ({
+  //       ...prevState,
+  //       destination: { lat: destLat, lng: destLng },
+  //       center: { lat: destLat, lng: destLng },
+  //       destinationAddress: addressObject && addressObject.formatted_address,
+  //     }));
+  //   }
+  // };
 
   //format numbers
   formatPrice = (x) => {

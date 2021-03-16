@@ -100,15 +100,16 @@ const Contact = () => {
       console.log(res);
       setSubmitting(false);
       clearForm();
-   } catch (error) {
+    } catch (error) {
       setSubmitting(false);
       Swal.fire({
         title: "Sorry 😞, we couldn't process your details",
         text: error.message,
         type: "error",
       });
-   }
-  }
+      clearForm();
+    }
+  };
 
   useEffect(() => {
     // setMap(am4core.create("chartdiv", am4maps.MapChart));
