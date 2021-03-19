@@ -1,6 +1,5 @@
 import React, { useEffect, useCallback, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import axios from "axios";
 import { httpGetNoToken } from "../helpers/api";
 import Loader from "../helpers/Loader";
 
@@ -13,15 +12,20 @@ const Autocomplete = ({
   loading,
   handlePlaceSelect,
   _handlePlaceSelect,
+  handleChange,
   children,
+  input_values,
 }) => {
   const pickupRef = useRef(null);
   const destinationRef = useRef(null);
   const [trucks, setTrucks] = useState({});
-  const [sizes, setSizes] = useState([]);
   const [truck_types, setTruckTypes] = useState([]);
-  const [tonnage, setTonnage] = useState([]);
   const [tonnageRange, setTonnageRange] = useState([]);
+
+  const [inputValues, setInputValues] = useState({
+    truckType: "",
+    tonnage: "",
+  });
 
   const getRef = useCallback(() => {
     setRef(pickupRef.current);
@@ -30,14 +34,6 @@ const Autocomplete = ({
   const _getRef = useCallback(() => {
     _setRef(destinationRef.current);
   }, [_setRef]);
-
-  // const clearForm = () => {
-  //   setInputValues({
-  //     ...inputValues,
-  //     truckType: "",
-  //     tonnage: ""
-  //   });
-  // };
 
   const getTruckTypes = async () => {
     try {
@@ -49,34 +45,38 @@ const Autocomplete = ({
     }
   };
 
-  const getTonnes = async (e) => {
+  const newTonnageRange = (e) => {
     let filtered = truck_types.filter(
       (item) => item.type.toLowerCase() === e.target.value.toLowerCase()
     );
-    setTonnage(filtered);
-    // setInputValues({ ...inputValues, truckType: e.target.value });
+    setTonnageRange(filtered);
+    setInputValues({ ...inputValues, truckType: e.target.value });
   };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setInputValues({ ...inputValues, [name]: value });
+  // };
 
   useEffect(() => {
     getTruckTypes();
-    getTonnes();
-    // axios.get(`${process.env.REACT_APP_API_URL}assets/grouped`).then((data) => {
     let res = httpGetNoToken("get_truck_types").then((data) => {
       setTrucks(data.data.data);
     });
-    // getRef();
-    // _getRef();
+    getRef();
+    _getRef();
     console.log(res);
   }, [getRef, _getRef]);
 
   // useEffect(() => {
-  //   if (state.truckType) {
-  //     const sizes = trucks.assetClasses.find(
-  //       (asset) => asset.name.toLowerCase() === state.truckType.toLowerCase()
+  //   if (state.truck_types) {
+  //     const sizes = trucks.cargo_tonnes.find(
+  //       (truck_types) =>
+  //         truck_types.name.toLowerCase() === state.truck_types.toLowerCase()
   //     ).size;
   //     setSizes(sizes);
   //   }
-  // }, [state.truckType, trucks.assetClasses]);
+  // }, [state.truck_types, trucks.assetClasses]);
 
   return (
     <div className="grid trade-box price-box">
@@ -135,23 +135,20 @@ const Autocomplete = ({
               name="truckType"
               className="select-box black"
               required
-              onChange={setChange}
-              // value={state.truckType}
-              value={truck_types}
+              // onChange={handleChange}
+              onChange={(value) => newTonnageRange(value)}
+              value={inputValues.truckType}
+              // value={state.truck_types}
             >
               <option value=""></option>
-              {truck_types.map((item, index) => (
-                <option value={item.id} key={index}>
-                  {item.type}
-                </option>
-              ))}
-              {/* {trucks.assetClasses
-                ? trucks.assetClasses.map(({ name }, index) => (
-                    <option key={index} value={name}>
-                      {name.toUpperCase()}
-                    </option>
-                  ))
-                : ""} */}
+              {[...new Set(truck_types.map((item) => item.type))].map(
+                (item, index) => (
+                  <option value={item} key={index}>
+                    {/* console.log(item) */}
+                    {item}
+                  </option>
+                )
+              )}
             </select>
           </label>
 
@@ -161,21 +158,19 @@ const Autocomplete = ({
               name="tonnage"
               className="select-box black"
               required
-              onChange={setChange}
+              value={input_values.tonnage}
+              onChange={handleChange}
+              // onChange={setChange}
               // value={state.tonnage}
-              value={tonnage}
             >
               <option value=""></option>
-              {truck_types.map((item, index) => (
+              {tonnageRange.map((item, index) => (
                 <option value={item.id} key={index}>
+                  {/* console.log(item) */}
+                  {/* {item.cargo_tonnes} */}
                   {item.cargo_tonnes}
                 </option>
               ))}
-              {/* {tonnage.map((item, index) => (
-                <option value={item.id} key={index}>
-                  {item.name}
-                </option>
-              ))} */}
               {/* {sizes.length > 0
                 ? sizes.map(({ size }, index) => (
                     <option key={index} value={size}>
