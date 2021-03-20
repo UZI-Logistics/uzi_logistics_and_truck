@@ -8,7 +8,6 @@ import SEO from "../SEO";
 
 const About = () => {
   useEffect(() => {
-    // document.title = "Kobo360 | About Kobo360";
     window.scrollTo(0, 0);
   });
   return (
