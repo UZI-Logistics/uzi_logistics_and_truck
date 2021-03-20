@@ -7,7 +7,6 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_frozen from "@amcharts/amcharts4/themes/frozen";
 import logocolored from "../../images/logo.png";
 import Loader from "../helpers/Loader";
-import { POST } from "../helpers/api";
 import Swal from "sweetalert2";
 // import Axios from "axios";
 import { FormattedMessage } from "react-intl";

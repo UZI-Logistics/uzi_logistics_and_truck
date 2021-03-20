@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../common/Footer";
 // import sync from "../../images/synchronize-arrows-1.svg";
 import Swal from "sweetalert2";
@@ -14,7 +14,7 @@ import MapContainer from "./Map";
 import SEO from "../SEO";
 
 const Pricing = () => {
-  const [submitting, setSubmitting] = useState(false);
+  const [setSubmitting] = useState(false);
   const [loading, setLoading] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
   const [costPrice, setCostPrice] = useState("");
@@ -23,9 +23,9 @@ const Pricing = () => {
   const [source, setSource] = useState({});
   const [destination, setDestination] = useState({});
   // const [pickupState, destinationState] = useState("");
-  const [state] = useState("");
+  // const [state] = useState("");
   // const destinationAddress = useRef();
-  const [autocomplete, autocomplete_] = useState(null);
+  // const [autocomplete, autocomplete_] = useState(null);
   // const pickupAddress = useRef();
 
   const getTruckTypes = async () => {
