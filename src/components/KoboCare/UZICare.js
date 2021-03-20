@@ -6,11 +6,10 @@ import diesel from "../../images/diesel.png";
 import oil from "../../images/oil.png";
 import Footer from "../common/Footer";
 import logocolored from "../../images/logo.png";
-import { httpGetNoToken, httpPostNoToken } from "../helpers/api";
+import { httpPostNoToken } from "../helpers/api";
 import ReactPhoneInput from "react-phone-input-2";
 import Loader from "../helpers/Loader";
 import Swal from "sweetalert2";
-import { handleError } from "../helpers/errorHandler";
 import axios from "axios";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
@@ -21,16 +20,10 @@ const KoboCare = () => {
     window.scrollTo(0, 0);
   });
 
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}route/country`).then((res) => {
-      setCountry(res.data.data.countries);
-    });
-  }, []);
-
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [mobile, setMobile] = useState("");
-  let [country, setCountry] = useState("");
+  let [setCountry] = useState("");
   const [inputValues, setInputValues] = useState({
     first_name: "",
     last_name: "",
@@ -43,6 +36,12 @@ const KoboCare = () => {
     // user_type: "customer",
   });
   // const { lang } = useParams();
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}route/country`).then((res) => {
+      setCountry(res.data.data.countries);
+    });
+  }, [setCountry]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -109,7 +108,7 @@ const KoboCare = () => {
       location: "",
       email: "",
       mobile: "",
-      phone: ""
+      phone: "",
     });
   };
 
