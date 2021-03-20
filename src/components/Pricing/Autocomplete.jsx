@@ -18,7 +18,7 @@ const Autocomplete = ({
 }) => {
   const pickupRef = useRef(null);
   const destinationRef = useRef(null);
-  const [setTrucks] = useState({});
+  const [trucks, setTrucks] = useState({});
   const [truck_types, setTruckTypes] = useState([]);
   const [tonnageRange, setTonnageRange] = useState([]);
 
@@ -66,7 +66,7 @@ const Autocomplete = ({
     getRef();
     _getRef();
     console.log(res);
-  }, [getRef, _getRef, setTrucks]);
+  }, [getRef, _getRef]);
 
   // useEffect(() => {
   //   if (state.truck_types) {
