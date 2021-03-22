@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../common/Footer";
-// import sync from "../../images/synchronize-arrows-1.svg";
 import Swal from "sweetalert2";
 import { httpGetNoToken } from ".././helpers/api";
 import TheHeader from "../common/TheHeader";
@@ -19,6 +18,8 @@ const Pricing = () => {
   const [truck_types, setTruckTypes] = useState([]);
   const [costPrice, setCostPrice] = useState("");
   const [sourceAddress, destinationAddress] = useState("");
+  const [pickupState, destinationState] = useState("");
+  // const [state, setInfo] = useState("");
   const [tonnage, center] = useState("");
   const [source, setSource] = useState({});
   const [destination, setDestination] = useState({});
@@ -37,10 +38,8 @@ const Pricing = () => {
   }, []);
 
   const [inputValues, setInputValues] = useState({
-    tonnage: "",
     truckType: "",
-    source: "",
-    destinationAddress: "",
+    tonnage: "",
   });
 
   const toPlayStore = () => {
@@ -111,7 +110,7 @@ const Pricing = () => {
 
   const handlePlaceSelect = (e) => {
     //console.log('e>>',autocomplete.getPlace());
-    // let addressObject = autocomplete.getDirectionService();
+    // let addressObject = autocomplete.getPlace();
     // if (addressObject !== undefined) {
     //   let sourceLat = addressObject.geometry
     //     ? addressObject.geometry.location.lat()
@@ -130,7 +129,7 @@ const Pricing = () => {
 
   // Extract City From Address Object
   const _handlePlaceSelect = (e) => {
-    // let addressObject = autocomplete_.getDirectionService();
+    // let addressObject = autocomplete_.getPlace();
     // if (addressObject !== undefined) {
     //   let destLat = addressObject.geometry.location.lat();
     //   let destLng = addressObject.geometry.location.lng();
@@ -151,20 +150,6 @@ const Pricing = () => {
   //   e.preventDefault();
   //   window.location.reload();
   // };
-
-  const clearForm = () => {
-    setInputValues({
-      ...inputValues,
-      secret: "",
-      // tonnage: "",
-      truckType: "",
-      sourceAddress: "",
-      destinationAddress: "",
-      truck_types,
-      destination: "",
-      source: "",
-    });
-  };
 
   const onSubmit = async (e) => {
     try {
@@ -208,7 +193,6 @@ const Pricing = () => {
         // anonymous function to capture directions
         setLoading(false);
         setSubmitting(false);
-        // clearForm();
         if (status !== "OK") {
           window.alert("Directions request failed due to " + status);
           return;
@@ -229,7 +213,6 @@ const Pricing = () => {
     } catch (error) {
       setLoading(false);
       setSubmitting(false);
-      clearForm();
       const msg =
         typeof error !== "object"
           ? error.response.data.message
@@ -241,8 +224,16 @@ const Pricing = () => {
         type: "error",
       });
       setSubmitting(false);
-      clearForm();
+      clearSearchForm();
     }
+  };
+
+  const clearSearchForm = () => {
+    setInputValues({
+      ...inputValues,
+      truckType: "",
+      tonnage: "",
+    });
   };
 
   const handleChange = (e) => {
@@ -315,7 +306,7 @@ const Pricing = () => {
                 {" "}
                 <FormattedMessage
                   id="app.estimator-range"
-                  defaultMessage="The service is going to cost :"
+                  defaultMessage="The cost of the service is :"
                 />
               </p>
               <p className="bold white font-5">

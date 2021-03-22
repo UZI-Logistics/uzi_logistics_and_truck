@@ -7,22 +7,21 @@
         "@amcharts/amcharts4-geodata": "^4.1.19",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.2.5",
-        "@testing-library/user-event": "13.0.6",
         "aos": "^2.3.4",
         "axios": "^0.21.1",
         "clsx": "^1.1.1",
-        "core-js": "3",
-        "framer-motion": "^3.0.0",
+        "core-js": "^3.9.1",
+        "framer-motion": "^3.10.6",
         "google-maps-react": "2.0.6",
         "node-sass": "4.14.1",
         "react": "^16.0.1",
-        "react-dom": "^16.0.1",
-        "react-ga": "3.3.0",
+        "react-dom": "^16.14.0",
+        "react-ga": "^3.3.0",
         "react-helmet": "^6.1.0",
         "react-intl": "^5.10.9",
         "react-phone-input-2": "2.13.9",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "4.0.3",
+        "react-scripts": "^4.0.3",
         "resolve-url-loader": "^3.1.2",
         "sweetalert2": "^10.12.5",
         "web-vitals": "^0.2.4"
@@ -51,5 +50,7 @@
             "last 1 safari version"
         ]
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "@testing-library/dom": "^7.30.0"
+    }
 }
