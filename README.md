@@ -8,7 +8,7 @@ Inorder to contribute to this project, make sure you have node-js installed and 
 ```
 This is so you have the latest version of the app.
 
-In the Project Directory, you have to run"
+In the Project Directory"
 ------
 ```
 To start the project:
