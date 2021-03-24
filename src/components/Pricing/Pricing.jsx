@@ -13,12 +13,12 @@ import MapContainer from "./Map";
 import SEO from "../SEO";
 
 const Pricing = () => {
-  const [submitting, setSubmitting] = useState(false);
+  const [setSubmitting] = useState(false);
   const [loading, setLoading] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
   const [costPrice, setCostPrice] = useState("");
   const [sourceAddress, destinationAddress] = useState("");
-  const [pickupState, destinationState] = useState("");
+  // const [pickupState, destinationState] = useState("");
   // const [state, setInfo] = useState("");
   const [tonnage, center] = useState("");
   const [source, setSource] = useState({});
