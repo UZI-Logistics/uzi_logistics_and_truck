@@ -18,8 +18,6 @@ const Pricing = () => {
   const [truck_types, setTruckTypes] = useState([]);
   const [costPrice, setCostPrice] = useState("");
   const [sourceAddress, destinationAddress] = useState("");
-  const [pickupState, destinationState] = useState("");
-  // const [state, setInfo] = useState("");
   const [tonnage, center] = useState("");
   const [source, setSource] = useState({});
   const [destination, setDestination] = useState({});
