@@ -13,17 +13,22 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
-// import { useParams } from "react-router-dom";
 
 const KoboCare = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}route/country`).then((res) => {
+      setCountry(res.data.data.countries);
+    });
+  }, []);
+
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [mobile, setMobile] = useState("");
-  let [setCountry] = useState("");
+  let [country, setCountry] = useState("");
   const [inputValues, setInputValues] = useState({
     first_name: "",
     last_name: "",
@@ -36,12 +41,6 @@ const KoboCare = () => {
     // user_type: "customer",
   });
   // const { lang } = useParams();
-
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}route/country`).then((res) => {
-      setCountry(res.data.data.countries);
-    });
-  }, [setCountry]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -282,15 +281,15 @@ const KoboCare = () => {
                       onChange={handleChange}
                     >
                       <option className="close">Select Country</option>
-                      <option value="ng">Nigeria</option>
-                      <option value="gh">Ghana</option>
-                      {/* {country
-                       ? country.map((countries) => (
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="Ghana">Ghana</option>
+                      {country
+                        ? country.map((countries) => (
                             <option value={countries.country}>
-                             {countries.country.toUpperCase()}
+                              {countries.country.toUpperCase()}
                             </option>
                           ))
-                         : ""} */}
+                        : ""}
                     </select>
                   </div>
 

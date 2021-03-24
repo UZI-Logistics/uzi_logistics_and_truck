@@ -18,7 +18,7 @@ const Autocomplete = ({
 }) => {
   const pickupRef = useRef(null);
   const destinationRef = useRef(null);
-  const [setTrucks] = useState({});
+  // const [setTrucks] = useState({});
   const [truck_types, setTruckTypes] = useState([]);
   const [tonnageRange, setTonnageRange] = useState([]);
 
@@ -61,7 +61,7 @@ const Autocomplete = ({
   useEffect(() => {
     getTruckTypes();
     let res = httpGetNoToken("get_truck_types").then((data) => {
-      setTrucks(data.data.data);
+      // setTrucks(data.data.data);
     });
     getRef();
     _getRef();
