@@ -10,11 +10,12 @@ const Loader = ({ color }) => (
 );
 
 Loader.defaultProps = {
-  color: "white"
+  color: "Blue",
+  fontSize: "15px",
 };
 
 Loader.propTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
 };
 
 export default Loader;

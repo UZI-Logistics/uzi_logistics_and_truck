@@ -14,6 +14,7 @@ import SEO from "../SEO";
 
 const Pricing = () => {
   const [submitting, setSubmitting] = useState(false);
+  // const setSubmitting = useState('');
   const [loading, setLoading] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
   const [costPrice, setCostPrice] = useState("");
@@ -190,7 +191,7 @@ const Pricing = () => {
       directionsService.route(route, function (response, status) {
         // anonymous function to capture directions
         setLoading(false);
-        setSubmitting(false);
+        setSubmitting(!submitting);
         if (status !== "OK") {
           window.alert("Directions request failed due to " + status);
           return;
