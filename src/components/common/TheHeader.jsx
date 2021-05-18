@@ -291,7 +291,7 @@ const TheHeader = (props) => {
         </div>
       </ul>
 
-      <div className={`select-dropdown ${toggle ? "none" : ""} `}>
+      {/* <div className={`select-dropdown ${toggle ? "none" : ""} `}>
         <select
           className="header_language pointer"
           onChange={onChange}
@@ -301,16 +301,16 @@ const TheHeader = (props) => {
           <option value="en">ENGLISH</option>
           <option value="fr">FRANÇAIS</option>
           <option value="ha">HAUSA</option>
-          {/* <option value="sw">SWAHILI</option> */}
-          {/* <option value="ar">ARABIC</option> */}
+          <option value="sw">SWAHILI</option>
+          <option value="ar">ARABIC</option>
         </select>
-      </div>
+      </div> */}
       <div
-        className={`kobo360 nav-item pointer set-flex ${props.color} ${
+        className={`uzi-logistics nav-item pointer set-flex ${props.color} ${
           toggle ? "none" : ""
         } `}
       >
-        {code || "NG"}
+        {/* {code || "NG"} */}
         {countries.length > 0 &&
         countries.find(
           (country) =>

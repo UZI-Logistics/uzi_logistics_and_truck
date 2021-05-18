@@ -7,10 +7,10 @@ import Loader from "../helpers/Loader";
 import Swal from "sweetalert2";
 import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
-import logo from "../../images/logo-white.png";
+import logo from "../../images/logo2.png";
 import { httpGetNoToken, httpPostNoToken } from "../helpers/api";
 import { Slider } from "../helpers/Slider";
-import userguideenglish from "../../kobo360-guide-english.pdf";
+// import userguideenglish from "../../kobo360-guide-english.pdf";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 
@@ -22,6 +22,7 @@ const Home = () => {
   const [trucks] = useState({});
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
+  const [loading, setIsLoading] = useState(false);
 
   const [truck_types, setTruckTypes] = useState([]);
 
@@ -64,9 +65,10 @@ const Home = () => {
       let res = await httpGetNoToken("get_truck_types");
       console.log("res>", res);
       setTruckTypes(res.data);
+      setIsLoading(true);
     } catch (error) {
-      
       console.log("error", error);
+      setIsLoading(false);
     }
   };
 
@@ -97,19 +99,23 @@ const Home = () => {
 
   const toPlayStore = () => {
     window.open(
-      "https://play.google.com/store/apps/details?id=io.kobodriver.kobodriver"
+      // "https://play.google.com/store/apps/details?id=io.kobodriver.kobodriver"
+      "#"
     );
   };
 
   const toAppleStore = () => {
-    window.open("https://apps.apple.com/gh/app/kobo-customer/id1476414044");
+    window.open(
+      // "https://apps.apple.com/gh/app/kobo-customer/id1476414044"
+      "#"
+    );
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
-  
+
   const register = async (e) => {
     try {
       e.preventDefault();
@@ -206,9 +212,7 @@ const Home = () => {
                 <button
                   className="home-button capitalize margin-bottom-1"
                   onClick={() =>
-                    window.open(
-                      "https://customer.uzi-logistics-&-trucking.com/"
-                    )
+                    window.open("https://admin-uzi-logistics.netlify.app/")
                   }
                 >
                   <FormattedMessage
@@ -219,7 +223,7 @@ const Home = () => {
                 <button
                   className="home-button capitalize"
                   onClick={() =>
-                    window.open("https://partner.uzi-logistics-&-trucking.com/")
+                    window.open("https://admin-uzi-logistics.netlify.app/")
                   }
                 >
                   <FormattedMessage
@@ -231,7 +235,7 @@ const Home = () => {
                   className="home-button capitalize"
                   onClick={() =>
                     // window.open("https://admin.uzi-logistics-&-trucking.com/")
-                    window.open("http://localhost:3001/")
+                    window.open("https://admin-uzi-logistics.netlify.app/")
                   }
                 >
                   <FormattedMessage id="app.sig" defaultMessage="ADMIN LOGIN" />
@@ -349,42 +353,45 @@ const Home = () => {
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="flex-column ">
-                    <label htmlFor="model" className="input-text font-smaller">
-                      <FormattedMessage
-                        id="app.truck-type"
-                        defaultMessage="Truck type"
-                      />
-                    </label>
-                    <select
-                      name="truckType"
-                      className="select-box"
-                      required
-                      onChange={handleChange}
-                    >
-                      <option value=""></option>
-                      {truck_types.map((item, index) => (
-                        <option value={item.id} key={index}>
-                          {item.name}
-                        </option>
-                      ))}
-                      {trucks.assetClasses
-                        ? [
-                            ...new Set(
-                              trucks.assetClasses.map((asset, index) => (
-                                <option
-                                  key={index}
-                                  value={`${asset.name} ${asset.size}${asset.unit}`}
-                                >
-                                  {asset.name.toUpperCase()} {asset.size}
-                                  {asset.unit}
-                                </option>
-                              ))
-                            ),
-                          ]
-                        : ""}
-                    </select>
-                  </div>
+                    <div className="flex-column ">
+                      <label
+                        htmlFor="model"
+                        className="input-text font-smaller"
+                      >
+                        <FormattedMessage
+                          id="app.truck-type"
+                          defaultMessage="Truck type"
+                        />
+                      </label>
+                      <select
+                        name="truckType"
+                        className="select-box"
+                        required
+                        onChange={handleChange}
+                      >
+                        <option value=""></option>
+                        {truck_types.map((item, index) => (
+                          <option value={item.id} key={index}>
+                            {item.name}
+                          </option>
+                        ))}
+                        {trucks.assetClasses
+                          ? [
+                              ...new Set(
+                                trucks.assetClasses.map((asset, index) => (
+                                  <option
+                                    key={index}
+                                    value={`${asset.name} ${asset.size}${asset.unit}`}
+                                  >
+                                    {asset.name.toUpperCase()} {asset.size}
+                                    {asset.unit}
+                                  </option>
+                                ))
+                              ),
+                            ]
+                          : ""}
+                      </select>
+                    </div>
                 </div>
                 <div className="flex flex-column bottom-padding-20">
                   <label className="label-color font-size-12">
@@ -434,10 +441,10 @@ const Home = () => {
           <div className="home-content">
             <div className="">
               <h1 className="capitalize font-10 title white home-title">
-                <FormattedMessage
+                {/* <FormattedMessage
                   id="app.africa-platform"
                   defaultMessage="NIGERIA LEADING LOGISTICS & TRUCKING PLATFORM"
-                />
+                /> */}
               </h1>
               <div className="home-buttons center">
                 <button
@@ -449,7 +456,42 @@ const Home = () => {
                     defaultMessage="GET STARTED"
                   />
                 </button>
+                <br />
                 <button
+                  className="home-button orange padding-1 capitalize font-size-1rem"
+                  onClick={showModal}
+                >
+                  <FormattedMessage
+                    id="app.sell"
+                    defaultMessage="CLICK HERE TO REGISTER TRUCK"
+                  />
+                </button>
+
+                {/* <div className="download-app download">
+              <p className="capitalize white left margin-bottom-1 download-text">
+                <FormattedMessage
+                  id="app.download"
+                  defaultMessage="download our apps"
+                />
+              </p>
+              <div className="app-store">
+                <img
+                  src={iosstore}
+                  alt="app-store"
+                  onClick={toAppleStore}
+                  className="pointer download-img"
+                  loading="lazy"
+                />
+                <img
+                  src={googlestore}
+                  alt="google-store"
+                  onClick={toPlayStore}
+                  className="pointer download-img"
+                  loading="lazy"
+                />
+              </div>
+            </div> */}
+                {/* <button
                   className="home-button orange padding-1 capitalize font-size-1rem"
                   onClick={showModal}
                 >
@@ -457,10 +499,10 @@ const Home = () => {
                     id="app.sell"
                     defaultMessage="REGISTER TRUCK"
                   />
-                </button>
+                </button> */}
               </div>
 
-              <div className="manual-download capitalize center white pointer margin-1 bold">
+              {/* <div className="manual-download capitalize center white pointer margin-1 bold">
                 <a
                   download="User guide English"
                   target="_blank"
@@ -469,7 +511,7 @@ const Home = () => {
                 >
                   Download the registration manual to learn more
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
