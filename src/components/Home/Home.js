@@ -22,7 +22,7 @@ const Home = () => {
   const [trucks] = useState({});
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
-  const [loading, setIsLoading] = useState(false);
+  // const [loading, setIsLoading] = useState(false);
 
   const [truck_types, setTruckTypes] = useState([]);
 
@@ -65,10 +65,10 @@ const Home = () => {
       let res = await httpGetNoToken("get_truck_types");
       console.log("res>", res);
       setTruckTypes(res.data);
-      setIsLoading(true);
+      // setIsLoading(true);
     } catch (error) {
       console.log("error", error);
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   };
 
