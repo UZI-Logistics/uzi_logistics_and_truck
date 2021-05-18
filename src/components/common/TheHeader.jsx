@@ -388,7 +388,8 @@ const TheHeader = (props) => {
               variants={navItemVariants}
             >
               {" "}
-              GOTRUCKING &nbsp;<i className="fa fa-caret-down"></i>
+              UZI-Logistics-&-Trucking &nbsp;
+              <i className="fa fa-caret-down"></i>
               <div>
                 <div className="dropdown-content">
                   <NavLink
