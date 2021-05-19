@@ -1,5 +1,7 @@
 # Getting Started and contributing to UZI-Logistics-&-Trucking
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9bae90f8-a99c-4069-8dc6-0d96c11e2599/deploy-status)](https://app.netlify.com/sites/uzi-logistics-and-trucking/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Inorder to contribute to this project, make sure you have node-js installed and also create-react-app, then follow the instructions below to clone to your local machine, then create a new branch: 
