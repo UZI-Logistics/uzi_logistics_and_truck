@@ -5,7 +5,7 @@ import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_frozen from "@amcharts/amcharts4/themes/frozen";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import Loader from "../helpers/Loader";
 import Swal from "sweetalert2";
 // import Axios from "axios";
@@ -178,7 +178,7 @@ const Contact = () => {
       longitude: 120,
     };
     var ss = polygonTemplate.states.create("active");
-    ss.properties.fill = am4core.color("#2b3c95");
+    ss.properties.fill = am4core.color("#36b37c");
 
     var hs = polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("#ff932f");

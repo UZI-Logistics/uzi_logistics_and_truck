@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import kgs from "../../images/Group 1406.png";
 import businesses from "../../images/Group 1407.png";
 import fleet from "../../images/fast.png";
@@ -26,7 +26,7 @@ const Services = ({ history }) => {
           color="black"
           sticky="sticky"
         />
-        <div data-aos="zoom-out" className="about">
+        <div data-aos="zoom-out" className="about about-header">
           <div className="about-heading middle">
             <h1 className="capitalize">
               <FormattedMessage
@@ -45,32 +45,6 @@ const Services = ({ history }) => {
           </div>
         </div>
         <div className="flex about-box">
-          <p data-aos="zoom-left" className="about-box__card">
-            <FormattedMessage
-              id="app.about-uzi_logistics"
-              defaultMessage="Our deep industry experience and passion for logistics enable us to meet customers’ demands. We ensure the best customer experience, 
-              competitive pricing and state of the art technology through our mobile and web applications that fosters speed, service and safety with a single click of a button.
-              be the “Top Choice” to our partners and customers worldwide for international freight forwarding and logistics services."
-              description="About UZI Logistics & Trucking"
-            />
-            <br />
-            <br />
-            <FormattedMessage
-              id="app.about-uzi_logistics"
-              defaultMessage="UZI logistics and trucking solutions serves as an extension of your Logistics Team by providing a wide range of strategic, consultative, 
-              and executional supply chain solutions. The people, processes and systems provided by Swift Logistics were built to address the complex needs of our clients 
-              and with a commitment to always provide ’Good Service’"
-              description="About UZI Logistics & Trucking"
-            />
-
-            <br />
-            <br />
-            <FormattedMessage
-              id="app.about-uzi_logistics"
-              defaultMessage="Yes! through the use of technology and on-site management we ensure swift delivery and safety of your cargo to any location in Nigeria and beyond. "
-              description="About UZI Logistics & Trucking"
-            />
-          </p>
           <div className="flex-column box-images">
             <div className="about-box__images flex-align-center hover-scale margin-1">
               <img src={kgs} alt="" data-aos="zoom-in" loading="lazy" />
@@ -112,6 +86,32 @@ const Services = ({ history }) => {
               </span>
             </div>
           </div>
+          <p data-aos="zoom-left" className="about-box__card">
+            <FormattedMessage
+              id="app.about-uzi_logistics"
+              defaultMessage="Our deep industry experience and passion for logistics enable us to meet customers’ demands. We ensure the best customer experience, 
+              competitive pricing and state of the art technology through our mobile and web applications that fosters speed, service and safety with a single click of a button.
+              be the “Top Choice” to our partners and customers worldwide for international freight forwarding and logistics services."
+              description="About UZI Logistics & Trucking"
+            />
+            <br />
+            <br />
+            <FormattedMessage
+              id="app.about-uzi_logistics"
+              defaultMessage="UZI logistics and trucking solutions serves as an extension of your Logistics Team by providing a wide range of strategic, consultative, 
+              and executional supply chain solutions. The people, processes and systems provided by Swift Logistics were built to address the complex needs of our clients 
+              and with a commitment to always provide ’Good Service’"
+              description="About UZI Logistics & Trucking"
+            />
+
+            <br />
+            <br />
+            <FormattedMessage
+              id="app.about-uzi_logistics"
+              defaultMessage="Yes! through the use of technology and on-site management we ensure swift delivery and safety of your cargo to any location in Nigeria and beyond. "
+              description="About UZI Logistics & Trucking"
+            />
+          </p>
         </div>
         <div className="services-added">
           <h1 className="center white title services-title" data-aos="zoom-out">

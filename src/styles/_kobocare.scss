@@ -4,7 +4,8 @@ p {
 }
 
 .care {
-  background-color: colors(light-orange);
+  // background-color: colors(light-orange);
+  background-color: #36b37c;
   padding-top: 8rem;
   padding-bottom: 20rem;
 
@@ -17,14 +18,17 @@ p {
   &-heading {
     flex-direction: column;
   }
+
   &-box {
     margin-left: 4.5rem;
     margin-top: -14.8rem;
     padding-bottom: 5rem;
+
     @include breakpoint(big-desktop-up) {
       align-items: center;
       justify-content: center;
     }
+
     &__card {
       background-color: colors(white);
       margin: 0 5rem;
@@ -35,8 +39,9 @@ p {
 }
 
 .partners {
-  background-color: #fbfbfb;
+  background-color: #36b37c;
   padding: 2rem 1rem;
+
   &-images {
     padding-bottom: 2rem;
     display: flex;
@@ -66,6 +71,7 @@ ul .list-care::before {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -76,11 +82,13 @@ ul .list-care::before {
     &-heading {
       text-align: center;
       padding: 0.1rem 1rem;
+
       & h1 {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
       }
     }
+
     &-box {
       display: block;
       margin-top: -18rem;
@@ -95,12 +103,15 @@ ul .list-care::before {
       }
     }
   }
+
   .kobocare-images {
     display: none !important;
   }
+
   .partners {
     background-color: #fff;
   }
+
   .line {
     width: 8.5rem;
   }
@@ -115,4 +126,8 @@ ul .list-care::before {
       padding-bottom: 2rem;
     }
   }
+}
+
+button.care-button.middle.aos-init.aos-animate {
+  background-color: #d32037;
 }
