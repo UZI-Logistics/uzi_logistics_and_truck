@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactPhoneInput from "react-phone-input-2";
-import kobo from "../../images/gotruck-video.mp4";
+import kobo from "../../images/uzi web main video effects 1.mp4";
 import iosstore from "../../images/app-store-logo@2x.png";
 import googlestore from "../../images/en_badge_web_generic@2x.png";
 import Loader from "../helpers/Loader";
@@ -10,7 +10,6 @@ import TheHeader from "../common/TheHeader";
 import logo from "../../images/logo2.png";
 import { httpGetNoToken, httpPostNoToken } from "../helpers/api";
 import { Slider } from "../helpers/Slider";
-// import userguideenglish from "../../kobo360-guide-english.pdf";
 import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 
@@ -458,7 +457,7 @@ const Home = () => {
                 </button>
                 <br />
                 <button
-                  className="home-button orange padding-1 capitalize font-size-1rem"
+                  className="home-button truck-register padding-1 capitalize font-size-1rem"
                   onClick={showModal}
                 >
                   <FormattedMessage

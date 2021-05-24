@@ -1,4 +1,5 @@
 .awards {
+
   // width: 100%;
   // margin: 0 auto;
   // position: relative;
@@ -10,13 +11,16 @@
       margin-top: 2rem;
     }
   }
+
   @include breakpoint(big-desktop-up) {
     padding-bottom: 8rem;
   }
 }
+
 .react-tel-input .country-list {
   width: 240px !important;
 }
+
 .grayscale {
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
@@ -29,15 +33,17 @@
 }
 
 .green-x {
-  color: colors(green);
+  color: colors(white);
   margin-left: 30rem;
 }
+
 .home-title {
   @include breakpoint(phone-only) {
     font-size: 1.5rem;
     padding: .5rem 1rem;
   }
 }
+
 .video-overlay {
   // position: absolute;
   position: fixed;
@@ -54,11 +60,14 @@
     // display: none;
   }
 }
+
 .header-home {
   height: 100vh;
 }
+
 .slide {
   margin-left: 1.5rem;
+
   @include breakpoint(phone-only) {
     // margin-top: 2rem;
     margin-left: 0;
@@ -67,6 +76,7 @@
     width: 100% !important;
   }
 }
+
 .home {
   min-height: 35rem;
   height: 100vh;
@@ -96,6 +106,7 @@
     @include breakpoint(tablet-portrait-up) {
       margin-top: 14rem;
     }
+
     @include breakpoint(tablet-landscape-up) {
       position: relative;
       color: #fff;
@@ -104,6 +115,7 @@
       width: 100%;
     }
   }
+
   // &-video {
   //   position: fixed;
   //   top: 50%;
@@ -161,24 +173,37 @@
   padding-top: 27rem;
 }
 
+.truck-register {
+  background-color: #E74C3C;
+}
+
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Sit on top */
+  position: fixed;
+  /* Stay in place */
+  z-index: 100;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
   padding-top: 5rem;
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */
   transition: 0.3s all ease;
 }
+
 .register {
   &-box {
     width: 500px;
     margin: 120px auto;
     background-color: colors(modal);
+    // background-color: colors(#36b37e);
     border-radius: 5px;
     padding: 1.5rem;
   }
@@ -189,6 +214,7 @@
     width: 100%;
   }
 }
+
 .signin {
   &-box {
     width: 15em;
@@ -219,11 +245,13 @@
   align-items: center;
   justify-content: center;
 }
+
 .home-button {
   @extend %button;
   border-radius: 5px;
   margin: 10px 0.8rem;
 }
+
 .home-video {
   position: absolute;
   width: 100%;
@@ -231,26 +259,30 @@
   top: 0;
   left: 0;
   z-index: -1;
+
   & video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
     @include breakpoint(phone-only) {
       display: none;
     }
   }
 }
+
 .manual-download {
-  
+
   @include breakpoint(phone-only) {
     padding-bottom: 2.5rem !important;
     font-size: .8rem;
     margin-bottom: 9em;
     margin-left: 3rem;
     margin-right: 3rem;
-    
-   }
+
+  }
 }
+
 .brands {
   // margin: 0 8.5rem;
   // position: relative;
@@ -275,6 +307,7 @@
     width: 100%;
     // bottom: -2rem;
   }
+
   @include breakpoint(tablet-landscape-up) {
     // margin: 0 7rem;
     // position: relative;
@@ -282,6 +315,7 @@
     // margin-top: 7rem;
     // flex-direction: row;
   }
+
   // @include breakpoint(tablet-portrait-up) {
   //   margin: 0;
   //   margin: 0 2rem;
@@ -308,6 +342,7 @@
 .app-store img {
   height: 2.2rem;
 }
+
 .download-img {
   margin-right: 1rem;
 }
@@ -319,6 +354,7 @@
       text-align: center;
     }
   }
+
   @include breakpoint(tablet-portrait-up) {
     &-text {
       text-align: center;
@@ -334,27 +370,32 @@
     text-align: center;
     width: 100% !important;
   }
+
   @include breakpoint(tablet-portrait-up) {
     margin-left: 0;
     // width: 90% !important;
   }
 }
+
 .register-box {
   @include breakpoint(phone-only) {
     width: 300px;
   }
 }
+
 .green-x {
   @include breakpoint(phone-only) {
     margin-left: 17rem;
   }
 }
+
 // .brands-apps {
 //   position: absolute;
 //   bottom: 10%;
 // }
 .trusted-text {
   padding: 0.2rem 0;
+
   @include breakpoint(tablet-portrait-up) {
     text-align: center;
     // padding: 1rem 0;

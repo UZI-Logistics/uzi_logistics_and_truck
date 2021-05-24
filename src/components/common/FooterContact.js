@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import linkedin from "../../images/linkedin.png";
-import twitter from "../../images/twitter (1).png";
 import youtube from "../../images/youtube.png";
 import { FormattedMessage } from "react-intl";
 import { GET } from "../helpers/api";
@@ -127,13 +126,7 @@ const FooterContact = () => {
           >
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
-          <a
-            href="https://twitter.com/kobo_360"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={twitter} alt="twitter" loading="lazy" />
-          </a>
+      
           <a
             href="https://www.linkedin.com/company/kobo360/"
             target="_blank"

@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import loader from "../../images/wait.gif"
 
 const Loader = ({ color }) => (
   <div className={`spinner ${color} smaller inline-spinner`}>
+    {/* <img src={loader} alt="google-map" /> */}
     <div className="bounce1"></div>
     <div className="bounce2"></div>
     <div className="bounce3"></div>
@@ -10,8 +12,9 @@ const Loader = ({ color }) => (
 );
 
 Loader.defaultProps = {
-  color: "Blue",
-  fontSize: "15px",
+  color: "green",
+  fontSize: "3500px",
+
 };
 
 Loader.propTypes = {

@@ -3,7 +3,7 @@ import Footer from "../common/Footer";
 import Swal from "sweetalert2";
 import { httpGetNoToken } from ".././helpers/api";
 import TheHeader from "../common/TheHeader";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import { FormattedMessage } from "react-intl";
 import Loader from "../helpers/Loader";
 import Autocomplete from "./Autocomplete";
@@ -43,12 +43,12 @@ const Pricing = () => {
 
   const toPlayStore = () => {
     window.open(
-      "https://play.google.com/store/apps/details?id=io.kobodriver.kobodriver"
+      "https://play.google.com/store/apps/#"
     );
   };
 
   const toAppleStore = () => {
-    window.open("https://apps.apple.com/gh/app/kobo-customer/id1476414044");
+    window.open("https://apps.apple.com/gh/apps/#");
   };
 
   const setRef = (input) => {

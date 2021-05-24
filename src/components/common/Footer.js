@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import linkedin from "../../images/linkedin.png";
-import twitter from "../../images/twitter (1).png";
 import youtube from "../../images/youtube.png";
 import { FormattedMessage } from "react-intl";
 
@@ -117,35 +116,28 @@ const Footer = () => {
         </p>
         <div className="footer-social__media--logos margin-1">
           <a
-            href="https://www.instagram.com/kobo_360/"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={instagram} alt="instagram" loading="lazy" />
           </a>
           <a
-            href="https://www.facebook.com/kobo360/"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
           <a
-            href="https://twitter.com/kobo_360"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={twitter} alt="twitter" loading="lazy" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/kobo360/"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={linkedin} alt="linkedin" loading="lazy" />
           </a>
           <a
-            href="https://www.youtube.com/channel/UCSMxgq7f51sS9gh3fwbRAWw"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >

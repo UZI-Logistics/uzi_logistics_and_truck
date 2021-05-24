@@ -4,13 +4,15 @@ p {
 }
 
 .about {
-  background-color: colors(light-blue);
+  // background-color: colors(light-blue);
+  background-color: #36b37e;
   padding-top: 8rem;
   padding-bottom: 20rem;
 
   &-heading {
     flex-direction: column;
   }
+
   &-box {
     margin-left: 4.5rem;
     margin-top: -13.8rem;
@@ -20,6 +22,7 @@ p {
       align-items: center;
       justify-content: center;
     }
+
     &__card {
       background-color: colors(white);
       margin: 0 5rem;
@@ -30,7 +33,7 @@ p {
 }
 
 .investors {
-  background-color: #fbfbfb;
+  background-color: #36b37c;
   padding: 2rem 1rem;
 
   &-images {
@@ -42,11 +45,9 @@ p {
 }
 
 .news {
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(0, 57, 115, 1) 0%,
-    rgba(43, 60, 149, 1) 100%
-  );
+  background: -webkit-linear-gradient(90deg,
+      rgba(54, 179, 124, 1) 0%,
+      rgba(54, 179, 124, 1) 100%);
 
   &-card {
     position: relative;
@@ -60,10 +61,12 @@ p {
     @include breakpoint(tablet-landscape-up) {
       grid-template-columns: repeat(3, 220px);
     }
+
     @include breakpoint(big-desktop-up) {
       grid-template-columns: repeat(5, 300px);
       justify-content: center;
     }
+
     &__content {
       background-color: colors(white);
       border-top-left-radius: 0.3rem;
@@ -82,6 +85,7 @@ p {
         margin-bottom: 1rem;
         background-color: transparent !important;
       }
+
       &--text {
         margin: 0 1rem;
       }
@@ -97,11 +101,13 @@ p {
   .about {
     &-heading {
       text-align: center;
+
       & h1 {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
       }
     }
+
     &-box {
       display: block;
       margin-top: -18rem;
@@ -114,11 +120,13 @@ p {
         margin: 0 0.3rem;
         border-radius: 1rem;
       }
+
       .box-images {
         display: none !important;
       }
     }
   }
+
   .investors {
     background-color: colors(white) !important;
 
@@ -137,6 +145,7 @@ p {
       }
     }
   }
+
   .news-card {
     grid-template-columns: repeat(1, 1fr);
     padding: 0;
@@ -149,11 +158,17 @@ p {
     grid-template-columns: repeat(1, 345px);
   }
 }
+
 @media (min-width: 790px) and (max-width: 1280px) {
   .about-box {
     margin-left: 2.5rem;
   }
+
   // .news-card {
   //   margin-left: 5.5rem;
   // }
+}
+
+img.about-small.aos-animate {
+  border-radius: 5rem;
 }

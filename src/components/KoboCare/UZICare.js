@@ -4,8 +4,9 @@ import TheHeader from "../common/TheHeader";
 import tyres from "../../images/tyres.png";
 import diesel from "../../images/diesel.png";
 import oil from "../../images/oil.png";
+import oando from "../../images/oando.png"
 import Footer from "../common/Footer";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import { httpPostNoToken } from "../helpers/api";
 import ReactPhoneInput from "react-phone-input-2";
 import Loader from "../helpers/Loader";
@@ -445,9 +446,10 @@ const KoboCare = () => {
             />
           </h1>
           <div className="partners-images" data-aos="zoom-out">
-            {/* <img className="big" src={oando} alt="" loading="lazy" />
+            <h3>Coming Soon ...</h3>
+           {/*  <img className="big" src={oando} alt="" loading="lazy" />
             <img className="small-icon" src={total} alt="" loading="lazy" />
-            <img className="small-icon" src={danco} alt="" loading="lazy" /> */}
+            <img className="small-icon" src={danco} alt="" loading="lazy" />  */}
           </div>
         </div>
         <Footer />

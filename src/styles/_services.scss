@@ -1,11 +1,13 @@
 .services {
-  background-color: colors(light-blue);
+  // background-color: colors(light-blue);
+  background-color: #36b37e;
   padding-top: 8rem;
   padding-bottom: 19rem;
 
   &-heading {
     flex-direction: column;
   }
+
   &-box {
     margin-left: 5.5rem;
     margin-top: -14.8rem;
@@ -27,12 +29,12 @@
       width: 45%;
     }
   }
+
   &-added {
-    background: -webkit-linear-gradient(
-      90deg,
-      rgba(0, 57, 115, 1) 0%,
-      rgba(43, 60, 149, 1) 100%
-    );
+    background: -webkit-linear-gradient(90deg,
+        rgba(54, 179, 124, 1) 0%,
+        rgba(54, 179, 124, 1) 100%);
+
     &__card {
       border-top-left-radius: 3rem;
       border-bottom-left-radius: 3rem;
@@ -42,9 +44,10 @@
       width: 40%;
 
       & img {
-        width: 15rem;
+        width: 25rem;
       }
     }
+
     &__content {
       justify-content: space-around;
       padding-bottom: 5rem;
@@ -65,11 +68,13 @@
   .services {
     &-heading {
       text-align: center;
+
       & h1 {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
       }
     }
+
     &-box {
       display: block;
       margin-top: -18rem;
@@ -82,6 +87,7 @@
         margin: 0 0.3rem;
         border-radius: 1rem;
       }
+
       // .box-images {
       // }
       &__images {
@@ -90,9 +96,11 @@
       }
     }
   }
+
   .services-title {
     padding: 1rem !important;
   }
+
   .services-added__content {
     display: flex;
     flex-direction: column;
@@ -105,6 +113,7 @@
       object-fit: cover;
     }
   }
+
   .services-added__card {
     margin-bottom: 2rem;
     width: 98%;

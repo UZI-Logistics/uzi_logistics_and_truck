@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import TheHeader from "../common/TheHeader";
 import { FormattedMessage } from "react-intl";
 import Footer from "../common/Footer";
@@ -17,24 +17,7 @@ const TradeIn = () => {
   const [submitting, setSubmitting] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
   const [tonnageRange, setTonnageRange] = useState([
-    2,
-    3,
-    5,
-    8,
-    10,
-    15,
-    16,
-    20,
-    28,
-    30,
-    35,
-    40,
-    45,
-    50,
-    60,
-    1000,
-    33000,
-    45000,
+    2, 3, 5, 8, 10, 15, 16, 20, 28, 30, 35, 40, 45, 50, 60, 1000, 33000, 45000,
   ]);
 
   const getTruckTypes = async () => {

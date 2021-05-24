@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logocolored from "../../images/logo.png";
+import logocolored from "../../images/logo-green.png";
 import { FormattedMessage } from "react-intl";
 import TheHeader from "../common/TheHeader";
 import joining from "../../images/joining@2x.png";
