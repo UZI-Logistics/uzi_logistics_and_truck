@@ -33,7 +33,7 @@
 }
 
 .green-x {
-  color: colors(white);
+  color: colors(#36b37e);
   margin-left: 30rem;
 }
 
@@ -173,8 +173,12 @@
   padding-top: 27rem;
 }
 
+.reg-button {
+  background-color: #d32037;
+}
+
 .truck-register {
-  background-color: #E74C3C;
+  background-color: #d32037;
 }
 
 .modal {
@@ -191,9 +195,10 @@
   overflow: auto;
   /* Enable scroll if needed */
   padding-top: 5rem;
-  background-color: rgb(0, 0, 0);
+  // background-color: rgb(0, 0, 0);
+  background-color: rgb(54, 179, 124);
   /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(133, 103, 103, 0.6);
   /* Black w/ opacity */
   transition: 0.3s all ease;
 }
@@ -202,8 +207,8 @@
   &-box {
     width: 500px;
     margin: 120px auto;
-    background-color: colors(modal);
-    // background-color: colors(#36b37e);
+    // background-color: colors(modal);
+    background-color: #36b37e;
     border-radius: 5px;
     padding: 1.5rem;
   }

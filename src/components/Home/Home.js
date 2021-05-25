@@ -417,7 +417,7 @@ const Home = () => {
                   </select>
                 </div>
                 <div className="contact-button">
-                  <button type="submit" className="register-button">
+                  <button type="submit" className="register-button reg-button">
                     {submitting ? (
                       <Loader />
                     ) : (
@@ -440,10 +440,10 @@ const Home = () => {
           <div className="home-content">
             <div className="">
               <h1 className="capitalize font-10 title white home-title">
-                {/* <FormattedMessage
+                <FormattedMessage
                   id="app.africa-platform"
-                  defaultMessage="NIGERIA LEADING LOGISTICS & TRUCKING PLATFORM"
-                /> */}
+                  defaultMessage="YOUR RELIABLE LOGISTICS PARTNER"
+                />
               </h1>
               <div className="home-buttons center">
                 <button
