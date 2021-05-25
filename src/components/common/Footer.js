@@ -116,28 +116,28 @@ const Footer = () => {
         </p>
         <div className="footer-social__media--logos margin-1">
           <a
-            href="#"
+            href="#/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={instagram} alt="instagram" loading="lazy" />
           </a>
           <a
-            href="#"
+            href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
           <a
-            href="#"
+            href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={linkedin} alt="linkedin" loading="lazy" />
           </a>
           <a
-            href="#"
+            href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >

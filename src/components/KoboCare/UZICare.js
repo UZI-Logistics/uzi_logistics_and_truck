@@ -4,7 +4,6 @@ import TheHeader from "../common/TheHeader";
 import tyres from "../../images/tyres.png";
 import diesel from "../../images/diesel.png";
 import oil from "../../images/oil.png";
-import oando from "../../images/oando.png"
 import Footer from "../common/Footer";
 import logocolored from "../../images/logo-green.png";
 import { httpPostNoToken } from "../helpers/api";

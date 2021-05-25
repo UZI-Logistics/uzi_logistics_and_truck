@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className="loading">
       <img src={Spinner} loading="lazy" alt="logo" />
-      <h3 style={{ color: "green" }}>Your Go-to Logisitics Platform...</h3>
+      <h3 style={{ color: "green" }}>Your Reliable Logistics Partner...</h3>
     </div>
   );
 };
