@@ -579,7 +579,7 @@ const Contact = () => {
                       name="name"
                       value={inputValues.name}
                       placeholder=""
-                      required
+                      // required
                       onChange={handleChange}
                     />
                   </div>
@@ -594,7 +594,7 @@ const Contact = () => {
                       type="text"
                       name="business"
                       placeholder=""
-                      required
+                      // required
                       value={inputValues.business}
                       onChange={handleChange}
                     />
@@ -614,7 +614,7 @@ const Contact = () => {
                       type="text"
                       placeholder=""
                       name="email"
-                      required
+                      // required
                       value={inputValues.email}
                       onChange={handleChange}
                     />
@@ -623,14 +623,14 @@ const Contact = () => {
                     <label htmlFor="model" className="grey">
                       <FormattedMessage
                         id="app.phone-number"
-                        // defaultMessage="Phone number"
+                        defaultMessage="Phone number"
                       />
                     </label>
                     <input
                       type="text"
                       placeholder=""
                       name="phone"
-                      required
+                      // required
                       value={inputValues.phone}
                       onChange={handleChange}
                     />
@@ -647,7 +647,7 @@ const Contact = () => {
                     type="text"
                     name="message"
                     className=""
-                    required
+                    // required
                     cols={2}
                     rows={2}
                     value={inputValues.message}

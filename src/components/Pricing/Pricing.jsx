@@ -43,12 +43,12 @@ const Pricing = () => {
 
   const toPlayStore = () => {
     window.open(
-      "https://play.google.com/store/apps/#"
+      "https://play.google.com/store/apps/"
     );
   };
 
   const toAppleStore = () => {
-    window.open("https://apps.apple.com/gh/apps/#");
+    window.open("https://apps.apple.com/gh/apps/");
   };
 
   const setRef = (input) => {

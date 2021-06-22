@@ -124,16 +124,14 @@ const TheHeader = (props) => {
     let origin = window.location.origin;
 
     window.location.replace(
-      `${origin}/${localStorage.code}/${
-        localStorage.locale || "en"
+      `${origin}/${localStorage.code}/${localStorage.locale || "en"
       }/${pathname}`
     );
   }
   return (
     <div
-      className={`header ${props.color} ${props.bgColor || ""} ${
-        scroll ? props.sticky : ""
-      }`}
+      className={`header ${props.color} ${props.bgColor || ""} ${scroll ? props.sticky : ""
+        }`}
     >
       <NavLink to={`/${code || "NG"}/${language}/`}>
         <img src={props.kobo} alt="logo" loading="lazy" />
@@ -147,9 +145,8 @@ const TheHeader = (props) => {
               <NavLink
                 className=""
                 // to={`/${code || "NG"}/${language}/about-kobo360`}
-                to={`/${
-                  code || "NG"
-                }/${language}/about-uzi-logistics-&-trucking`}
+                to={`/${code || "NG"
+                  }/${language}/about-uzi-logistics-&-trucking`}
               >
                 <div className="span dropdown">
                   <i className="fa fa-caret-right"></i>
@@ -261,22 +258,21 @@ const TheHeader = (props) => {
                 className="font-icon-small"
               > */}
               <span
-                onClick={() => window.open("http://localhost:3001/")}
+                onClick={() => window.open("https://test-uzi.vercel.app/")}
                 className="font-icon-small"
               >
                 <FormattedMessage
                   id="app.sig"
-                  defaultMessage="SIGN IN AS CUSTOMER"
+                  defaultMessage="CUSTOMER SIGN-IN"
                 />
               </span>
             </div>
-            <div className="span dropdown kobocare-dropdown-span left-100">
+            {/* <div className="span dropdown kobocare-dropdown-span left-100">
               <i className="fa fa-caret-right"></i>
-
-              {/* <span
+               <span
                 className="font-icon-small"
                 onClick={() => window.open("https://partner.kobo360.com/")}
-              > */}
+              >
               <span
                 className="font-icon-small"
                 onClick={() => window.open("http://localhost:3001")}
@@ -286,7 +282,7 @@ const TheHeader = (props) => {
                   defaultMessage="SIGN IN AS PARTNER"
                 />
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </ul>
@@ -306,17 +302,16 @@ const TheHeader = (props) => {
         </select>
       </div> */}
       <div
-        className={`uzi-logistics nav-item pointer set-flex ${props.color} ${
-          toggle ? "none" : ""
-        } `}
+        className={`uzi-logistics nav-item pointer set-flex ${props.color} ${toggle ? "none" : ""
+          } `}
       >
         {/* {code || "NG"} */}
         {countries.length > 0 &&
-        countries.find(
-          (country) =>
-            country.countryCode.toLowerCase() ===
-            ((code && code.toLowerCase()) || "ng")
-        ) ? (
+          countries.find(
+            (country) =>
+              country.countryCode.toLowerCase() ===
+              ((code && code.toLowerCase()) || "ng")
+          ) ? (
           <img
             loading="lazy"
             src={
@@ -358,9 +353,8 @@ const TheHeader = (props) => {
       )}
       {/* MobileMenu list */}
       <div
-        className={` ${
-          hamburgerOpen ? "header-menu__list white show" : "close"
-        } `}
+        className={` ${hamburgerOpen ? "header-menu__list white show" : "close"
+          } `}
         initial="hidden"
         animate={hamburgerOpen ? "visible" : "hidden"}
         variants={navVariants}
@@ -395,7 +389,7 @@ const TheHeader = (props) => {
                   <NavLink
                     className=""
                     exact={true}
-                    to={`/${code || "NG"}/${language}/about-kobo360`}
+                    to={`/${code || "NG"}/${language}/about-uzi-logistics-&-trucking`}
                   >
                     <div className="span dropdown">
                       <span>
@@ -517,21 +511,26 @@ const TheHeader = (props) => {
             <div className="dropdown-content ">
               <div className="span dropdown kobocare-dropdown-span">
                 <i className="fa fa-caret-right"></i>
-                {/* <span
-                  onClick={() => window.open("https://customer.kobo360.com/")}
-                  className="font-icon-small"
-                > */}
                 <span
-                  onClick={() => window.open("http://localhost:3001/")}
+                  onClick={() => window.open("https://test-uzi.vercel.app/")}
                   className="font-icon-small"
                 >
                   <FormattedMessage
                     id="app.sig"
-                    defaultMessage="SIGN IN AS CUSTOMER"
+                    defaultMessage="ADMIN LOGIN"
+                  />
+                </span>
+                <span
+                  onClick={() => window.open("https://test-uzi.vercel.app/")}
+                  className="font-icon-small"
+                >
+                  <FormattedMessage
+                    id="app.sig"
+                    defaultMessage="CUSTOMER SIGN IN"
                   />
                 </span>
               </div>
-              <div className="span dropdown kobocare-dropdown-span ">
+              {/* <div className="span dropdown kobocare-dropdown-span ">
                 <i className="fa fa-caret-right"></i>
                 <span
                   className="font-icon-small"
@@ -542,7 +541,7 @@ const TheHeader = (props) => {
                     defaultMessage="SIGN IN AS PARTNER"
                   />
                 </span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -562,11 +561,11 @@ const TheHeader = (props) => {
             <div className={`kobo360 nav-item pointer set-flex ${props.color}`}>
               {code || "NG"}
               {countries.length > 0 &&
-              countries.find(
-                (country) =>
-                  country.countryCode.toLowerCase() ===
-                  ((code && code.toLowerCase()) || "ng")
-              ) ? (
+                countries.find(
+                  (country) =>
+                    country.countryCode.toLowerCase() ===
+                    ((code && code.toLowerCase()) || "ng")
+                ) ? (
                 <img
                   loading="lazy"
                   src={
@@ -591,9 +590,8 @@ const TheHeader = (props) => {
                   countries.map(({ country, countryCode }, i) => (
                     <div
                       onClick={() => setCountryCode(countryCode)}
-                      className={`country ${
-                        countryCode === code ? "active" : ""
-                      } `}
+                      className={`country ${countryCode === code ? "active" : ""
+                        } `}
                       key={i}
                     >
                       {country}
