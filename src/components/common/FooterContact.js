@@ -54,7 +54,7 @@ const FooterContact = () => {
             {" "}
             <NavLink
               className="list pointer"
-              to={`/${code}/${language}/about-kobo360`}
+              to={`/${code}/${language}/about-uzi-logistics-&-trucking`}
             >
               <FormattedMessage id="app.about" defaultMessage="About Us" />
             </NavLink>
@@ -113,29 +113,29 @@ const FooterContact = () => {
         </p>
         <div className="footer-social__media--logos margin-1">
           <a
-            href="https://www.instagram.com/kobo_360/"
+            href="https://www.instagram.com/uzitruckingandlogistics/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={instagram} alt="instagram" loading="lazy"/>
+            <img src={instagram} alt="instagram" loading="lazy" />
           </a>
           <a
-            href="https://www.facebook.com/kobo360/"
+            href="https://web.facebook.com/UZI-Trucking-and-Logistics-104745208506879/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
-      
+
           <a
-            href="https://www.linkedin.com/company/kobo360/"
+            href="#/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={linkedin} alt="linkedin" loading="lazy" />
           </a>
           <a
-            href="https://www.youtube.com/channel/UCSMxgq7f51sS9gh3fwbRAWw"
+            href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >

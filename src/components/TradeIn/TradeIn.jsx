@@ -12,8 +12,6 @@ import SEO from "../SEO";
 import { Event } from "../helpers/tracking";
 
 const TradeIn = () => {
-  // const token =
-  //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50SWQiOjg3MDgsInVzZXJUeXBlIjoiYWRtaW4iLCJlbWFpbCI6InllbWlAa29ibzM2MC5jb20iLCJtb2JpbGUiOiJ5ZW1pQGtvYm8zNjAuY29tIiwiZmlyc3ROYW1lIjoiTmV3IiwibGFzdE5hbWUiOiItIiwibW9iaWxlVmVyaWZpZWQiOjAsImVtYWlsVmVyaWZpZWQiOjAsInJvbGUiOiJTdXBlckFkbWluIiwiYWRtaW5JZCI6MzksInVuaXF1ZUhhc2giOiI1ZGI5OGZiODc1MjUwIiwiaXNzIjoiS29ibzM2MCIsImlhdCI6MTU3MjQ0MjA0MCwiZXhwIjoxNTczMDQ2ODQwfQ.H7wdFPkcm40052pQhT8-ZAO721e8N96FcMNjtrA3OaY";
   const [submitting, setSubmitting] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
   const [tonnageRange, setTonnageRange] = useState([
@@ -87,7 +85,7 @@ const TradeIn = () => {
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted. We will get in touch shortly",
-        type: "success",
+        // type: "success",
       });
       Event(
         "SellTruck",
@@ -101,7 +99,7 @@ const TradeIn = () => {
       Swal.fire({
         title: "Sorry 😞",
         text: error.message,
-        type: "error",
+        // type: "error",
       });
       clearSaleForm();
       setSubmitting(false);
@@ -170,7 +168,6 @@ const TradeIn = () => {
                 <select
                   name="truckType"
                   className="select-box black"
-                  required
                   onChange={(value) => newTonnageRange(value)}
                   value={inputValues.truckType}
                 >

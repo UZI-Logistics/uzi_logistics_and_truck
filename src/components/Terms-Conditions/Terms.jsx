@@ -9,7 +9,7 @@ import SEO from "../SEO";
 
 const Terms = () => {
   useEffect(() => {
-    // document.title = "Kobo360 | Terms and Conditions";
+    // document.title = "Uzi Logistics && Trucking | Terms and Conditions";
     window.scrollTo(0, 0);
   });
   return (

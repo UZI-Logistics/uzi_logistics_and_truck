@@ -22,7 +22,6 @@ const Home = () => {
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
   // const [loading, setIsLoading] = useState(false);
-
   const [truck_types, setTruckTypes] = useState([]);
 
   const [inputValues, setInputValues] = useState({
@@ -98,15 +97,13 @@ const Home = () => {
 
   const toPlayStore = () => {
     window.open(
-      // "https://play.google.com/store/apps/details?id=io.kobodriver.kobodriver"
-      "#"
+      "https://play.google.com/store/apps/"
     );
   };
 
   const toAppleStore = () => {
     window.open(
-      // "https://apps.apple.com/gh/app/kobo-customer/id1476414044"
-      "#"
+      "https://apps.apple.com/apps/"
     );
   };
 
@@ -135,7 +132,7 @@ const Home = () => {
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted. We will get in touch shortly",
-        type: "success",
+        // type: "success",
       });
       Event(
         "Register Truck",
@@ -151,7 +148,7 @@ const Home = () => {
         firstName: "",
         lastName: "",
         location: "",
-        state: "",
+        // state: "",
         email: "",
         phone: "",
       });
@@ -191,7 +188,7 @@ const Home = () => {
       firstName: "",
       lastName: "",
       location: "",
-      state: "",
+      // state: "",
       email: "",
       phone: "",
     });
@@ -211,7 +208,7 @@ const Home = () => {
                 <button
                   className="home-button capitalize margin-bottom-1"
                   onClick={() =>
-                    window.open("https://admin-uzi-logistics.netlify.app/")
+                    window.open("https://test-uzi.vercel.app/")
                   }
                 >
                   <FormattedMessage
@@ -219,7 +216,7 @@ const Home = () => {
                     defaultMessage="SIGN IN AS CUSTOMER"
                   />
                 </button>
-                <button
+                {/* <button
                   className="home-button capitalize"
                   onClick={() =>
                     window.open("https://admin-uzi-logistics.netlify.app/")
@@ -229,12 +226,12 @@ const Home = () => {
                     id="app.sig"
                     defaultMessage="SIGN IN AS PARTNER"
                   />
-                </button>
+                </button> */}
                 <button
                   className="home-button capitalize"
                   onClick={() =>
                     // window.open("https://admin.uzi-logistics-&-trucking.com/")
-                    window.open("https://admin-uzi-logistics.netlify.app/")
+                    window.open("https://test-uzi.vercel.app/")
                   }
                 >
                   <FormattedMessage id="app.sig" defaultMessage="ADMIN LOGIN" />
@@ -285,7 +282,7 @@ const Home = () => {
                       onChange={handleChange}
                       name="firstName"
                       value={inputValues.firstName}
-                      required
+                      //required
                     />
                   </div>
                   <div className="flex-column">
@@ -300,7 +297,7 @@ const Home = () => {
                       placeholder=""
                       name="lastName"
                       value={inputValues.lastName}
-                      required
+                      //required
                       onChange={handleChange}
                     />
                   </div>
@@ -319,7 +316,7 @@ const Home = () => {
                       placeholder=""
                       name="email"
                       value={inputValues.email}
-                      required
+                      //required
                       onChange={handleChange}
                     />
                   </div>
@@ -348,49 +345,49 @@ const Home = () => {
                       placeholder=""
                       name="location"
                       value={inputValues.location}
-                      required
+                      //required
                       onChange={handleChange}
                     />
                   </div>
-                    <div className="flex-column ">
-                      <label
-                        htmlFor="model"
-                        className="input-text font-smaller"
-                      >
-                        <FormattedMessage
-                          id="app.truck-type"
-                          defaultMessage="Truck type"
-                        />
-                      </label>
-                      <select
-                        name="truckType"
-                        className="select-box"
-                        required
-                        onChange={handleChange}
-                      >
-                        <option value=""></option>
-                        {truck_types.map((item, index) => (
-                          <option value={item.id} key={index}>
-                            {item.name}
-                          </option>
-                        ))}
-                        {trucks.assetClasses
-                          ? [
-                              ...new Set(
-                                trucks.assetClasses.map((asset, index) => (
-                                  <option
-                                    key={index}
-                                    value={`${asset.name} ${asset.size}${asset.unit}`}
-                                  >
-                                    {asset.name.toUpperCase()} {asset.size}
-                                    {asset.unit}
-                                  </option>
-                                ))
-                              ),
-                            ]
-                          : ""}
-                      </select>
-                    </div>
+                  <div className="flex-column ">
+                    <label
+                      htmlFor="model"
+                      className="input-text font-smaller"
+                    >
+                      <FormattedMessage
+                        id="app.truck-type"
+                        defaultMessage="Truck type"
+                      />
+                    </label>
+                    <select
+                      name="truckType"
+                      className="select-box"
+                      //required
+                      onChange={handleChange}
+                    >
+                      <option value=""></option>
+                      {truck_types.map((item, index) => (
+                        <option value={item.id} key={index}>
+                          {item.name}
+                        </option>
+                      ))}
+                      {trucks.assetClasses
+                        ? [
+                          ...new Set(
+                            trucks.assetClasses.map((asset, index) => (
+                              <option
+                                key={index}
+                                value={`${asset.name} ${asset.size}${asset.unit}`}
+                              >
+                                {asset.name.toUpperCase()} {asset.size}
+                                {asset.unit}
+                              </option>
+                            ))
+                          ),
+                        ]
+                        : ""}
+                    </select>
+                  </div>
                 </div>
                 <div className="flex flex-column bottom-padding-20">
                   <label className="label-color font-size-12">
