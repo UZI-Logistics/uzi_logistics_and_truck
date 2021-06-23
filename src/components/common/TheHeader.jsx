@@ -258,7 +258,7 @@ const TheHeader = (props) => {
                 className="font-icon-small"
               > */}
               <span
-                onClick={() => window.open("https://test-uzi.vercel.app/")}
+                onClick={() => window.open("https://customer-uzi-logistics.netlify.app/")}
                 className="font-icon-small"
               >
                 <FormattedMessage
