@@ -208,7 +208,7 @@ const Home = () => {
                 <button
                   className="home-button capitalize margin-bottom-1"
                   onClick={() =>
-                    window.open("https://test-uzi.vercel.app/")
+                    window.open("https://customer-uzi-logistics.netlify.app/")
                   }
                 >
                   <FormattedMessage
