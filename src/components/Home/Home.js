@@ -231,7 +231,7 @@ const Home = () => {
                   className="home-button capitalize"
                   onClick={() =>
                     // window.open("https://admin.uzi-logistics-&-trucking.com/")
-                    window.open("https://test-uzi.vercel.app/")
+                    window.open("https://admin-uzi-logistics.netlify.app")
                   }
                 >
                   <FormattedMessage id="app.sig" defaultMessage="ADMIN LOGIN" />
