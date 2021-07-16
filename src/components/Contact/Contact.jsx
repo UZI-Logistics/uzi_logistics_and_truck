@@ -33,7 +33,7 @@ const Contact = () => {
     code: "NG",
     country: "Nigeria",
     address: "49, Bode Thomas street, Surulere, Lagos.",
-    email: "info@uzi-logistics-&-trucking.com",
+    email: "Uzilogisticsandtrucking@gmail.com",
     mobile: "+234 909 874 7941",
   });
 
@@ -52,7 +52,7 @@ const Contact = () => {
       code: "NG",
       country: "Nigeria",
       address: "49, Bode Thomas street, Surulere, Lagos.",
-      email: "info@uzi-logistics-&-trucking.com",
+      email: "Uzilogisticsandtrucking@gmail.com",
       mobile: "+233 909 874 7941",
     },
     {
@@ -60,7 +60,7 @@ const Contact = () => {
       country: "Ghana",
       address:
         "3rd Floor, Excel House Off Nungua Barrier- Sakumono Road, Accra, Ghana",
-      email: "info.gh@uzi-logistics-&-trucking.com",
+      email: "Uzilogisticsandtrucking@gmail.com",
       mobile: "+233 909 874 7941",
     },
   ];
@@ -535,9 +535,8 @@ const Contact = () => {
                 </i>
               </span>
               <span
-                className={`${
-                  step === countries.length - 1 && "disabled"
-                } pointer map-button margin-left-1`}
+                className={`${step === countries.length - 1 && "disabled"
+                  } pointer map-button margin-left-1`}
                 onClick={next}
               >
                 <i className="material-icons map-icon-smaller pointer">

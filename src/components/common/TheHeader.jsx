@@ -133,7 +133,7 @@ const TheHeader = (props) => {
       className={`header ${props.color} ${props.bgColor || ""} ${scroll ? props.sticky : ""
         }`}
     >
-      <NavLink to={`/${code || "NG"}/${language}/`}>
+      <NavLink to="/">
         <img src={props.kobo} alt="logo" loading="lazy" />
       </NavLink>
       <ul className={`header_list ${props.color}`}>
@@ -253,41 +253,33 @@ const TheHeader = (props) => {
           <div className="dropdown-content left-100">
             <div className="span dropdown kobocare-dropdown-span">
               <i className="fa fa-caret-right"></i>
-              {/* <span
-                onClick={() => window.open("https://customer.kobo360.com/")}
-                className="font-icon-small"
-              > */}
               <span
                 onClick={() => window.open("https://customer-uzi-logistics.netlify.app/")}
                 className="font-icon-small"
               >
                 <FormattedMessage
                   id="app.sig"
-                  defaultMessage="CUSTOMER SIGN-IN"
+                  defaultMessage="SIGN-IN AS CUSTOMER"
                 />
               </span>
             </div>
-            {/* <div className="span dropdown kobocare-dropdown-span left-100">
+            <div className="span dropdown kobocare-dropdown-span left-100">
               <i className="fa fa-caret-right"></i>
-               <span
-                className="font-icon-small"
-                onClick={() => window.open("https://partner.kobo360.com/")}
-              >
               <span
                 className="font-icon-small"
-                onClick={() => window.open("http://localhost:3001")}
+                onClick={() => window.open("https://customer-uzi-logistics.netlify.app/")}
               >
                 <FormattedMessage
                   id="app.sig"
                   defaultMessage="SIGN IN AS PARTNER"
                 />
               </span>
-            </div> */}
+            </div>
           </div>
         </div>
       </ul>
 
-      {/* <div className={`select-dropdown ${toggle ? "none" : ""} `}>
+      <div className={`select-dropdown ${toggle ? "none" : ""} `}>
         <select
           className="header_language pointer"
           onChange={onChange}
@@ -300,7 +292,7 @@ const TheHeader = (props) => {
           <option value="sw">SWAHILI</option>
           <option value="ar">ARABIC</option>
         </select>
-      </div> */}
+      </div>
       <div
         className={`uzi-logistics nav-item pointer set-flex ${props.color} ${toggle ? "none" : ""
           } `}
@@ -365,7 +357,7 @@ const TheHeader = (props) => {
             animate={hamburgerOpen ? "visible" : "hidden"}
             variants={navItemVariants}
           >
-            <NavLink className="header-underline" to={`/${code}/${language}/`}>
+            <NavLink className="header-underline" to="/">
               <FormattedMessage id="app.home" defaultMessage="Home" />
             </NavLink>
           </motion.li>
@@ -382,7 +374,7 @@ const TheHeader = (props) => {
               variants={navItemVariants}
             >
               {" "}
-              UZI-Logistics-&-Trucking &nbsp;
+              Uzi-Logistics &nbsp;
               <i className="fa fa-caret-down"></i>
               <div>
                 <div className="dropdown-content">
@@ -501,7 +493,7 @@ const TheHeader = (props) => {
           </motion.li>
 
           <motion.div
-            className="kobo360 margin-1"
+            className="kobo360 margin-2"
             onClick={showDropdown}
             initial="hidden"
             animate={hamburgerOpen ? "visible" : "hidden"}
@@ -512,7 +504,7 @@ const TheHeader = (props) => {
               <div className="span dropdown kobocare-dropdown-span">
                 <i className="fa fa-caret-right"></i>
                 <span
-                  onClick={() => window.open("https://test-uzi.vercel.app/")}
+                  onClick={() => window.open("https://admin-uzi-logistics.netlify.app/")}
                   className="font-icon-small"
                 >
                   <FormattedMessage
@@ -520,33 +512,37 @@ const TheHeader = (props) => {
                     defaultMessage="ADMIN LOGIN"
                   />
                 </span>
+              </div>
+              <div className="span dropdown kobocare-dropdown-span ">
+                <i className="fa fa-caret-right"></i>
                 <span
-                  onClick={() => window.open("https://test-uzi.vercel.app/")}
+                  onClick={() => window.open("https://customer-uzi-logistics.netlify.app/")}
                   className="font-icon-small"
                 >
                   <FormattedMessage
                     id="app.sig"
-                    defaultMessage="CUSTOMER SIGN IN"
+                    defaultMessage="SIGN IN AS CUSTOMER"
                   />
                 </span>
               </div>
-              {/* <div className="span dropdown kobocare-dropdown-span ">
+
+              <div className="span dropdown kobocare-dropdown-span ">
                 <i className="fa fa-caret-right"></i>
                 <span
                   className="font-icon-small"
-                  onClick={() => window.open("http://localhost:3001/")}
+                  onClick={() => window.open("https://customer-uzi-logistics.netlify.app/")}
                 >
                   <FormattedMessage
                     id="app.sig"
                     defaultMessage="SIGN IN AS PARTNER"
                   />
                 </span>
-              </div> */}
+              </div>
             </div>
           </motion.div>
 
           <div className="mobile-sel">
-            <div className={`select-dropdown margin-1`}>
+            {/* <div className={`select-dropdown margin-1`}>
               <select
                 className="header_language pointer"
                 onChange={onChange}
@@ -557,7 +553,7 @@ const TheHeader = (props) => {
                 <option value="fr">FRANÇAIS</option>
                 <option value="ha">HAUSA</option>
               </select>
-            </div>
+            </div> 
             <div className={`kobo360 nav-item pointer set-flex ${props.color}`}>
               {code || "NG"}
               {countries.length > 0 &&
@@ -598,7 +594,7 @@ const TheHeader = (props) => {
                     </div>
                   ))}
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
@@ -607,4 +603,3 @@ const TheHeader = (props) => {
 };
 
 export default TheHeader;
-// export default withRouter(TheHeader);

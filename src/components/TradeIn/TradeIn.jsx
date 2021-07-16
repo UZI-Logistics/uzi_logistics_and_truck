@@ -14,6 +14,7 @@ import { Event } from "../helpers/tracking";
 const TradeIn = () => {
   const [submitting, setSubmitting] = useState(false);
   const [truck_types, setTruckTypes] = useState([]);
+  // const [loading, setLoaded] = useState(false);
   const [tonnageRange, setTonnageRange] = useState([
     2, 3, 5, 8, 10, 15, 16, 20, 28, 30, 35, 40, 45, 50, 60, 1000, 33000, 45000,
   ]);
@@ -171,7 +172,7 @@ const TradeIn = () => {
                   onChange={(value) => newTonnageRange(value)}
                   value={inputValues.truckType}
                 >
-                  <option value=""></option>
+                  <option value="" disabled>Please wait...</option>
                   {[...new Set(truck_types.map((item) => item.type))].map(
                     (item, index) => (
                       <option value={item} key={index}>
