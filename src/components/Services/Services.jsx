@@ -145,11 +145,6 @@ const Services = ({ history }) => {
                       className="smaller-pointer pointer-margin-5"
                       loading="lazy"
                     />{" "}
-                    <FormattedMessage
-                      id="app.read-more"
-                      defaultMessage="Read more"
-                      description="Read more..."
-                    />
                   </p>
                 </div>
               </div>

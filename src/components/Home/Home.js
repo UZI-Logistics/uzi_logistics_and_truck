@@ -216,21 +216,20 @@ const Home = () => {
                     defaultMessage="SIGN IN AS CUSTOMER"
                   />
                 </button>
-                {/* <button
+                <button
                   className="home-button capitalize"
                   onClick={() =>
-                    window.open("https://admin-uzi-logistics.netlify.app/")
+                    window.open("https://customer-uzi-logistics.netlify.app/")
                   }
                 >
                   <FormattedMessage
                     id="app.sig"
                     defaultMessage="SIGN IN AS PARTNER"
                   />
-                </button> */}
+                </button>
                 <button
                   className="home-button capitalize"
                   onClick={() =>
-                    // window.open("https://admin.uzi-logistics-&-trucking.com/")
                     window.open("https://admin-uzi-logistics.netlify.app")
                   }
                 >
@@ -282,7 +281,7 @@ const Home = () => {
                       onChange={handleChange}
                       name="firstName"
                       value={inputValues.firstName}
-                      //required
+                    //required
                     />
                   </div>
                   <div className="flex-column">

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
-import linkedin from "../../images/linkedin.png";
-import youtube from "../../images/youtube.png";
+// import linkedin from "../../images/linkedin.png";
+// import youtube from "../../images/youtube.png";
 import { FormattedMessage } from "react-intl";
 
 const OpenMail = ({ mail }) => {
@@ -129,32 +129,32 @@ const Footer = () => {
           >
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
-          <a
+          {/* <a
             href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={linkedin} alt="linkedin" loading="lazy" />
-          </a>
-          <a
+          </a> */}
+          {/* <a
             href="/#"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={youtube} alt="youtube" loading="lazy" />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="branches">
         <span>
           <p className="bold">Nigeria</p>
           <p className="grey font-smaller">+234 909 874 7941</p>
-          <OpenMail mail="info@uzi-logistics-&-trucking.com"></OpenMail>
+          {/* <OpenMail mail="Uzilogisticsandtrucking@gmail.com"></OpenMail> */}
         </span>
         <span>
           <p className="bold">Ghana</p>
           <p className="grey font-smaller">+233 909 874 7941</p>
-          <OpenMail mail="info@uzi-logistics-&-trucking.com"></OpenMail>
+          {/* <OpenMail mail="Uzilogisticsandtrucking@gmail.com"></OpenMail> */}
         </span>
         {/* <span>
           <p className="bold">Kenya</p>
@@ -173,7 +173,7 @@ const Footer = () => {
         </span> */}
         <span>
           <p className="bold">Media Enquiries</p>
-          <OpenMail mail="press@uzi-logistics-&-trucking.com"></OpenMail>
+          <OpenMail mail="Uzilogisticsandtrucking@gmail.com"></OpenMail>
         </span>
         {/* <span>
           <p className="bold">Ivory Coast</p>

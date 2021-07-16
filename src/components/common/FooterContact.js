@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
-import linkedin from "../../images/linkedin.png";
-import youtube from "../../images/youtube.png";
+// import linkedin from "../../images/linkedin.png";
+// import youtube from "../../images/youtube.png";
 import { FormattedMessage } from "react-intl";
 import { GET } from "../helpers/api";
 import Axios from "axios";
@@ -127,7 +127,7 @@ const FooterContact = () => {
             <img src={facebook} alt="facebook" loading="lazy" />
           </a>
 
-          <a
+          {/* <a
             href="#/"
             target="_blank"
             rel="noopener noreferrer"
@@ -140,7 +140,7 @@ const FooterContact = () => {
             rel="noopener noreferrer"
           >
             <img src={youtube} alt="youtube" loading="lazy" />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

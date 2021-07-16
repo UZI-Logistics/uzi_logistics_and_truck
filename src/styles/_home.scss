@@ -83,9 +83,9 @@
   position: relative;
 
   @include breakpoint(phone-only) {
-    background-image: url("../images/home@2x.png");
+    background-image: url("../images/logo-green.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     min-height: 40rem;
 
     // width: 100%;
